@@ -185,6 +185,21 @@
                     <span class="category-tag">${item.franquicia}</span>
                     <h3>${item.personaje}</h3>
                     <p>${item.notas}</p>
+                    <p>${item.fecha}</p>
+                    <p>${item.nroFunko}</p>
+                    <p>${item.nroSerie}</p>
+                    <p>${item.precio}</p>
+                    <p>${item.gastosEnvio}</p>
+                    <p>${item.estadoPedido}</p>
+                    <p>${item.compradoEn}</p>
+                    <p>${item.subtienda}</p>
+                    <p>${item.caracteristicasEspeciales}</p>
+                    <p>${item.linea}</p>
+                    <p>${item.tvShow}</p>
+                    <p>${item.estadoCaja}</p>
+                    <p>${item.estado}</p>
+                    <p>${item.fullWave}</p>
+                    <p>${item.notas}</p>
                     ${item.video && item.video !== '#' ? 
                         `<a href="${item.video}" target="_blank" class="btn-video">▶ Ver Video</a>` 
                         : ''}
@@ -194,10 +209,10 @@
         });
     }
 
-    // 3. GENERAR BOTONES DE FILTRO BASADOS EN LAS CATEGORÍAS DEL JSON
+    // 3. GENERAR BOTONES DE FILTRO BASADOS EN LAS franquicias DEL JSON
     function generarBotonesFiltro() {
         const container = document.getElementById('filter-container');
-        // Extraemos las categorías únicas
+        // Extraemos las franquicias únicas
         const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))];
         
         franquicias.forEach(cat => {
@@ -230,6 +245,7 @@
 
 </body>
 </html>
+
 
 
 
