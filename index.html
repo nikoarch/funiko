@@ -14,93 +14,47 @@
             --muted: #64748b;
         }
 
-        body { 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            margin: 0; padding: 20px; 
-        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
+        header { text-align: center; margin-bottom: 20px; }
+        
+        /* Contador */
+        #contador { font-weight: bold; color: var(--muted); margin-bottom: 20px; font-size: 0.9rem; }
 
-        header { text-align: center; margin-bottom: 30px; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; }
-
-        /* Buscador y Filtros */
-        .controls {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        #search-bar {
-            padding: 12px 20px;
-            width: 100%;
-            max-width: 400px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        #search-bar:focus { border-color: var(--primary); }
-
-        .filters { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-
-        button { 
-            padding: 8px 18px; border: none; border-radius: 20px; 
-            background: #e2e8f0; color: #475569; cursor: pointer; 
-            font-weight: 600; transition: 0.3s; 
-        }
+        .controls { max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        #search-bar { padding: 12px 20px; width: 100%; max-width: 400px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none; }
+        .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+        button { padding: 8px 16px; border: none; border-radius: 20px; background: #e2e8f0; color: #475569; cursor: pointer; font-weight: 600; }
         button.active { background: var(--primary); color: white; }
 
-        /* Grid y Tarjetas */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
-            gap: 20px; max-width: 1200px; margin: 0 auto; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
 
-        .card { 
-            background: var(--card); border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); 
-            display: flex; flex-direction: column; border: 1px solid #e2e8f0;
-        }
+        .card { background: var(--card); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
+        .card-img-container { position: relative; height: 200px; }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        .price-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; }
 
-        .card-img-container { position: relative; }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        
-        .price-badge {
-            position: absolute; top: 15px; right: 15px;
-            background: rgba(0,0,0,0.7); color: white;
-            padding: 5px 12px; border-radius: 10px; font-weight: bold;
-        }
+        .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+        .category-tag { color: var(--primary); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+        h3 { margin: 5px 0 10px; font-size: 1.3rem; }
 
-        .card-content { padding: 20px; flex-grow: 1; }
-        .category-tag { color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
-        h3 { margin: 5px 0 15px; font-size: 1.5rem; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+        .btn-detail { padding: 8px; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: var(--text); font-size: 0.8rem; font-weight: bold; text-align: center; border: 1px solid #cbd5e1; cursor: pointer; }
+        .btn-video { padding: 8px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.8rem; text-align: center; }
 
-        /* Mini Ficha Técnica */
-        .stats-grid { 
-            display: grid; grid-template-columns: 1fr 1fr; 
-            gap: 10px; font-size: 0.85rem; color: var(--muted);
-            background: #f1f5f9; padding: 12px; border-radius: 12px;
-            margin-bottom: 15px;
-        }
-        .stat-item b { color: var(--text); }
-
-        .btn-video { 
-            display: block; text-align: center; padding: 10px; 
-            background: var(--accent); color: white; text-decoration: none; 
-            border-radius: 10px; font-weight: bold; font-size: 0.9rem;
-        }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+        .close-modal { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; cursor: pointer; border: none; background: none; }
+        .modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid #eee; pt: 15px; margin-top: 15px; }
+        .info-item { font-size: 0.85rem; color: var(--muted); }
+        .info-item b { color: var(--text); display: block; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>📦 Funiko</h1>
+    <div id="contador">Cargando colección...</div>
 </header>
 
 <div class="controls">
@@ -112,6 +66,14 @@
 
 <div class="grid" id="collection-grid"></div>
 
+<!-- Modal para Detalles -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="cerrarModal()">×</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
 <script>
     let datosCompletos = [];
     let categoriaActual = 'todos';
@@ -121,15 +83,18 @@
             const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
             datosCompletos = await respuesta.json();
             generarBotonesFiltro();
-            render(datosCompletos);
-        } catch (e) { console.error("Error cargando JSON", e); }
+            filtrarTodo();
+        } catch (e) { console.error("Error", e); }
     }
 
     function render(items) {
         const grid = document.getElementById('collection-grid');
-        grid.innerHTML = ''; 
+        grid.innerHTML = '';
+        
+        // Actualizar contador
+        document.getElementById('contador').innerText = `Mostrando ${items.length} de ${datosCompletos.length} Funkos`;
 
-        items.forEach(item => {
+        items.forEach((item, index) => {
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
@@ -140,21 +105,44 @@
                 <div class="card-content">
                     <span class="category-tag">${item.franquicia}</span>
                     <h3>${item.personaje}</h3>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-item">Nº: <b>#${item.nroFunko}</b></div>
-                        <div class="stat-item">Estado: <b>${item.estado}</b></div>
-                        <div class="stat-item">Caja: <b>${item.estadoCaja}</b></div>
-                        <div class="stat-item">Línea: <b>${item.linea}</b></div>
+                    <div class="btn-group">
+                        <button class="btn-detail" onclick="verDetalles(${index})">📋 Ficha Técnica</button>
+                        ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
                     </div>
-
-                    ${item.video && item.video !== '#' ? 
-                        `<a href="${item.video}" target="_blank" class="btn-video">▶ Ver Video Review</a>` : ''}
                 </div>
             `;
             grid.appendChild(card);
         });
     }
+
+    function verDetalles(index) {
+        const item = datosCompletos[index];
+        const modal = document.getElementById('infoModal');
+        const body = document.getElementById('modal-body');
+        
+        body.innerHTML = `
+            <h2 style="margin-top:0">${item.personaje}</h2>
+            <p style="color:var(--primary); font-weight:bold">${item.franquicia} - ${item.tvShow}</p>
+            <div class="modal-info-grid">
+                <div class="info-item">Nº Funko<b>#${item.nroFunko}</b></div>
+                <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
+                <div class="info-item">Estado<b>${item.estado}</b></div>
+                <div class="info-item">Caja<b>${item.estadoCaja}</b></div>
+                <div class="info-item">Comprado en<b>${item.compradoEn} (${item.subtienda})</b></div>
+                <div class="info-item">Gastos Envío<b>${item.gastosEnvio}</b></div>
+                <div class="info-item">Línea<b>${item.linea}</b></div>
+                <div class="info-item">Fecha Compra<b>${item.fecha}</b></div>
+            </div>
+            <div style="margin-top:20px; padding:15px; background:#f8fafc; border-radius:10px; font-size:0.9rem">
+                <strong>Notas:</strong><br>${item.notas}
+            </div>
+            <p><small><b>Especial:</b> ${item.caracteristicasEspeciales}</small></p>
+        `;
+        modal.style.display = 'flex';
+    }
+
+    function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
+    window.onclick = (event) => { if(event.target == document.getElementById('infoModal')) cerrarModal(); }
 
     function generarBotonesFiltro() {
         const container = document.getElementById('filter-container');
@@ -176,13 +164,11 @@
 
     function filtrarTodo() {
         const textoBusqueda = document.getElementById('search-bar').value.toLowerCase();
-        
         const filtrados = datosCompletos.filter(item => {
             const coincideCategoria = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
             const coincideTexto = item.personaje.toLowerCase().includes(textoBusqueda);
             return coincideCategoria && coincideTexto;
         });
-        
         render(filtrados);
     }
 
