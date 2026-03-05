@@ -2,6 +2,8 @@ let datosCompletos = [];
 let categoriaActual = 'todos';
 let indicesFotos = {};
 let idAbiertoLightbox = null;
+let touchStartX = 0;
+let touchEndX = 0;
 
 async function cargarDatos() {
     try {
@@ -26,7 +28,17 @@ function render(items) {
         if(!isNaN(p)) {
             totalInv += p;
             itemsConPrecio++;
-        }
+        };
+        // Dentro de items.forEach en la función render:
+    const estadoLimpio = item.estadoPedido ? 
+    item.estadoPedido.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() 
+    : '';
+
+let claseEstado = 'estado-default';
+if (estadoLimpio === 'recibido') claseEstado = 'estado-recibido';
+else if (estadoLimpio === 'en transito') claseEstado = 'estado-transito';
+else if (estadoLimpio === 'preventa') claseEstado = 'estado-preventa';
+
     });
 
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
@@ -186,3 +198,28 @@ window.onclick = (e) => {
 
 window.onload = cargarDatos;
 
+// Función genérica para manejar el gesto
+function manejarGesto(callback) {
+    if (touchEndX < touchStartX - 50) callback(1);  // Swipe izquierda -> Siguiente
+    if (touchEndX > touchStartX + 50) callback(-1); // Swipe derecha -> Anterior
+}
+
+// Configurar eventos táctiles en un elemento
+function habilitarSwipe(elemento, callback) {
+    elemento.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    elemento.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        manejarGesto(callback);
+    }, {passive: true});
+}
+
+// Modifica tu función render para aplicar swipe a las imágenes de las cards
+// Dentro del items.forEach, después de crear la 'card':
+const imgContainer = card.querySelector('.card-img-container');
+habilitarSwipe(imgContainer, (dir) => cambiarFoto(realID, dir));
+
+// Al final de tu script o en el cargarDatos, habilita el swipe del Lightbox:
+habilitarSwipe(document.getElementById('lightbox'), (dir) => cambiarFotoLightbox(dir));

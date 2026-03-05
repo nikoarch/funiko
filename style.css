@@ -79,3 +79,32 @@ h3 { margin: 5px 0 15px; font-size: 1.3rem; color: white; line-height: 1.2; }
 
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .modal-info-grid { grid-template-columns: 1fr; }
+    .stats-container { flex-direction: column; align-items: stretch; }
+}
+
+.card-img-container, .lightbox img {
+    touch-action: pan-y; /* Permite scroll vertical pero bloquea el horizontal nativo */
+    user-select: none;   /* Evita seleccionar la imagen al deslizar */
+    -webkit-user-drag: none;
+}
+
+/* Opcional: indicador visual de que hay más fotos */
+.card-img-container::after {
+    content: "↔";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.card-img-container:active::after { opacity: 1; }
+
