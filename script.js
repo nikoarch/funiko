@@ -2,6 +2,11 @@ let datosCompletos = [];
 let categoriaActual = 'todos';
 let indicesFotos = {};
 let idAbiertoLightbox = null;
+let touchStartX = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    cargarDatos();
+});
 
 async function cargarDatos() {
     try {
@@ -10,36 +15,32 @@ async function cargarDatos() {
         datosCompletos = await respuesta.json();
         generarBotonesFiltro();
         filtrarTodo();
-    } catch (e) { console.error("Error crítico:", e); }
+    } catch (e) { 
+        console.error("Error:", e);
+    }
 }
 
 function render(items) {
     const grid = document.getElementById('collection-grid');
     const contadorDiv = document.getElementById('contador');
-    grid.innerHTML = '';
+    if (!grid) return;
 
+    grid.innerHTML = '';
     let totalInv = 0;
     let itemsConPrecio = 0;
 
     items.forEach(item => {
         const p = parseFloat(item.precio.replace('€','').replace(',','.').trim());
-        if(!isNaN(p)) {
-            totalInv += p;
-            itemsConPrecio++;
-        }
+        if(!isNaN(p)) { totalInv += p; itemsConPrecio++; }
     });
 
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
-
-    contadorDiv.innerHTML = `
-        <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
-        <div class="stat-pill pill-price">📊 Media: <b>${promedio}€</b></div>
-        <div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>
-    `;
-
-    if (items.length === 0) {
-        grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:var(--muted); padding:50px;">Sin resultados.</p>';
-        return;
+    if (contadorDiv) {
+        contadorDiv.innerHTML = `
+            <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
+            <div class="stat-pill pill-price">📊 Media: <b>${promedio}€</b></div>
+            <div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>
+        `;
     }
 
     items.forEach((item, index) => {
@@ -49,28 +50,26 @@ function render(items) {
 
         let claseEstado = 'estado-default';
         const estadoLimpio = item.estadoPedido ? item.estadoPedido.toLowerCase().trim() : '';
-
-        if (estadoLimpio === 'recibido') {
-            claseEstado = 'estado-recibido';
-        } else if (estadoLimpio === 'en transito' || estadoLimpio === 'en tránsito') {
-            claseEstado = 'estado-transito';
-        } else if (estadoLimpio === 'preventa') {
-            claseEstado = 'estado-preventa';
-        }
+        if (estadoLimpio === 'recibido') claseEstado = 'estado-recibido';
+        else if (estadoLimpio.includes('transito') || estadoLimpio.includes('tránsito')) claseEstado = 'estado-transito';
+        else if (estadoLimpio === 'preventa') claseEstado = 'estado-preventa';
 
         const card = document.createElement('div');
         card.className = 'card';
         card.style.animationDelay = `${(index % 10) * 0.05}s`;
         
         card.innerHTML = `
-            <div class="card-img-container" onclick="abrirLightbox(${realID})">
+            <div class="card-img-container">
                 <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
                 <div class="price-badge">${item.precio}</div>
                 <div class="status-badge ${claseEstado}">${item.estadoPedido}</div>
                 ${fotos.length > 1 ? `
                 <div class="nav-overlay">
-                    <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, -1)">❮</button>
-                    <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, 1)">❯</button>
+                    <button class="nav-btn prev-btn">❮</button>
+                    <button class="nav-btn next-btn">❯</button>
+                </div>
+                <div class="foto-counter" id="count-${realID}" style="position:absolute; bottom:8px; right:12px; font-size:0.75rem; background:rgba(0,0,0,0.6); padding:2px 8px; border-radius:10px; color:white;">
+                    ${indicesFotos[realID] + 1}/${fotos.length}
                 </div>` : ''}
             </div>
             <div class="card-content">
@@ -83,10 +82,30 @@ function render(items) {
                 </div>
                 <h3>${item.personaje}</h3>
                 <div class="btn-group">
-                    <button class="btn-detail" onclick="verFichaTecnica(${realID})">📋 Detalles</button>
+                    <button class="btn-detail-trigger">📋 Detalles</button>
                     ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
                 </div>
             </div>`;
+        
+        const imgCont = card.querySelector('.card-img-container');
+        imgCont.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('nav-btn')) abrirLightbox(realID);
+        });
+
+        const btnPrev = card.querySelector('.prev-btn');
+        const btnNext = card.querySelector('.next-btn');
+        if(btnPrev) btnPrev.addEventListener('click', (e) => { e.stopPropagation(); cambiarFoto(realID, -1); });
+        if(btnNext) btnNext.addEventListener('click', (e) => { e.stopPropagation(); cambiarFoto(realID, 1); });
+
+        card.querySelector('.btn-detail-trigger').addEventListener('click', () => verFichaTecnica(realID));
+
+        // Soporte Táctil
+        imgCont.addEventListener('touchstart', e => touchStartX = e.changedTouches.screenX, {passive: true});
+        imgCont.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches.screenX;
+            if (Math.abs(diff) > 50) cambiarFoto(realID, diff > 0 ? 1 : -1);
+        }, {passive: true});
+
         grid.appendChild(card);
     });
 }
@@ -94,7 +113,7 @@ function render(items) {
 function verFichaTecnica(id) {
     const item = datosCompletos[id];
     const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
-    const waveStyle = item.fullWave === 'Si' ? 'color:#6ee7b7; font-weight:800;' : '';
+    const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
     
     document.getElementById('modal-body').innerHTML = `
         <h2 style="margin:0 0 5px; color:white;">${item.personaje}</h2>
@@ -111,7 +130,7 @@ function verFichaTecnica(id) {
             <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${item.caracteristicasEspeciales}</b></div>
         </div>
         
-        <div class="notes-box"><strong>📝 Notas:</strong><br>${item.notes || 'Sin notas.'}</div>
+        <div class="notes-box"><strong>📝 Notas:</strong><br>${item.notas || 'Sin notas.'}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
 }
@@ -119,9 +138,12 @@ function verFichaTecnica(id) {
 function cambiarFoto(id, dir) {
     const item = datosCompletos[id];
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
+    if (fotos.length <= 1) return;
     indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
-    const imgT = document.getElementById(`img-${id}`);
-    if (imgT) imgT.src = fotos[indicesFotos[id]];
+    const imgElement = document.getElementById(`img-${id}`);
+    const countElement = document.getElementById(`count-${id}`);
+    if (imgElement) imgElement.src = fotos[indicesFotos[id]];
+    if (countElement) countElement.innerText = `${indicesFotos[id] + 1}/${fotos.length}`;
     if (idAbiertoLightbox === id) document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
 }
 
@@ -129,13 +151,10 @@ function abrirLightbox(id) {
     idAbiertoLightbox = id;
     const item = datosCompletos[id];
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    const lb = document.getElementById('lightbox');
-    if(fotos.length <= 1) lb.classList.add('single-photo'); else lb.classList.remove('single-photo');
     document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
-    lb.style.display = 'flex';
+    document.getElementById('lightbox').style.display = 'flex';
 }
 
-function cambiarFotoLightbox(dir) { if (idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); }
 function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
@@ -144,45 +163,47 @@ function generarBotonesFiltro() {
     const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean).sort();
     franquicias.forEach(cat => {
         const btn = document.createElement('button');
-        btn.className = 'filter-btn'; btn.innerText = cat;
-        btn.onclick = (e) => filterByCategory(cat, e.target);
+        btn.className = 'filter-btn';
+        btn.innerText = cat;
+        btn.onclick = (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            categoriaActual = cat;
+            filtrarTodo();
+        };
         container.appendChild(btn);
     });
-}
-
-function filterByCategory(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    categoriaActual = cat; filtrarTodo();
 }
 
 function filtrarTodo() {
     const texto = document.getElementById('search-bar').value.toLowerCase();
     const filtrados = datosCompletos.filter(item => {
-        const cCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
-        const cText = item.personaje.toLowerCase().includes(texto) || item.franquicia.toLowerCase().includes(texto);
-        return cCat && cText;
+        const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+        const matchesText = item.personaje.toLowerCase().includes(texto) || item.franquicia.toLowerCase().includes(texto);
+        return matchesCat && matchesText;
     });
     render(filtrados);
 }
 
-function resetearFiltros() {
+window.resetearFiltros = () => {
     document.getElementById('search-bar').value = '';
-    filterByCategory('todos', document.getElementById('btn-todos'));
-}
-
-window.onkeydown = (e) => { 
-    if(e.key === "Escape") { cerrarModal(); cerrarLightbox(); }
-    if(idAbiertoLightbox !== null) {
-        if(e.key === "ArrowLeft") cambiarFotoLightbox(-1);
-        if(e.key === "ArrowRight") cambiarFotoLightbox(1);
-    }
-}
+    categoriaActual = 'todos';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('btn-todos').classList.add('active');
+    filtrarTodo();
+};
 
 window.onclick = (e) => {
     if(e.target.id === 'infoModal') cerrarModal();
     if(e.target.id === 'lightbox') cerrarLightbox();
-}
+};
 
-window.onload = cargarDatos;
+const lb = document.getElementById('lightbox');
+lb.addEventListener('touchstart', e => touchStartX = e.changedTouches.screenX, {passive: true});
+lb.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches.screenX;
+    if (Math.abs(diff) > 50 && idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, diff > 0 ? 1 : -1);
+}, {passive: true});
+
+window.cambiarFotoLightbox = (dir) => { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); };
 
