@@ -79,3 +79,25 @@ h3 { margin: 5px 0 15px; font-size: 1.3rem; color: white; line-height: 1.2; }
 
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espacio entre el logo y el texto */
+    font-size: 2.2rem;
+}
+
+.header-logo {
+    height: 50px; /* Ajusta la altura a tu gusto */
+    width: auto;
+    object-fit: contain;
+    /* Opcional: si tu logo es muy brillante puedes añadirle un poco de sombra */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    h1 { font-size: 1.6rem; gap: 10px; }
+    .header-logo { height: 35px; }
+}
+
