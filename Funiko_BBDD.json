@@ -27,54 +27,60 @@
     },
 
     {
-        "fecha": "27/09/26",
-        "nroFunko": "666",
-        "personaje": "rambo",
-        "nroSerie": "DRM789456",
-        "precio": "9,55€",
-        "gastosEnvio": "7€",
+        "fecha": "24/02/26",
+        "nroFunko": "778",
+        "personaje": "Leonard",
+        "nroSerie": "TTC250612",
+        "precio": "16,60€",
+        "gastosEnvio": "2€",
         "estadoPedido": "En Transito",
-        "compradoEn": "Fnac",
-        "subtienda": "-",
+        "compradoEn": "Amazon",
+        "subtienda": "Top Marchan",
         "caracteristicasEspeciales": "-",
-        "franquicia": "Star Wars",
+        "franquicia": "TBBT",
         "linea": "Television",
-        "tvShow": "Episodio IV",
-        "estadoCaja": "Tocada esquina",
+        "tvShow": "TBBT",
+        "estadoCaja": "Un pelin marcada en el frente.",
         "estado": "Nuevo",
-        "fullWave": "So",
-        "notas": "Factura en su caja... bla bla bla",
-        "foto": "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=400",
+        "fullWave": "No",
+        "notas": "Factura en la caja de Amy.",
+        "foto": [
+            "imagenes/funkos/778-Leonard_1.jpg",
+            "imagenes/funkos/778-Leonard_2.jpg",
+            "imagenes/funkos/778-Leonard_3.jpg",
+            "imagenes/funkos/778-Leonard_4.jpg"
+        ],
         "video": "#"
     },
 
     {
-        "fecha": "1/2/23",
-        "nroFunko": "5",
-        "personaje": "juanito",
-        "nroSerie": "DRM124349",
-        "precio": "1,5€",
-        "gastosEnvio": "7€",
+        "fecha": "27/02/26",
+        "nroFunko": "749",
+        "personaje": "Ahsoka Tano",
+        "nroSerie": "FAC-053571-25002",
+        "precio": "10€",
+        "gastosEnvio": "0€",
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
         "subtienda": "-",
         "caracteristicasEspeciales": "Cabeza oscilante",
-        "franquicia": "Stargate",
-        "linea": "Movies",
-        "tvShow": "Pelicula",
+        "franquicia": "Star Wars",
+        "linea": "-",
+        "tvShow": "-",
         "estadoCaja": "Perfecta",
         "estado": "Nuevo",
         "fullWave": "No",
-        "notas": "Ticket en su caja... bla bla bla",
+        "notas": "Factura en su caja.",
         "foto": [
-            "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400",
-            "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=400",
-            "imagenes/1.jpg",
-            "imagenes/2.avif"
+            "imagenes/funkos/749-Ahsoka_1.jpg",
+            "imagenes/funkos/749-Ahsoka_2.jpg",
+            "imagenes/funkos/749-Ahsoka_3.jpg",
+            "imagenes/funkos/749-Ahsoka_4.jpg"
         ],
         "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
 ]
+
 
 
 
