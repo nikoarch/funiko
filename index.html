@@ -182,7 +182,7 @@
             card.innerHTML = `
                 <img src="${item.foto}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/400x220?text=Sin+Imagen'">
                 <div class="card-content">
-                    <span class="category-tag">${item.categoria}</span>
+                    <span class="category-tag">${item.franquicia}</span>
                     <h3>${item.nombre}</h3>
                     <p>${item.descripcion}</p>
                     ${item.video && item.video !== '#' ? 
@@ -198,9 +198,9 @@
     function generarBotonesFiltro() {
         const container = document.getElementById('filter-container');
         // Extraemos las categorías únicas
-        const categorias = [...new Set(datosCompletos.map(i => i.categoria))];
+        const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))];
         
-        categorias.forEach(cat => {
+        franquicias.forEach(cat => {
             if(!cat) return; // Saltamos si no hay categoría definida
             const btn = document.createElement('button');
             btn.innerText = cat;
@@ -219,7 +219,7 @@
         if (cat === 'todos') {
             render(datosCompletos);
         } else {
-            const filtrados = datosCompletos.filter(i => i.categoria === cat);
+            const filtrados = datosCompletos.filter(i => i.franquicia === cat);
             render(filtrados);
         }
     }
@@ -230,6 +230,7 @@
 
 </body>
 </html>
+
 
 
 
