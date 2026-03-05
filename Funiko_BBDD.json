@@ -1,27 +1,27 @@
 [
     {
-        "fecha": "11/12/26",
-        "nroFunko": "1555",
-        "personaje": "pepito",
-        "nroSerie": "DRM124569",
-        "precio": "10,55€",
+        "fecha": "26/02/2026",
+        "nroFunko": "1745",
+        "personaje": "Arwen",
+        "nroSerie": "DRM241205",
+        "precio": "13,42€",
         "gastosEnvio": "0€",
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
-        "subtienda": "Toys",
-        "caracteristicasEspeciales": "Cabeza oscilante",
-        "franquicia": "Stargate",
-        "linea": "Television",
-        "tvShow": "SG-1",
+        "subtienda": "",
+        "caracteristicasEspeciales": "-",
+        "franquicia": "LOTR",
+        "linea": "Movies",
+        "tvShow": "Pelicula",
         "estadoCaja": "Perfecta",
         "estado": "Nuevo",
         "fullWave": "No",
-        "notas": "Ticket en su caja... bla bla bla",
+        "notas": "Factura en su caja.",
         "foto": [
-            "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400",
-            "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=400",
-            "imagenes/1.jpg",
-            "imagenes/2.avif"
+            "imagenes/funkos/1745-Arwen_1.jpg",
+            "imagenes/funkos/1745-Arwen_2.jpg",
+            "imagenes/funkos/1745-Arwen_3.jpg",
+            "imagenes/funkos/1745-Arwen_4.jpg"
         ],
         "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
@@ -75,6 +75,7 @@
         "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
 ]
+
 
 
 
