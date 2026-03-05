@@ -180,11 +180,11 @@
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
-                <img src="${item.foto}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/400x220?text=Sin+Imagen'">
+                <img src="${item.foto}" alt="${item.personaje}" onerror="this.src='https://via.placeholder.com/400x220?text=Sin+Imagen'">
                 <div class="card-content">
                     <span class="category-tag">${item.franquicia}</span>
-                    <h3>${item.nombre}</h3>
-                    <p>${item.descripcion}</p>
+                    <h3>${item.personaje}</h3>
+                    <p>${item.notas}</p>
                     ${item.video && item.video !== '#' ? 
                         `<a href="${item.video}" target="_blank" class="btn-video">▶ Ver Video</a>` 
                         : ''}
@@ -230,6 +230,7 @@
 
 </body>
 </html>
+
 
 
 
