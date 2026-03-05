@@ -12,53 +12,128 @@
             --text: #1e293b;
             --accent: #ef4444;
             --muted: #64748b;
+            --success: #16a34a;
         }
 
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
-        header { text-align: center; margin-bottom: 20px; }
+        body { 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background-color: var(--bg); 
+            color: var(--text); 
+            margin: 0; padding: 20px; 
+            line-height: 1.5;
+        }
+
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #0f172a; }
         
-        /* Contador */
-        #contador { font-weight: bold; color: var(--muted); margin-bottom: 20px; font-size: 0.9rem; }
+        /* Contenedor de Estadísticas */
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .stat-pill {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .stat-count { background: #e2e8f0; color: #475569; }
+        .stat-avg { background: #dcfce7; color: var(--success); }
 
-        .controls { max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        #search-bar { padding: 12px 20px; width: 100%; max-width: 400px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; outline: none; }
+        /* Controles */
+        .controls { 
+            max-width: 1200px; 
+            margin: 0 auto 30px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            align-items: center; 
+        }
+
+        #search-bar { 
+            padding: 12px 20px; 
+            width: 100%; 
+            max-width: 450px; 
+            border: 2px solid #e2e8f0; 
+            border-radius: 14px; 
+            font-size: 1rem; 
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        #search-bar:focus { border-color: var(--primary); }
+
         .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        button { padding: 8px 16px; border: none; border-radius: 20px; background: #e2e8f0; color: #475569; cursor: pointer; font-weight: 600; }
-        button.active { background: var(--primary); color: white; }
+        .filters button { 
+            padding: 8px 18px; border: none; border-radius: 25px; 
+            background: #ffffff; color: #64748b; cursor: pointer; 
+            font-weight: 600; border: 1px solid #e2e8f0; transition: 0.3s; 
+        }
+        .filters button.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        /* Grid de Tarjetas */
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            gap: 25px; max-width: 1200px; margin: 0 auto; 
+        }
 
-        .card { background: var(--card); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: flex; flex-direction: column; border: 1px solid #e2e8f0; }
-        .card-img-container { position: relative; height: 200px; }
+        .card { 
+            background: var(--card); border-radius: 20px; overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            display: flex; flex-direction: column; 
+            border: 1px solid #e2e8f0; transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+
+        .card-img-container { position: relative; height: 220px; }
         .card img { width: 100%; height: 100%; object-fit: cover; }
-        .price-badge { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; }
+        .price-badge { 
+            position: absolute; top: 12px; right: 12px; 
+            background: rgba(15, 23, 42, 0.9); color: white; 
+            padding: 5px 12px; border-radius: 10px; font-weight: bold; font-size: 0.85rem;
+        }
 
-        .card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
-        .category-tag { color: var(--primary); font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
-        h3 { margin: 5px 0 10px; font-size: 1.3rem; }
+        .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .category-tag { color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; }
+        h3 { margin: 0 0 15px 0; font-size: 1.4rem; color: #0f172a; }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .btn-detail { padding: 8px; background: #f1f5f9; border-radius: 8px; text-decoration: none; color: var(--text); font-size: 0.8rem; font-weight: bold; text-align: center; border: 1px solid #cbd5e1; cursor: pointer; }
-        .btn-video { padding: 8px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 0.8rem; text-align: center; }
+        .btn-detail { padding: 10px; background: #f1f5f9; border-radius: 10px; color: var(--text); font-size: 0.85rem; font-weight: bold; border: 1px solid #cbd5e1; cursor: pointer; }
+        .btn-video { padding: 10px; background: var(--accent); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 0.85rem; text-align: center; }
 
-        /* MODAL */
-        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
-        .close-modal { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; cursor: pointer; border: none; background: none; }
-        .modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid #eee; pt: 15px; margin-top: 15px; }
-        .info-item { font-size: 0.85rem; color: var(--muted); }
-        .info-item b { color: var(--text); display: block; }
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 550px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; }
+        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.8rem; cursor: pointer; border: none; background: none; color: var(--muted); }
+        
+        .modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; border-top: 1px solid #f1f5f9; padding-top: 20px; }
+        .info-item { font-size: 0.9rem; color: var(--muted); }
+        .info-item b { color: var(--text); display: block; margin-top: 2px; }
+        .modal-notes { margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 12px; border-left: 4px solid var(--primary); }
+
+        @media (max-width: 600px) {
+            .btn-group { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>📦 Funiko</h1>
-    <div id="contador">Cargando colección...</div>
+    <h1>📦 Mi Colección Funiko</h1>
+    <div class="stats-container" id="stats-area">
+        <!-- Se rellena con JS -->
+    </div>
 </header>
 
 <div class="controls">
-    <input type="text" id="search-bar" placeholder="Buscar personaje..." oninput="filtrarTodo()">
+    <input type="text" id="search-bar" placeholder="Buscar personaje por nombre..." oninput="filtrarTodo()">
     <div class="filters" id="filter-container">
         <button id="btn-todos" class="active" onclick="filterByCategory('todos', this)">Todos</button>
     </div>
@@ -66,10 +141,10 @@
 
 <div class="grid" id="collection-grid"></div>
 
-<!-- Modal para Detalles -->
+<!-- Modal -->
 <div id="infoModal" class="modal">
     <div class="modal-content">
-        <button class="close-modal" onclick="cerrarModal()">×</button>
+        <button class="close-modal" onclick="cerrarModal()">&times;</button>
         <div id="modal-body"></div>
     </div>
 </div>
@@ -78,23 +153,72 @@
     let datosCompletos = [];
     let categoriaActual = 'todos';
 
+    // 1. CARGA DE DATOS
     async function cargarDatos() {
         try {
             const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
+            if (!respuesta.ok) throw new Error();
             datosCompletos = await respuesta.json();
+            
             generarBotonesFiltro();
-            filtrarTodo();
-        } catch (e) { console.error("Error", e); }
+            filtrarTodo(); // Render inicial
+        } catch (e) {
+            document.getElementById('collection-grid').innerHTML = "<p style='grid-column:1/-1; text-align:center;'>Error al cargar el JSON.</p>";
+        }
     }
 
+    // 2. LÓGICA DE FILTRADO (Categoría + Texto)
+    function filtrarTodo() {
+        const textoBusqueda = document.getElementById('search-bar').value.toLowerCase();
+        
+        const filtrados = datosCompletos.filter(item => {
+            const coincideCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+            const coincideTexto = item.personaje.toLowerCase().includes(textoBusqueda);
+            return coincideCat && coincideTexto;
+        });
+
+        render(filtrados);
+        actualizarStats(filtrados);
+    }
+
+    // 3. ACTUALIZAR CONTADORES Y PRECIO MEDIO
+    function actualizarStats(items) {
+        const statsArea = document.getElementById('stats-area');
+        
+        let sumaTotal = 0;
+        let validos = 0;
+
+        items.forEach(item => {
+            // Limpieza de precio: "10,55€" -> 10.55
+            const num = parseFloat(item.precio.replace('€', '').replace(',', '.').trim());
+            if (!isNaN(num)) {
+                sumaTotal += num;
+                validos++;
+            }
+        });
+
+        const promedio = validos > 0 ? (sumaTotal / validos).toFixed(2) : "0.00";
+
+        statsArea.innerHTML = `
+            <div class="stat-pill stat-count">📦 <b>${items.length}</b> Ítems</div>
+            <div class="stat-pill stat-avg">💰 Media: <b>${promedio}€</b></div>
+        `;
+    }
+
+    // 4. PINTAR TARJETAS
     function render(items) {
         const grid = document.getElementById('collection-grid');
         grid.innerHTML = '';
-        
-        // Actualizar contador
-        document.getElementById('contador').innerText = `Mostrando ${items.length} de ${datosCompletos.length} Funkos`;
 
-        items.forEach((item, index) => {
+        if (items.length === 0) {
+            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 50px;">No hay resultados para esta búsqueda.</p>';
+            return;
+        }
+
+        items.forEach(item => {
+            // Buscamos el ID real para el modal
+            const idxOriginal = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
+            
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
@@ -106,8 +230,10 @@
                     <span class="category-tag">${item.franquicia}</span>
                     <h3>${item.personaje}</h3>
                     <div class="btn-group">
-                        <button class="btn-detail" onclick="verDetalles(${index})">📋 Ficha Técnica</button>
-                        ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
+                        <button class="btn-detail" onclick="verDetalles(${idxOriginal})">📋 Detalles</button>
+                        ${item.video && item.video !== '#' ? 
+                            `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : 
+                            `<span></span>`}
                     </div>
                 </div>
             `;
@@ -115,42 +241,54 @@
         });
     }
 
+    // 5. MODAL DE DETALLES
     function verDetalles(index) {
         const item = datosCompletos[index];
-        const modal = document.getElementById('infoModal');
         const body = document.getElementById('modal-body');
         
         body.innerHTML = `
-            <h2 style="margin-top:0">${item.personaje}</h2>
-            <p style="color:var(--primary); font-weight:bold">${item.franquicia} - ${item.tvShow}</p>
+            <h2 style="margin:0 0 5px 0">${item.personaje}</h2>
+            <span style="color:var(--primary); font-weight:800; font-size:0.9rem">${item.franquicia}</span>
+            
             <div class="modal-info-grid">
                 <div class="info-item">Nº Funko<b>#${item.nroFunko}</b></div>
                 <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
-                <div class="info-item">Estado<b>${item.estado}</b></div>
-                <div class="info-item">Caja<b>${item.estadoCaja}</b></div>
-                <div class="info-item">Comprado en<b>${item.compradoEn} (${item.subtienda})</b></div>
-                <div class="info-item">Gastos Envío<b>${item.gastosEnvio}</b></div>
+                <div class="info-item">Estado General<b>${item.estado}</b></div>
+                <div class="info-item">Estado Caja<b>${item.estadoCaja}</b></div>
                 <div class="info-item">Línea<b>${item.linea}</b></div>
-                <div class="info-item">Fecha Compra<b>${item.fecha}</b></div>
+                <div class="info-item">Fecha de Compra<b>${item.fecha}</b></div>
+                <div class="info-item">Tienda<b>${item.compradoEn}</b></div>
+                <div class="info-item">Envío<b>${item.gastosEnvio}</b></div>
             </div>
-            <div style="margin-top:20px; padding:15px; background:#f8fafc; border-radius:10px; font-size:0.9rem">
-                <strong>Notas:</strong><br>${item.notas}
+
+            <div class="modal-notes">
+                <strong>Notas del coleccionista:</strong><br>
+                ${item.notas || "Sin notas adicionales."}
             </div>
-            <p><small><b>Especial:</b> ${item.caracteristicasEspeciales}</small></p>
+
+            <p style="margin-top:20px; font-size:0.8rem; color:var(--muted)">
+                <b>Características:</b> ${item.caracteristicasEspeciales}
+            </p>
         `;
-        modal.style.display = 'flex';
+        document.getElementById('infoModal').style.display = 'flex';
     }
 
     function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
-    window.onclick = (event) => { if(event.target == document.getElementById('infoModal')) cerrarModal(); }
 
+    // 6. FILTROS
     function generarBotonesFiltro() {
         const container = document.getElementById('filter-container');
         const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean);
-        franquicias.forEach(cat => {
+        
+        franquicias.sort().forEach(cat => {
             const btn = document.createElement('button');
             btn.innerText = cat;
-            btn.onclick = (e) => filterByCategory(cat, e.target);
+            btn.onclick = (e) => {
+                document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                categoriaActual = cat;
+                filtrarTodo();
+            };
             container.appendChild(btn);
         });
     }
@@ -162,15 +300,8 @@
         filtrarTodo();
     }
 
-    function filtrarTodo() {
-        const textoBusqueda = document.getElementById('search-bar').value.toLowerCase();
-        const filtrados = datosCompletos.filter(item => {
-            const coincideCategoria = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
-            const coincideTexto = item.personaje.toLowerCase().includes(textoBusqueda);
-            return coincideCategoria && coincideTexto;
-        });
-        render(filtrados);
-    }
+    // Cerrar modal al hacer clic fuera
+    window.onclick = (e) => { if(e.target.id === 'infoModal') cerrarModal(); }
 
     window.onload = cargarDatos;
 </script>
