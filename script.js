@@ -2,8 +2,8 @@ let datosCompletos = [];
 let categoriaActual = 'todos';
 let indicesFotos = {};
 let idAbiertoLightbox = null;
-let touchStartX = 0;
-let touchStartY = 0; // Añadido para detectar si el usuario quiere hacer scroll o swipe
+let xDown = null;                                                        
+let yDown = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
@@ -55,10 +55,9 @@ function render(items) {
 
         const card = document.createElement('div');
         card.className = 'card';
-        card.style.animationDelay = `${(index % 10) * 0.05}s`;
         
         card.innerHTML = `
-            <div class="card-img-container">
+            <div class="card-img-container" style="touch-action: pan-y;">
                 <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
                 <div class="price-badge">${item.precio}</div>
                 <div class="status-badge ${claseEstado}">${item.estadoPedido}</div>
@@ -88,33 +87,39 @@ function render(items) {
         
         const imgCont = card.querySelector('.card-img-container');
         
-        // Clic para abrir Lightbox
+        // Clic/Tap para Lightbox
         imgCont.addEventListener('click', (e) => {
             if (!e.target.classList.contains('nav-btn')) abrirLightbox(realID);
         });
 
-        // Botones de navegación
+        // Botones manuales
         const btnPrev = card.querySelector('.prev-btn');
         const btnNext = card.querySelector('.next-btn');
-        if(btnPrev) btnPrev.addEventListener('click', (e) => { e.stopPropagation(); cambiarFoto(realID, -1); });
-        if(btnNext) btnNext.addEventListener('click', (e) => { e.stopPropagation(); cambiarFoto(realID, 1); });
+        if(btnPrev) btnPrev.onclick = (e) => { e.stopPropagation(); cambiarFoto(realID, -1); };
+        if(btnNext) btnNext.onclick = (e) => { e.stopPropagation(); cambiarFoto(realID, 1); };
 
-        card.querySelector('.btn-detail-trigger').addEventListener('click', () => verFichaTecnica(realID));
+        card.querySelector('.btn-detail-trigger').onclick = () => verFichaTecnica(realID);
 
-        // --- LÓGICA TÁCTIL EN TARJETA ---
-        imgCont.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-        }, {passive: true});
+        // --- GESTOS TÁCTILES MEJORADOS ---
+        imgCont.addEventListener('touchstart', (e) => {
+            xDown = e.touches[0].clientX;                                      
+            yDown = e.touches[0].clientY;                                      
+        }, false);
 
-        imgCont.addEventListener('touchend', e => {
-            const diffX = touchStartX - e.changedTouches[0].screenX;
-            const diffY = touchStartY - e.changedTouches[0].screenY;
-            // Si el movimiento es horizontal y no vertical (scroll)
-            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
-                cambiarFoto(realID, diffX > 0 ? 1 : -1);
+        imgCont.addEventListener('touchmove', (e) => {
+            if (!xDown || !yDown) return;
+            let xUp = e.touches[0].clientX;                                    
+            let yUp = e.touches[0].clientY;
+            let xDiff = xDown - xUp;
+            let yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) { // Es un movimiento horizontal
+                if (Math.abs(xDiff) > 30) { // Umbral de sensibilidad
+                    cambiarFoto(realID, xDiff > 0 ? 1 : -1);
+                    xDown = null; yDown = null; // Reset para no disparar múltiple
+                }
             }
-        }, {passive: true});
+        }, false);
 
         grid.appendChild(card);
     });
@@ -206,17 +211,16 @@ window.onclick = (e) => {
     if(e.target.id === 'lightbox') cerrarLightbox();
 };
 
-// --- LÓGICA TÁCTIL EN LIGHTBOX ---
+// Touch para el Lightbox
 const lb = document.getElementById('lightbox');
-lb.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-}, {passive: true});
-
-lb.addEventListener('touchend', e => {
-    const diffX = touchStartX - e.changedTouches[0].screenX;
-    if (Math.abs(diffX) > 50 && idAbiertoLightbox !== null) {
-        cambiarFoto(idAbiertoLightbox, diffX > 0 ? 1 : -1);
+lb.addEventListener('touchstart', (e) => { xDown = e.touches[0].clientX; }, false);
+lb.addEventListener('touchmove', (e) => {
+    if (!xDown || idAbiertoLightbox === null) return;
+    let xDiff = xDown - e.touches[0].clientX;
+    if (Math.abs(xDiff) > 40) {
+        cambiarFoto(idAbiertoLightbox, xDiff > 0 ? 1 : -1);
+        xDown = null;
     }
-}, {passive: true});
+}, false);
 
 window.cambiarFotoLightbox = (dir) => { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); };
