@@ -1,0 +1,108 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --primary: #3b82f6;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --accent: #ef4444;
+    --border: #334155;
+    --pill-bg: #334155;
+    --success-bg: #064e3b;
+    --success-text: #6ee7b7;
+    --info-bg: #1e3a8a;
+    --info-text: #93c5fd;
+}
+
+body { 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    margin: 0; 
+    padding: 15px; 
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+header { text-align: center; margin-bottom: 20px; }
+h1 { font-size: 1.8rem; color: white; margin-bottom: 5px; }
+
+/* Stats y Barra de Progreso */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-pill {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.pill-count { background: var(--pill-bg); color: var(--text); }
+.pill-price { background: var(--success-bg); color: var(--success-text); }
+.pill-total { background: var(--info-bg); color: var(--info-text); }
+
+.progress-wrapper { width: 100%; max-width: 400px; margin: 15px auto; text-align: center; }
+.progress-text { font-size: 0.7rem; color: var(--muted); margin-bottom: 4px; }
+.progress-bg { height: 6px; background: #1e293b; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), #60a5fa); transition: width 0.5s ease; }
+
+/* Controles */
+.controls { max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.search-wrapper { display: flex; gap: 8px; width: 100%; max-width: 400px; }
+#search-bar { flex-grow: 1; padding: 12px; background: var(--card); border: 2px solid var(--border); border-radius: 12px; color: white; outline: none; }
+.reset-btn { padding: 0 15px; background: #450a0a; color: #fca5a5; border: none; border-radius: 12px; cursor: pointer; }
+
+.filters { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.filter-btn { padding: 7px 14px; border: 1px solid var(--border); border-radius: 15px; background: var(--pill-bg); color: var(--muted); cursor: pointer; font-size: 0.8rem; }
+.filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Grid y Tarjetas */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+.card { background: var(--card); border-radius: 15px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; animation: fadeInUp 0.4s ease backwards; }
+.card-img-container { position: relative; height: 200px; background: #000; touch-action: pan-y; /* Permite scroll vertical pero detecta swipe horizontal */ }
+.card img { width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; }
+
+.price-badge { position: absolute; top: 10px; right: 10px; background: rgba(15,23,42,0.8); padding: 4px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 800; border: 1px solid var(--border); }
+
+.card-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+.category-tag { color: var(--primary); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; }
+h3 { margin: 5px 0 15px; font-size: 1.1rem; color: white; }
+
+.btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+.btn-detail { padding: 8px; background: #334155; border: 1px solid #475569; border-radius: 8px; color: white; font-weight: bold; cursor: pointer; font-size: 0.8rem; }
+.btn-video { padding: 8px; background: var(--accent); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; text-align: center; font-size: 0.8rem; }
+
+/* Carrusel Overlay */
+.nav-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+.nav-btn { background: rgba(0,0,0,0.4); color: white; border: none; padding: 12px; cursor: pointer; pointer-events: auto; font-size: 1.2rem; }
+
+/* Lightbox Pro */
+.lightbox { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; touch-action: none; }
+.lightbox img { max-width: 95%; max-height: 85vh; border-radius: 4px; user-select: none; }
+.close-lightbox { position: absolute; top: 15px; right: 20px; color: white; font-size: 35px; cursor: pointer; z-index: 2010; }
+.nav-btn-light { position: absolute; background: none; color: white; border: none; font-size: 2.5rem; padding: 20px; cursor: pointer; z-index: 2010; }
+.nav-btn-light.prev { left: 5px; }
+.nav-btn-light.next { right: 5px; }
+.lightbox.single-photo .nav-btn-light { display: none; }
+
+/* Modal Detalles */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+.modal-content { background: var(--card); padding: 25px; border-radius: 20px; max-width: 500px; width: 90%; border: 1px solid var(--border); position: relative; max-height: 90vh; overflow-y: auto; }
+.close-modal { position: absolute; top: 15px; right: 15px; font-size: 1.5rem; cursor: pointer; border: none; background: none; color: var(--muted); }
+.modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid var(--border); padding-top: 15px; margin-top: 15px; }
+.info-item { font-size: 0.8rem; color: var(--muted); }
+.info-item b { color: white; display: block; font-size: 0.9rem; }
+.notes-box { margin-top: 15px; padding: 12px; background: var(--bg); border-radius: 10px; font-size: 0.8rem; border-left: 3px solid var(--primary); }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Ocultar flechas en móviles para limpieza (se usa el dedo) */
+@media (max-width: 768px) {
+    .nav-overlay, .nav-btn-light { display: none !important; }
+}
+
