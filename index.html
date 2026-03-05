@@ -143,8 +143,8 @@
     // 1. CARGAR DATOS DESDE JSON EXTERNO
     async function cargarDatos() {
         try {
-            //const respuesta = await fetch('datos.json');
-            const respuesta = await fetch('datos.json?t=' + new Date().getTime());
+            //const respuesta = await fetch('Funiko_BBDD.json');
+            const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
             if (!respuesta.ok) throw new Error('No se pudo cargar el archivo JSON');
             
             datosCompletos = await respuesta.json();
@@ -230,4 +230,5 @@
 
 </body>
 </html>
+
 
