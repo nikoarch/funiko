@@ -1,0 +1,19 @@
+[
+    {
+        "nombre": "Reloj Omega 2010",
+        "categoria": "Relojes",
+        "descripcion": "Calibre 565, automático con calendario.",
+        "foto": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400",
+        "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+        "nombre": "Cámara Leica M3",
+        "categoria": "Fotografía",
+        "descripcion": "Cámara telemétrica de 35mm.",
+        "foto": "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=400",
+        "video": "#"
+    }
+]
+
+
+
