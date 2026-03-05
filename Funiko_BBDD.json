@@ -5,8 +5,8 @@
         "personaje": "pepito",
         "nroSerie": "DRM124569",
         "precio": "10,55€",
-        "gastos_envio": "0€",
-        "estado_Pedido": "Recibido",
+        "gastosEnvio": "0€",
+        "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
         "subtienda": "Toys",
         "caracteristicasEspeciales": "Cabeza oscilante",
@@ -27,8 +27,8 @@
         "personaje": "rambo",
         "nroSerie": "DRM789456",
         "precio": "9,55€",
-        "gastos_envio": "7€",
-        "estado_Pedido": "En Transito",
+        "gastosEnvio": "7€",
+        "estadoPedido": "En Transito",
         "compradoEn": "Fnac",
         "subtienda": "-",
         "caracteristicasEspeciales": "-",
@@ -43,6 +43,7 @@
         "video": "#"
     }
 ]
+
 
 
 
