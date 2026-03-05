@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colección Funiko Pro</title>
+    <title>Colección Funiko Pro - Dashboard</title>
     <style>
         :root {
             --primary: #2563eb;
@@ -12,51 +12,39 @@
             --text: #1e293b;
             --accent: #ef4444;
             --muted: #64748b;
-            --success: #16a34a;
+            --success: #22c55e;
         }
 
-        body { 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text); 
-            margin: 0; padding: 20px; 
-            line-height: 1.5;
-        }
-
-        header { text-align: center; margin-bottom: 30px; }
-        h1 { font-size: 2.5rem; margin-bottom: 10px; color: #0f172a; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 20px; }
         
-        /* Contenedor de Estadísticas */
-        .stats-container {
+        header { text-align: center; margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Estilo del Dashboard de Contadores */
+        .dashboard {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-bottom: 25px;
             flex-wrap: wrap;
         }
+
         .stat-pill {
-            padding: 8px 16px;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
             font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .stat-count { background: #e2e8f0; color: #475569; }
-        .stat-avg { background: #dcfce7; color: var(--success); }
-
-        /* Controles */
-        .controls { 
-            max-width: 1200px; 
-            margin: 0 auto 30px; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px; 
-            align-items: center; 
         }
 
+        .pill-count { background: white; border: 1px solid #e2e8f0; color: var(--text); }
+        .pill-price { background: #dcfce7; border: 1px solid #bbf7d0; color: #166534; }
+
+        .controls { max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
+        
         #search-bar { 
             padding: 12px 20px; 
             width: 100%; 
@@ -64,85 +52,90 @@
             border: 2px solid #e2e8f0; 
             border-radius: 14px; 
             font-size: 1rem; 
-            outline: none;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
-        #search-bar:focus { border-color: var(--primary); }
+        #search-bar:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 4px rgba(37,99,235,0.1); }
 
         .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-        .filters button { 
-            padding: 8px 18px; border: none; border-radius: 25px; 
-            background: #ffffff; color: #64748b; cursor: pointer; 
-            font-weight: 600; border: 1px solid #e2e8f0; transition: 0.3s; 
+        
+        button.filter-btn { 
+            padding: 8px 18px; 
+            border: none; 
+            border-radius: 20px; 
+            background: #e2e8f0; 
+            color: #475569; 
+            cursor: pointer; 
+            font-weight: 600; 
+            transition: 0.2s;
         }
-        .filters button.active { background: var(--primary); color: white; border-color: var(--primary); }
+        button.filter-btn.active { background: var(--primary); color: white; }
 
         /* Grid de Tarjetas */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
-            gap: 25px; max-width: 1200px; margin: 0 auto; 
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
 
         .card { 
-            background: var(--card); border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
-            display: flex; flex-direction: column; 
-            border: 1px solid #e2e8f0; transition: transform 0.3s;
+            background: var(--card); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+            display: flex; 
+            flex-direction: column; 
+            transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-5px); }
 
-        .card-img-container { position: relative; height: 220px; }
+        .card-img-container { position: relative; height: 220px; background: #f1f5f9; }
         .card img { width: 100%; height: 100%; object-fit: cover; }
+        
         .price-badge { 
             position: absolute; top: 12px; right: 12px; 
-            background: rgba(15, 23, 42, 0.9); color: white; 
-            padding: 5px 12px; border-radius: 10px; font-weight: bold; font-size: 0.85rem;
+            background: rgba(0,0,0,0.75); color: white; 
+            padding: 5px 12px; border-radius: 10px; 
+            font-weight: bold; font-size: 0.85rem; backdrop-filter: blur(4px);
         }
 
         .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-        .category-tag { color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; }
-        h3 { margin: 0 0 15px 0; font-size: 1.4rem; color: #0f172a; }
+        .category-tag { color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+        h3 { margin: 5px 0 15px; font-size: 1.4rem; color: #0f172a; }
 
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
-        .btn-detail { padding: 10px; background: #f1f5f9; border-radius: 10px; color: var(--text); font-size: 0.85rem; font-weight: bold; border: 1px solid #cbd5e1; cursor: pointer; }
+        .btn-detail { padding: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: var(--text); font-size: 0.85rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        .btn-detail:hover { background: #f1f5f9; }
         .btn-video { padding: 10px; background: var(--accent); color: white; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 0.85rem; text-align: center; }
 
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+        /* Estilos del Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(6px); align-items: center; justify-content: center; }
         .modal-content { background: white; padding: 30px; border-radius: 24px; max-width: 550px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; }
         .close-modal { position: absolute; top: 20px; right: 20px; font-size: 1.8rem; cursor: pointer; border: none; background: none; color: var(--muted); }
         
-        .modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; border-top: 1px solid #f1f5f9; padding-top: 20px; }
-        .info-item { font-size: 0.9rem; color: var(--muted); }
-        .info-item b { color: var(--text); display: block; margin-top: 2px; }
-        .modal-notes { margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 12px; border-left: 4px solid var(--primary); }
+        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #f1f5f9; }
+        .m-item { font-size: 0.85rem; color: var(--muted); }
+        .m-item b { color: var(--text); display: block; font-size: 0.95rem; margin-top: 2px; }
+        .m-notes { margin-top: 20px; padding: 15px; background: #f8fafc; border-radius: 12px; border-left: 4px solid var(--primary); }
 
-        @media (max-width: 600px) {
-            .btn-group { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>📦 Mi Colección Funiko</h1>
-    <div class="stats-container" id="stats-area">
-        <!-- Se rellena con JS -->
+    <h1>📦 Funiko</h1>
+    <div class="dashboard" id="dashboard">
+        <!-- Se llena dinámicamente -->
     </div>
 </header>
 
 <div class="controls">
     <input type="text" id="search-bar" placeholder="Buscar personaje por nombre..." oninput="filtrarTodo()">
     <div class="filters" id="filter-container">
-        <button id="btn-todos" class="active" onclick="filterByCategory('todos', this)">Todos</button>
+        <button id="btn-todos" class="filter-btn active" onclick="filterByCategory('todos', this)">Todos</button>
     </div>
 </div>
 
 <div class="grid" id="collection-grid"></div>
 
-<!-- Modal -->
-<div id="infoModal" class="modal">
+<!-- Estructura del Modal -->
+<div id="infoModal" class="modal" onclick="if(event.target === this) cerrarModal()">
     <div class="modal-content">
         <button class="close-modal" onclick="cerrarModal()">&times;</button>
         <div id="modal-body"></div>
@@ -153,7 +146,7 @@
     let datosCompletos = [];
     let categoriaActual = 'todos';
 
-    // 1. CARGA DE DATOS
+    // 1. Cargar Datos
     async function cargarDatos() {
         try {
             const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
@@ -161,79 +154,56 @@
             datosCompletos = await respuesta.json();
             
             generarBotonesFiltro();
-            filtrarTodo(); // Render inicial
+            filtrarTodo(); // Primera carga
         } catch (e) {
-            document.getElementById('collection-grid').innerHTML = "<p style='grid-column:1/-1; text-align:center;'>Error al cargar el JSON.</p>";
+            document.getElementById('collection-grid').innerHTML = "<p>Error al cargar el archivo JSON.</p>";
         }
     }
 
-    // 2. LÓGICA DE FILTRADO (Categoría + Texto)
-    function filtrarTodo() {
-        const textoBusqueda = document.getElementById('search-bar').value.toLowerCase();
-        
-        const filtrados = datosCompletos.filter(item => {
-            const coincideCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
-            const coincideTexto = item.personaje.toLowerCase().includes(textoBusqueda);
-            return coincideCat && coincideTexto;
-        });
-
-        render(filtrados);
-        actualizarStats(filtrados);
-    }
-
-    // 3. ACTUALIZAR CONTADORES Y PRECIO MEDIO
-    function actualizarStats(items) {
-        const statsArea = document.getElementById('stats-area');
-        
-        let sumaTotal = 0;
-        let validos = 0;
-
-        items.forEach(item => {
-            // Limpieza de precio: "10,55€" -> 10.55
-            const num = parseFloat(item.precio.replace('€', '').replace(',', '.').trim());
-            if (!isNaN(num)) {
-                sumaTotal += num;
-                validos++;
-            }
-        });
-
-        const promedio = validos > 0 ? (sumaTotal / validos).toFixed(2) : "0.00";
-
-        statsArea.innerHTML = `
-            <div class="stat-pill stat-count">📦 <b>${items.length}</b> Ítems</div>
-            <div class="stat-pill stat-avg">💰 Media: <b>${promedio}€</b></div>
-        `;
-    }
-
-    // 4. PINTAR TARJETAS
+    // 2. Pintar Interfaz
     function render(items) {
         const grid = document.getElementById('collection-grid');
+        const dash = document.getElementById('dashboard');
         grid.innerHTML = '';
 
+        // Cálculo de Precio Medio
+        let suma = 0;
+        let validos = 0;
+        items.forEach(i => {
+            // Limpia "10,50€" -> 10.50
+            const p = parseFloat(i.precio.replace(/[€\s]/g, '').replace(',', '.'));
+            if (!isNaN(p)) { suma += p; validos++; }
+        });
+        const media = validos > 0 ? (suma / validos).toFixed(2) : "0.00";
+
+        // Actualizar Dashboard
+        dash.innerHTML = `
+            <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
+            <div class="stat-pill pill-price">💰 Media: <b>${media}€</b></div>
+        `;
+
         if (items.length === 0) {
-            grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 50px;">No hay resultados para esta búsqueda.</p>';
+            grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px; color:var(--muted)">No hay resultados para esta búsqueda</div>';
             return;
         }
 
         items.forEach(item => {
-            // Buscamos el ID real para el modal
-            const idxOriginal = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
+            // Buscamos el índice original para el modal
+            const originalIdx = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
             
             const card = document.createElement('div');
             card.className = 'card';
             card.innerHTML = `
                 <div class="card-img-container">
-                    <img src="${item.foto}" onerror="this.src='https://via.placeholder.com'">
+                    <img src="${item.foto}" alt="${item.personaje}" onerror="this.src='https://via.placeholder.com'">
                     <div class="price-badge">${item.precio}</div>
                 </div>
                 <div class="card-content">
                     <span class="category-tag">${item.franquicia}</span>
                     <h3>${item.personaje}</h3>
                     <div class="btn-group">
-                        <button class="btn-detail" onclick="verDetalles(${idxOriginal})">📋 Detalles</button>
-                        ${item.video && item.video !== '#' ? 
-                            `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : 
-                            `<span></span>`}
+                        <button class="btn-detail" onclick="verDetalles(${originalIdx})">Ficha Completa</button>
+                        ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">Ver Video</a>` : '<span></span>'}
                     </div>
                 </div>
             `;
@@ -241,69 +211,71 @@
         });
     }
 
-    // 5. MODAL DE DETALLES
-    function verDetalles(index) {
-        const item = datosCompletos[index];
+    // 3. Lógica de Filtros y Búsqueda
+    function generarBotonesFiltro() {
+        const container = document.getElementById('filter-container');
+        const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean);
+        franquicias.sort().forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.innerText = cat;
+            btn.onclick = (e) => filterByCategory(cat, e.target);
+            container.appendChild(btn);
+        });
+    }
+
+    function filterByCategory(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        categoriaActual = cat;
+        filtrarTodo();
+    }
+
+    function filtrarTodo() {
+        const busqueda = document.getElementById('search-bar').value.toLowerCase();
+        const filtrados = datosCompletos.filter(item => {
+            const matchCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+            const matchText = item.personaje.toLowerCase().includes(busqueda);
+            return matchCat && matchText;
+        });
+        render(filtrados);
+    }
+
+    // 4. Modal de Detalles
+    function verDetalles(idx) {
+        const f = datosCompletos[idx];
         const body = document.getElementById('modal-body');
-        
         body.innerHTML = `
-            <h2 style="margin:0 0 5px 0">${item.personaje}</h2>
-            <span style="color:var(--primary); font-weight:800; font-size:0.9rem">${item.franquicia}</span>
+            <h2 style="margin:0">${f.personaje}</h2>
+            <small style="color:var(--primary); font-weight:bold; text-transform:uppercase">${f.franquicia} | ${f.tvShow}</small>
             
-            <div class="modal-info-grid">
-                <div class="info-item">Nº Funko<b>#${item.nroFunko}</b></div>
-                <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
-                <div class="info-item">Estado General<b>${item.estado}</b></div>
-                <div class="info-item">Estado Caja<b>${item.estadoCaja}</b></div>
-                <div class="info-item">Línea<b>${item.linea}</b></div>
-                <div class="info-item">Fecha de Compra<b>${item.fecha}</b></div>
-                <div class="info-item">Tienda<b>${item.compradoEn}</b></div>
-                <div class="info-item">Envío<b>${item.gastosEnvio}</b></div>
+            <div class="modal-grid">
+                <div class="m-item">Nº Funko<b>#${f.nroFunko}</b></div>
+                <div class="m-item">Nº Serie<b>${f.nroSerie}</b></div>
+                <div class="m-item">Estado Figura<b>${f.estado}</b></div>
+                <div class="m-item">Estado Caja<b>${f.estadoCaja}</b></div>
+                <div class="m-item">Línea<b>${f.linea}</b></div>
+                <div class="m-item">Precio<b>${f.precio}</b></div>
+                <div class="m-item">Tienda<b>${f.compradoEn}</b></div>
+                <div class="m-item">Subtienda<b>${f.subtienda}</b></div>
+                <div class="m-item">Gastos Envío<b>${f.gastosEnvio}</b></div>
+                <div class="m-item">Fecha Compra<b>${f.fecha}</b></div>
             </div>
 
-            <div class="modal-notes">
-                <strong>Notas del coleccionista:</strong><br>
-                ${item.notas || "Sin notas adicionales."}
+            <div class="m-notes">
+                <strong>Notas de la colección:</strong><br>
+                <p style="margin: 5px 0 0 0; font-size: 0.9rem;">${f.notas}</p>
             </div>
-
-            <p style="margin-top:20px; font-size:0.8rem; color:var(--muted)">
-                <b>Características:</b> ${item.caracteristicasEspeciales}
-            </p>
+            
+            <p style="font-size:0.8rem; margin-top:15px"><b>Extras:</b> ${f.caracteristicasEspeciales}</p>
         `;
         document.getElementById('infoModal').style.display = 'flex';
     }
 
     function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
-    // 6. FILTROS
-    function generarBotonesFiltro() {
-        const container = document.getElementById('filter-container');
-        const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean);
-        
-        franquicias.sort().forEach(cat => {
-            const btn = document.createElement('button');
-            btn.innerText = cat;
-            btn.onclick = (e) => {
-                document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                categoriaActual = cat;
-                filtrarTodo();
-            };
-            container.appendChild(btn);
-        });
-    }
-
-    function filterByCategory(cat, btn) {
-        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        categoriaActual = cat;
-        filtrarTodo();
-    }
-
-    // Cerrar modal al hacer clic fuera
-    window.onclick = (e) => { if(e.target.id === 'infoModal') cerrarModal(); }
-
     window.onload = cargarDatos;
 </script>
+
 </body>
 </html>
