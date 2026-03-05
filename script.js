@@ -16,7 +16,9 @@ async function cargarDatos() {
         datosCompletos = await respuesta.json();
         generarBotonesFiltro();
         filtrarTodo();
-    } catch (e) { console.error("Error:", e); }
+    } catch (e) { 
+        console.error("Error al cargar datos:", e); 
+    }
 }
 
 function render(items) {
@@ -80,19 +82,17 @@ function render(items) {
                 </div>
                 <h3>${item.personaje}</h3>
                 <div class="btn-group">
-                    <button class="btn-detail-trigger">📋 Detalles</button>
+                    <button class="btn-detail btn-detail-trigger">📋 Detalles</button>
                     ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
                 </div>
             </div>`;
         
         const imgCont = card.querySelector('.card-img-container');
         
-        // Clic/Tap para Lightbox
         imgCont.addEventListener('click', (e) => {
             if (!e.target.classList.contains('nav-btn')) abrirLightbox(realID);
         });
 
-        // Botones manuales
         const btnPrev = card.querySelector('.prev-btn');
         const btnNext = card.querySelector('.next-btn');
         if(btnPrev) btnPrev.onclick = (e) => { e.stopPropagation(); cambiarFoto(realID, -1); };
@@ -100,26 +100,22 @@ function render(items) {
 
         card.querySelector('.btn-detail-trigger').onclick = () => verFichaTecnica(realID);
 
-        // --- GESTOS TÁCTILES MEJORADOS ---
+        // Soporte Táctil en Tarjeta
         imgCont.addEventListener('touchstart', (e) => {
             xDown = e.touches[0].clientX;                                      
             yDown = e.touches[0].clientY;                                      
-        }, false);
+        }, {passive: true});
 
         imgCont.addEventListener('touchmove', (e) => {
             if (!xDown || !yDown) return;
-            let xUp = e.touches[0].clientX;                                    
-            let yUp = e.touches[0].clientY;
-            let xDiff = xDown - xUp;
-            let yDiff = yDown - yUp;
+            let xDiff = xDown - e.touches[0].clientX;
+            let yDiff = yDown - e.touches[0].clientY;
 
-            if (Math.abs(xDiff) > Math.abs(yDiff)) { // Es un movimiento horizontal
-                if (Math.abs(xDiff) > 30) { // Umbral de sensibilidad
-                    cambiarFoto(realID, xDiff > 0 ? 1 : -1);
-                    xDown = null; yDown = null; // Reset para no disparar múltiple
-                }
+            if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 30) {
+                cambiarFoto(realID, xDiff > 0 ? 1 : -1);
+                xDown = null; yDown = null;
             }
-        }, false);
+        }, {passive: true});
 
         grid.appendChild(card);
     });
@@ -171,19 +167,27 @@ function abrirLightbox(id) {
 function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
+function filterByCategory(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    categoriaActual = cat;
+    filtrarTodo();
+}
+
 function generarBotonesFiltro() {
     const container = document.getElementById('filter-container');
+    const btnTodos = document.getElementById('btn-todos');
+    
+    if (btnTodos) {
+        btnTodos.onclick = (e) => filterByCategory('todos', e.target);
+    }
+
     const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean).sort();
     franquicias.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
         btn.innerText = cat;
-        btn.onclick = (e) => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            categoriaActual = cat;
-            filtrarTodo();
-        };
+        btn.onclick = (e) => filterByCategory(cat, e.target);
         container.appendChild(btn);
     });
 }
@@ -200,10 +204,7 @@ function filtrarTodo() {
 
 window.resetearFiltros = () => {
     document.getElementById('search-bar').value = '';
-    categoriaActual = 'todos';
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('btn-todos').classList.add('active');
-    filtrarTodo();
+    filterByCategory('todos', document.getElementById('btn-todos'));
 };
 
 window.onclick = (e) => {
@@ -211,9 +212,8 @@ window.onclick = (e) => {
     if(e.target.id === 'lightbox') cerrarLightbox();
 };
 
-// Touch para el Lightbox
 const lb = document.getElementById('lightbox');
-lb.addEventListener('touchstart', (e) => { xDown = e.touches[0].clientX; }, false);
+lb.addEventListener('touchstart', (e) => { xDown = e.touches[0].clientX; }, {passive: true});
 lb.addEventListener('touchmove', (e) => {
     if (!xDown || idAbiertoLightbox === null) return;
     let xDiff = xDown - e.touches[0].clientX;
@@ -221,6 +221,7 @@ lb.addEventListener('touchmove', (e) => {
         cambiarFoto(idAbiertoLightbox, xDiff > 0 ? 1 : -1);
         xDown = null;
     }
-}, false);
+}, {passive: true});
 
 window.cambiarFotoLightbox = (dir) => { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); };
+
