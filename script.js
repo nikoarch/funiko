@@ -2,224 +2,152 @@ let datosCompletos = [];
 let categoriaActual = 'todos';
 let indicesFotos = {};
 let idAbiertoLightbox = null;
-let touchStartX = 0;
-let touchEndX = 0;
 
+// --- GESTIÓN DE DATOS ---
 async function cargarDatos() {
     try {
-        const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
-        if (!respuesta.ok) throw new Error("JSON no encontrado");
-        datosCompletos = await respuesta.json();
+        const r = await fetch('Funiko_BBDD.json?t=' + Date.now());
+        datosCompletos = await r.json();
         generarBotonesFiltro();
         filtrarTodo();
-    } catch (e) { console.error("Error crítico:", e); }
+        habilitarSwipe(document.getElementById('lightbox'), dir => cambiarFotoLightbox(dir));
+    } catch (e) { console.error("Error cargando JSON", e); }
 }
 
+// --- RENDERIZADO ---
 function render(items) {
     const grid = document.getElementById('collection-grid');
-    const contadorDiv = document.getElementById('contador');
+    const contador = document.getElementById('contador');
     grid.innerHTML = '';
 
-    let totalInv = 0;
-    let itemsConPrecio = 0;
-
-    items.forEach(item => {
-        const p = parseFloat(item.precio.replace('€','').replace(',','.').trim());
-        if(!isNaN(p)) {
-            totalInv += p;
-            itemsConPrecio++;
-        };
-        // Dentro de items.forEach en la función render:
-    const estadoLimpio = item.estadoPedido ? 
-    item.estadoPedido.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim() 
-    : '';
-
-let claseEstado = 'estado-default';
-if (estadoLimpio === 'recibido') claseEstado = 'estado-recibido';
-else if (estadoLimpio === 'en transito') claseEstado = 'estado-transito';
-else if (estadoLimpio === 'preventa') claseEstado = 'estado-preventa';
-
+    let total = 0;
+    items.forEach(i => {
+        const p = parseFloat(i.precio.replace('€','').replace(',','.').trim());
+        if(!isNaN(p)) total += p;
     });
 
-    const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
-
-    contadorDiv.innerHTML = `
-        <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
-        <div class="stat-pill pill-price">📊 Media: <b>${promedio}€</b></div>
-        <div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>
+    contador.innerHTML = `
+        <div class="stat-pill pill-count">📦 <b>${items.length}</b></div>
+        <div class="stat-pill pill-total">💰 <b>${total.toFixed(2)}€</b></div>
     `;
 
-    if (items.length === 0) {
-        grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:var(--muted); padding:50px;">Sin resultados.</p>';
-        return;
-    }
-
-    items.forEach((item, index) => {
+    items.forEach((item, idx) => {
         const realID = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
         const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-        if (!(realID in indicesFotos)) indicesFotos[realID] = 0;
+        if (indicesFotos[realID] === undefined) indicesFotos[realID] = 0;
 
-        let claseEstado = 'estado-default';
-        const estadoLimpio = item.estadoPedido ? item.estadoPedido.toLowerCase().trim() : '';
-
-        if (estadoLimpio === 'recibido') {
-            claseEstado = 'estado-recibido';
-        } else if (estadoLimpio === 'en transito' || estadoLimpio === 'en tránsito') {
-            claseEstado = 'estado-transito';
-        } else if (estadoLimpio === 'preventa') {
-            claseEstado = 'estado-preventa';
-        }
+        const estado = (item.estadoPedido || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        let clase = 'estado-default';
+        if(estado.includes("recibido")) clase = 'estado-recibido';
+        else if(estado.includes("transito")) clase = 'estado-transito';
+        else if(estado.includes("preventa")) clase = 'estado-preventa';
 
         const card = document.createElement('div');
         card.className = 'card';
-        card.style.animationDelay = `${(index % 10) * 0.05}s`;
-        
         card.innerHTML = `
             <div class="card-img-container" onclick="abrirLightbox(${realID})">
                 <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
                 <div class="price-badge">${item.precio}</div>
-                <div class="status-badge ${claseEstado}">${item.estadoPedido}</div>
+                <div class="status-badge ${clase}">${item.estadoPedido}</div>
                 ${fotos.length > 1 ? `
-                <div class="nav-overlay">
-                    <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, -1)">❮</button>
-                    <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, 1)">❯</button>
-                </div>` : ''}
+                    <div class="nav-overlay">
+                        <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, -1)">❮</button>
+                        <button class="nav-btn" onclick="event.stopPropagation(); cambiarFoto(${realID}, 1)">❯</button>
+                    </div>` : ''}
             </div>
             <div class="card-content">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
-                    <div style="display:flex; flex-direction:column;">
-                        <span class="category-tag">${item.franquicia}</span>
-                        <span class="tvshow-tag">${item.tvShow !== '-' ? item.tvShow : ''}</span>
-                    </div>
+                <div style="display:flex; justify-content:space-between;">
+                    <span class="category-tag">${item.franquicia}</span>
                     <span class="nro-funko-tag">#${item.nroFunko}</span>
                 </div>
                 <h3>${item.personaje}</h3>
                 <div class="btn-group">
                     <button class="btn-detail" onclick="verFichaTecnica(${realID})">📋 Detalles</button>
-                    ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
+                    ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<div></div>'}
                 </div>
             </div>`;
+        
         grid.appendChild(card);
+        habilitarSwipe(card.querySelector('.card-img-container'), dir => cambiarFoto(realID, dir));
     });
 }
 
+// --- INTERACCIÓN ---
+function cambiarFoto(id, dir) {
+    const fotos = Array.isArray(datosCompletos[id].foto) ? datosCompletos[id].foto : [datosCompletos[id].foto];
+    indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
+    const img = document.getElementById(`img-${id}`);
+    if(img) img.src = fotos[indicesFotos[id]];
+    if(idAbiertoLightbox === id) document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
+}
+
 function verFichaTecnica(id) {
-    const item = datosCompletos[id];
-    const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
-    const waveStyle = item.fullWave === 'Si' ? 'color:#6ee7b7; font-weight:800;' : '';
-    
+    const i = datosCompletos[id];
     document.getElementById('modal-body').innerHTML = `
-        <h2 style="margin:0 0 5px; color:white;">${item.personaje}</h2>
-        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${item.franquicia} · ${item.linea} · ${item.tvShow}</p>
-        
+        <h2 style="margin:0">${i.personaje}</h2>
+        <p style="color:var(--primary); font-size:0.9rem; margin:5px 0 15px;">${i.franquicia} · ${i.linea}</p>
         <div class="modal-info-grid">
-            <div class="info-item">Fecha Compra<b>${item.fecha}</b></div>
-            <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
-            <div class="info-item">Tienda<b>${item.compradoEn}${sub}</b></div>
-            <div class="info-item">Gastos Envío<b>${item.gastosEnvio}</b></div>
-            <div class="info-item">Full Wave<b style="${waveStyle}">${item.fullWave}</b></div>
-            <div class="info-item">Estado Pieza<b>${item.estado}</b></div>
-            <div class="info-item">Estado Caja<b>${item.estadoCaja}</b></div>
-            <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${item.caracteristicasEspeciales}</b></div>
+            <div class="info-item">Nº Serie<b>${i.nroSerie}</b></div>
+            <div class="info-item">Tienda<b>${i.compradoEn}</b></div>
+            <div class="info-item">Estado Caja<b>${i.estadoCaja}</b></div>
+            <div class="info-item">Full Wave<b>${i.fullWave}</b></div>
         </div>
-        
-        <div class="notes-box"><strong>📝 Notas:</strong><br>${item.notes || 'Sin notas.'}</div>
+        <div class="notes-box"><strong>Notas:</strong><br>${i.notas || 'Sin notas.'}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
 }
 
-function cambiarFoto(id, dir) {
-    const item = datosCompletos[id];
-    const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
-    const imgT = document.getElementById(`img-${id}`);
-    if (imgT) imgT.src = fotos[indicesFotos[id]];
-    if (idAbiertoLightbox === id) document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
+// --- SWIPE LOGIC ---
+function habilitarSwipe(el, callback) {
+    let sX = 0, sY = 0;
+    el.addEventListener('touchstart', e => { sX = e.touches[0].clientX; sY = e.touches[0].clientY; }, {passive:true});
+    el.addEventListener('touchend', e => {
+        const dX = sX - e.changedTouches[0].clientX;
+        const dY = sY - e.changedTouches[0].clientY;
+        if(Math.abs(dX) > Math.abs(dY) && Math.abs(dX) > 40) callback(dX > 0 ? 1 : -1);
+    }, {passive:true});
 }
 
+// --- FILTROS Y MODALES ---
 function abrirLightbox(id) {
     idAbiertoLightbox = id;
-    const item = datosCompletos[id];
-    const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    const lb = document.getElementById('lightbox');
-    if(fotos.length <= 1) lb.classList.add('single-photo'); else lb.classList.remove('single-photo');
+    const fotos = Array.isArray(datosCompletos[id].foto) ? datosCompletos[id].foto : [datosCompletos[id].foto];
     document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
-    lb.style.display = 'flex';
+    document.getElementById('lightbox').style.display = 'flex';
 }
-
-function cambiarFotoLightbox(dir) { if (idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); }
 function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
+function cambiarFotoLightbox(dir) { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); }
 
 function generarBotonesFiltro() {
-    const container = document.getElementById('filter-container');
-    const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean).sort();
-    franquicias.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn'; btn.innerText = cat;
-        btn.onclick = (e) => filterByCategory(cat, e.target);
-        container.appendChild(btn);
+    const f = [...new Set(datosCompletos.map(i => i.franquicia))].sort();
+    const c = document.getElementById('filter-container');
+    f.forEach(cat => {
+        const b = document.createElement('button');
+        b.className = 'filter-btn'; b.innerText = cat;
+        b.onclick = (e) => filterByCategory(cat, e.target);
+        c.appendChild(b);
     });
 }
-
 function filterByCategory(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    categoriaActual = cat; filtrarTodo();
+    btn.classList.add('active'); categoriaActual = cat; filtrarTodo();
 }
-
 function filtrarTodo() {
-    const texto = document.getElementById('search-bar').value.toLowerCase();
-    const filtrados = datosCompletos.filter(item => {
-        const cCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
-        const cText = item.personaje.toLowerCase().includes(texto) || item.franquicia.toLowerCase().includes(texto);
-        return cCat && cText;
+    const t = document.getElementById('search-bar').value.toLowerCase();
+    const res = datosCompletos.filter(i => {
+        const matchC = categoriaActual === 'todos' || i.franquicia === categoriaActual;
+        const matchT = i.personaje.toLowerCase().includes(t) || i.franquicia.toLowerCase().includes(t);
+        return matchC && matchT;
     });
-    render(filtrados);
+    render(res);
 }
-
-function resetearFiltros() {
-    document.getElementById('search-bar').value = '';
-    filterByCategory('todos', document.getElementById('btn-todos'));
-}
-
-window.onkeydown = (e) => { 
-    if(e.key === "Escape") { cerrarModal(); cerrarLightbox(); }
-    if(idAbiertoLightbox !== null) {
-        if(e.key === "ArrowLeft") cambiarFotoLightbox(-1);
-        if(e.key === "ArrowRight") cambiarFotoLightbox(1);
-    }
-}
-
-window.onclick = (e) => {
-    if(e.target.id === 'infoModal') cerrarModal();
-    if(e.target.id === 'lightbox') cerrarLightbox();
+function resetearFiltros() { 
+    document.getElementById('search-bar').value = ''; 
+    filterByCategory('todos', document.getElementById('btn-todos')); 
 }
 
 window.onload = cargarDatos;
+window.onclick = e => { if(e.target.className === 'modal' || e.target.className === 'lightbox') { cerrarModal(); cerrarLightbox(); } };
+window.onkeydown = e => { if(e.key === "Escape") { cerrarModal(); cerrarLightbox(); } };
 
-// Función genérica para manejar el gesto
-function manejarGesto(callback) {
-    if (touchEndX < touchStartX - 50) callback(1);  // Swipe izquierda -> Siguiente
-    if (touchEndX > touchStartX + 50) callback(-1); // Swipe derecha -> Anterior
-}
-
-// Configurar eventos táctiles en un elemento
-function habilitarSwipe(elemento, callback) {
-    elemento.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, {passive: true});
-
-    elemento.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        manejarGesto(callback);
-    }, {passive: true});
-}
-
-// Modifica tu función render para aplicar swipe a las imágenes de las cards
-// Dentro del items.forEach, después de crear la 'card':
-const imgContainer = card.querySelector('.card-img-container');
-habilitarSwipe(imgContainer, (dir) => cambiarFoto(realID, dir));
-
-// Al final de tu script o en el cargarDatos, habilita el swipe del Lightbox:
-habilitarSwipe(document.getElementById('lightbox'), (dir) => cambiarFotoLightbox(dir));
