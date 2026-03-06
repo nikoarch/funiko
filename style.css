@@ -14,7 +14,20 @@
 }
 
 * { box-sizing: border-box; }
-body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 10px; overflow-x: hidden; width: 100%; }
+html, body { 
+    overflow-x: hidden; 
+    width: 100%; 
+    position: relative; 
+    margin: 0; 
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+}
+body { 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    background-color: var(--bg); 
+    color: var(--text); 
+    padding: 10px; 
+}
 
 header { text-align: center; margin-bottom: 20px; }
 h1 { font-size: 2rem; margin-bottom: 10px; }
@@ -26,8 +39,8 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .pill-total { background: var(--info-bg); color: var(--info-text); }
 
 .controls { width: 100%; max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 0 5px; }
-.search-wrapper { display: flex; gap: 8px; width: 100%; max-width: 450px; }
-#search-bar { flex-grow: 1; padding: 14px; background: var(--card); border: 2px solid var(--border); border-radius: 12px; color: white; outline: none; }
+.search-wrapper { display: flex; gap: 8px; width: 100%; max-width: 450px; align-items: stretch; }
+#search-bar { flex: 1; min-width: 0; padding: 14px; background: var(--card); border: 2px solid var(--border); border-radius: 12px; color: white; outline: none; }
 .reset-btn { padding: 0 15px; background: #450a0a; color: #fca5a5; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
@@ -70,8 +83,31 @@ h3 { margin: 5px 0 15px; font-size: 1.3rem; color: white; line-height: 1.2; }
 .card-img-container:hover .nav-overlay { opacity: 1; }
 .nav-btn { background: rgba(0,0,0,0.6); color: white; border: none; padding: 15px; cursor: pointer; pointer-events: auto; font-size: 1.2rem; }
 
-.modal, .lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
-.modal-content { background: var(--card); padding: 30px; border-radius: 25px; max-width: 550px; width: 92%; border: 1px solid var(--border); position: relative; max-height: 90vh; overflow-y: auto; }
+.modal, .lightbox { 
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(4px); 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+}
+.modal-content { 
+    background: var(--card); 
+    padding: 30px; 
+    border-radius: 25px; 
+    max-width: 550px; 
+    width: 92%; 
+    border: 1px solid var(--border); 
+    position: relative; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+}
 .close-modal, .close-lightbox { position: absolute; top: 15px; right: 20px; font-size: 2rem; cursor: pointer; border: none; background: none; color: var(--muted); z-index: 2100; }
 
 .modal-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; border-top: 1px solid var(--border); padding-top: 20px; margin-top: 20px; }
@@ -108,34 +144,41 @@ h1 {
 /* Ajuste para móviles */
 @media (max-width: 600px) {
     body { padding: 5px; }
-    h1 { font-size: 1.6rem; gap: 10px; }
-    .header-logo { height: 35px; }
+    h1 { font-size: 1.3rem; gap: 6px; width: 100%; justify-content: center; margin-top: 10px; }
+    .header-logo { height: 28px; }
     
-    .stats-container { gap: 5px; margin-bottom: 20px; width: 100%; padding: 0 5px; }
-    .stat-pill { padding: 6px 10px; font-size: 0.7rem; }
+    .stats-container { gap: 4px; margin-bottom: 15px; width: 100%; padding: 0 4px; justify-content: center; }
+    .stat-pill { padding: 5px 8px; font-size: 0.6rem; white-space: nowrap; flex: 1; text-align: center; min-width: 80px; }
     
-    .controls { gap: 10px; margin-bottom: 20px; padding: 0 5px; }
-    .search-wrapper { width: 100%; }
-    #search-bar { padding: 10px; font-size: 0.9rem; border-radius: 10px; }
-    .reset-btn { padding: 0 12px; border-radius: 10px; }
+    .controls { gap: 8px; margin-bottom: 15px; padding: 0 4px; width: 100%; }
+    .search-wrapper { width: 100%; max-width: 100%; gap: 6px; }
+    #search-bar { padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; }
+    .reset-btn { padding: 0 10px; border-radius: 8px; font-size: 0.8rem; flex-shrink: 0; }
     
-    .filter-btn { padding: 6px 10px; font-size: 0.7rem; }
+    .filters { width: 100%; gap: 4px; }
+    .filter-btn { padding: 5px 8px; font-size: 0.6rem; border-radius: 15px; }
     
-    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 0 5px; }
-    .card-img-container { height: 240px; }
-    .card-content { padding: 10px; }
-    h3 { font-size: 0.95rem; margin-bottom: 8px; }
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 0 4px; width: 100%; }
+    .card-img-container { height: 200px; }
+    .card-content { padding: 8px; }
+    h3 { font-size: 0.85rem; margin: 4px 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     
-    .price-badge { top: 6px; right: 6px; padding: 2px 6px; font-size: 0.7rem; }
-    .status-badge { top: 6px; left: 6px; padding: 2px 6px; font-size: 0.6rem; }
-    
-    .btn-group { gap: 6px; }
-    .btn-detail, .btn-video { padding: 6px; font-size: 0.75rem; border-radius: 8px; }
-    
-    .nro-funko-tag { font-size: 0.75rem; padding: 1px 5px; }
+    .category-tag { font-size: 0.65rem; }
+    .tvshow-tag { font-size: 0.6rem; }
+    .nro-funko-tag { font-size: 0.65rem; padding: 1px 4px; }
 
+    .price-badge { top: 4px; right: 4px; padding: 2px 4px; font-size: 0.6rem; }
+    .status-badge { top: 4px; left: 4px; padding: 2px 4px; font-size: 0.5rem; }
+    
+    .btn-group { gap: 4px; }
+    .btn-detail, .btn-video { padding: 5px 2px; font-size: 0.65rem; border-radius: 6px; }
+    
     /* Lightbox en móvil */
-    .lightbox img { max-width: 98%; max-height: 75vh; }
-    .nav-btn-light { font-size: 2rem; padding: 10px; }
+    .lightbox { padding: 0; }
+    .lightbox img { max-width: 100%; max-height: 100vh; width: auto; height: auto; border-radius: 0; }
+    .nav-btn-light { font-size: 1.5rem; padding: 12px; background: rgba(0,0,0,0.4); }
+    .nav-btn-light.prev { left: 0; }
+    .nav-btn-light.next { right: 0; }
+    .close-lightbox { top: 10px; right: 10px; font-size: 1.5rem; background: rgba(0,0,0,0.4); border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; }
 }
 
