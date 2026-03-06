@@ -1,6 +1,9 @@
 let datosCompletos = [];
 let indicesFotos = {}; 
 let idAbiertoLightbox = null;
+let lightboxTouchStartX = 0;
+let isZooming = false; // Nueva variable para bloquear el swipe durante el zoom
+
 
 document.addEventListener('DOMContentLoaded', cargarDatos);
 
@@ -127,12 +130,53 @@ function cambiarFotoManual(uid, dir) {
 
 function abrirLightbox(uid) {
     idAbiertoLightbox = uid;
-    document.getElementById('img-ampliada').src = datosCompletos[uid].foto[indicesFotos[uid]];
-    document.getElementById('lightbox').style.display = 'flex';
+    const item = datosCompletos.find(i => i.idUnicoInterno === uid || i.idInterno === uid);
+    const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
+    
+    const lbImg = document.getElementById('img-ampliada');
+    lbImg.src = fotos[indicesFotos[uid]];
+    
+    const lb = document.getElementById('lightbox');
+    lb.style.display = 'flex';
+
+    // EVENTOS TÁCTILES MEJORADOS
+    lb.addEventListener('touchstart', (e) => {
+        if (e.touches.length > 1) {
+            isZooming = true; // Detectamos zoom
+            lightboxTouchStartX = null;
+        } else {
+            isZooming = false;
+            lightboxTouchStartX = e.touches[0].clientX;
+        }
+    }, {passive: true});
+
+    lb.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 1) isZooming = true;
+    }, {passive: true});
+
+    lb.addEventListener('touchend', (e) => {
+        // Si estábamos haciendo zoom, no hacemos nada
+        if (isZooming || lightboxTouchStartX === null) return;
+
+        let touchEndX = e.changedTouches[0].clientX;
+        let diff = lightboxTouchStartX - touchEndX;
+
+        // Sensibilidad: 70 píxeles de desplazamiento para pasar foto
+        if (Math.abs(diff) > 70) {
+            cambiarFotoManual(uid, diff > 0 ? 1 : -1);
+            // Actualizamos la referencia visual del lightbox tras el cambio
+            lbImg.src = fotos[indicesFotos[uid]];
+        }
+    }, {passive: true});
 }
 
 function cambiarFotoLightbox(dir) {
-    if (idAbiertoLightbox !== null) cambiarFotoManual(idAbiertoLightbox, dir);
+    if (idAbiertoLightbox !== null) {
+        cambiarFotoManual(idAbiertoLightbox, dir);
+        // Forzamos actualización de la imagen del lightbox
+        const item = datosCompletos[idAbiertoLightbox];
+        document.getElementById('img-ampliada').src = item.foto[indicesFotos[idAbiertoLightbox]];
+    }
 }
 
 function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
