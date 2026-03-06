@@ -1,24 +1,17 @@
 let datosCompletos = [];
-let categoriaActual = 'todos';
-let indicesFotos = {};
+let indicesFotos = {}; 
 let idAbiertoLightbox = null;
-let xDown = null;                                                        
-let yDown = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-    cargarDatos();
-});
+document.addEventListener('DOMContentLoaded', cargarDatos);
 
 async function cargarDatos() {
     try {
-        const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
-        if (!respuesta.ok) throw new Error("JSON no encontrado");
-        datosCompletos = await respuesta.json();
-        generarBotonesFiltro();
-        filtrarTodo();
-    } catch (e) { 
-        console.error("Error al cargar datos:", e); 
-    }
+        const r = await fetch('Funiko_BBDD.json?t=' + Date.now());
+        const json = await r.json();
+        // Asignamos un ID numérico que NADIE más tenga
+        datosCompletos = json.map((item, i) => ({ ...item, idInterno: i }));
+        render(datosCompletos);
+    } catch (e) { console.error("Error:", e); }
 }
 
 function render(items) {
@@ -27,14 +20,14 @@ function render(items) {
     if (!grid) return;
 
     grid.innerHTML = '';
+    
+    // --- Lógica de estadísticas (Media, Total, etc.) ---
     let totalInv = 0;
     let itemsConPrecio = 0;
-
     items.forEach(item => {
         const p = parseFloat(item.precio.replace('€','').replace(',','.').trim());
         if(!isNaN(p)) { totalInv += p; itemsConPrecio++; }
     });
-
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
     if (contadorDiv) {
         contadorDiv.innerHTML = `
@@ -44,37 +37,37 @@ function render(items) {
         `;
     }
 
-    items.forEach((item, index) => {
-        const realID = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
+    // --- Renderizado de tarjetas ---
+    items.forEach((item) => {
+        const uid = item.idInterno; // ID Único absoluto (posición en el JSON)
         const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-        if (!(realID in indicesFotos)) indicesFotos[realID] = 0;
+        if (!(uid in indicesFotos)) indicesFotos[uid] = 0;
 
+        // Lógica de colores de estado
         let claseEstado = 'estado-default';
         const estadoLimpio = item.estadoPedido ? item.estadoPedido.toLowerCase().trim() : '';
         if (estadoLimpio === 'recibido') claseEstado = 'estado-recibido';
-        else if (estadoLimpio.includes('transito') || estadoLimpio.includes('tránsito')) claseEstado = 'estado-transito';
+        else if (estadoLimpio.includes('transito')) claseEstado = 'estado-transito';
         else if (estadoLimpio === 'preventa') claseEstado = 'estado-preventa';
 
         const card = document.createElement('div');
         card.className = 'card';
-        
         card.innerHTML = `
-            <div class="card-img-container" style="touch-action: pan-y;">
-                <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
+            <div class="card-img-container" id="img-cont-${uid}" style="touch-action: pan-y;">
+                <img id="main-img-${uid}" src="${fotos[indicesFotos[uid]]}" onerror="this.src='https://via.placeholder.com'">
                 <div class="price-badge">${item.precio}</div>
                 <div class="status-badge ${claseEstado}">${item.estadoPedido}</div>
                 ${fotos.length > 1 ? `
                 <div class="nav-overlay">
-                    <button class="nav-btn prev-btn">❮</button>
-                    <button class="nav-btn next-btn">❯</button>
+                    <button class="nav-btn prev">❮</button>
+                    <button class="nav-btn next">❯</button>
                 </div>
-                <div class="foto-counter" id="count-${realID}" style="position:absolute; bottom:8px; right:12px; font-size:0.75rem; background:rgba(0,0,0,0.6); padding:2px 8px; border-radius:10px; color:white;">
-                    ${indicesFotos[realID] + 1}/${fotos.length}
-                </div>` : ''}
+                <div class="foto-counter" id="cnt-${uid}">${indicesFotos[uid] + 1}/${fotos.length}</div>
+                ` : ''}
             </div>
             <div class="card-content">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
-                    <div style="display:flex; flex-direction:column;">
+                    <div>
                         <span class="category-tag">${item.franquicia}</span>
                         <span class="tvshow-tag">${item.tvShow !== '-' ? item.tvShow : ''}</span>
                     </div>
@@ -82,146 +75,72 @@ function render(items) {
                 </div>
                 <h3>${item.personaje}</h3>
                 <div class="btn-group">
-                    <button class="btn-detail btn-detail-trigger">📋 Detalles</button>
+                    <button class="btn-detail">📋 Detalles</button>
                     ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
                 </div>
             </div>`;
+
+        // Eventos de botones de foto
+        card.querySelector('.prev')?.addEventListener('click', (e) => { e.stopPropagation(); cambiarFotoManual(uid, -1); });
+        card.querySelector('.next')?.addEventListener('click', (e) => { e.stopPropagation(); cambiarFotoManual(uid, 1); });
         
+        // Evento Detalles
+        card.querySelector('.btn-detail').onclick = () => verFichaTecnica(uid);
+
+        // Evento Abrir Lightbox (Zoom)
         const imgCont = card.querySelector('.card-img-container');
-        
-        imgCont.addEventListener('click', (e) => {
-            if (!e.target.classList.contains('nav-btn')) abrirLightbox(realID);
-        });
+        imgCont.onclick = (e) => { 
+            if(!e.target.closest('.nav-btn')) abrirLightbox(uid); 
+        };
 
-        const btnPrev = card.querySelector('.prev-btn');
-        const btnNext = card.querySelector('.next-btn');
-        if(btnPrev) btnPrev.onclick = (e) => { e.stopPropagation(); cambiarFoto(realID, -1); };
-        if(btnNext) btnNext.onclick = (e) => { e.stopPropagation(); cambiarFoto(realID, 1); };
-
-        card.querySelector('.btn-detail-trigger').onclick = () => verFichaTecnica(realID);
-
-        // Soporte Táctil en Tarjeta
+        // --- GESTIÓN TÁCTIL (Móvil + Zoom) ---
+        let touchStartX = 0;
         imgCont.addEventListener('touchstart', (e) => {
-            xDown = e.touches[0].clientX;                                      
-            yDown = e.touches[0].clientY;                                      
+            if (e.touches.length > 1) { touchStartX = null; return; } // Bloqueo si hay zoom
+            touchStartX = e.touches[0].clientX;
         }, {passive: true});
 
-        imgCont.addEventListener('touchmove', (e) => {
-            if (!xDown || !yDown) return;
-            let xDiff = xDown - e.touches[0].clientX;
-            let yDiff = yDown - e.touches[0].clientY;
-
-            if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 30) {
-                cambiarFoto(realID, xDiff > 0 ? 1 : -1);
-                xDown = null; yDown = null;
-            }
+        imgCont.addEventListener('touchend', (e) => {
+            if (touchStartX === null || e.touches.length > 0) return; 
+            let touchEndX = e.changedTouches[0].clientX;
+            let diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 60) cambiarFotoManual(uid, diff > 0 ? 1 : -1);
         }, {passive: true});
 
         grid.appendChild(card);
     });
 }
 
-function verFichaTecnica(id) {
-    const item = datosCompletos[id];
-    const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
-    const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
-    
-    document.getElementById('modal-body').innerHTML = `
-        <h2 style="margin:0 0 5px; color:white;">${item.personaje}</h2>
-        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${item.franquicia} · ${item.linea} · ${item.tvShow}</p>
-        <div class="modal-info-grid">
-            <div class="info-item">Fecha Compra<b>${item.fecha}</b></div>
-            <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
-            <div class="info-item">Tienda<b>${item.compradoEn}${sub}</b></div>
-            <div class="info-item">Gastos Envío<b>${item.gastosEnvio}</b></div>
-            <div class="info-item">Full Wave<b style="${waveStyle}">${item.fullWave}</b></div>
-            <div class="info-item">Estado Pieza<b>${item.estado}</b></div>
-            <div class="info-item">Estado Caja<b>${item.estadoCaja}</b></div>
-            <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${item.caracteristicasEspeciales}</b></div>
-        </div>
-        <div class="notes-box"><strong>📝 Notas:</strong><br>${item.notas || 'Sin notas.'}</div>
-    `;
-    document.getElementById('infoModal').style.display = 'flex';
+function cambiarFotoManual(uid, dir) {
+    const item = datosCompletos[uid];
+    const fotos = item.foto;
+    indicesFotos[uid] = (indicesFotos[uid] + dir + fotos.length) % fotos.length;
+
+    document.getElementById(`main-img-${uid}`).src = fotos[indicesFotos[uid]];
+    const c = document.getElementById(`cnt-${uid}`);
+    if (c) c.innerText = `${indicesFotos[uid] + 1}/${fotos.length}`;
+
+    if (idAbiertoLightbox === uid) {
+        document.getElementById('img-ampliada').src = fotos[indicesFotos[uid]];
+    }
 }
 
-function cambiarFoto(id, dir) {
-    const item = datosCompletos[id];
-    const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    if (fotos.length <= 1) return;
-    indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
-    const imgElement = document.getElementById(`img-${id}`);
-    const countElement = document.getElementById(`count-${id}`);
-    if (imgElement) imgElement.src = fotos[indicesFotos[id]];
-    if (countElement) countElement.innerText = `${indicesFotos[id] + 1}/${fotos.length}`;
-    if (idAbiertoLightbox === id) document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
-}
-
-function abrirLightbox(id) {
-    idAbiertoLightbox = id;
-    const item = datosCompletos[id];
-    const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
+function abrirLightbox(uid) {
+    idAbiertoLightbox = uid;
+    document.getElementById('img-ampliada').src = datosCompletos[uid].foto[indicesFotos[uid]];
     document.getElementById('lightbox').style.display = 'flex';
+}
+
+function cambiarFotoLightbox(dir) {
+    if (idAbiertoLightbox !== null) cambiarFotoManual(idAbiertoLightbox, dir);
 }
 
 function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
-function filterByCategory(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    categoriaActual = cat;
-    filtrarTodo();
+function verFichaTecnica(uid) {
+    const item = datosCompletos[uid];
+    document.getElementById('modal-body').innerHTML = `<h2>${item.personaje}</h2><p>${item.notas}</p>`;
+    document.getElementById('infoModal').style.display = 'flex';
 }
-
-function generarBotonesFiltro() {
-    const container = document.getElementById('filter-container');
-    const btnTodos = document.getElementById('btn-todos');
-    
-    if (btnTodos) {
-        btnTodos.onclick = (e) => filterByCategory('todos', e.target);
-    }
-
-    const franquicias = [...new Set(datosCompletos.map(i => i.franquicia))].filter(Boolean).sort();
-    franquicias.forEach(cat => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn';
-        btn.innerText = cat;
-        btn.onclick = (e) => filterByCategory(cat, e.target);
-        container.appendChild(btn);
-    });
-}
-
-function filtrarTodo() {
-    const searchVal = document.getElementById('search-bar').value.toLowerCase();
-    const filtrados = datosCompletos.filter(item => {
-        const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
-        const matchesText = item.personaje.toLowerCase().includes(searchVal) || item.franquicia.toLowerCase().includes(searchVal);
-        return matchesCat && matchesText;
-    });
-    render(filtrados);
-}
-
-window.resetearFiltros = () => {
-    document.getElementById('search-bar').value = '';
-    filterByCategory('todos', document.getElementById('btn-todos'));
-};
-
-window.onclick = (e) => {
-    if(e.target.id === 'infoModal') cerrarModal();
-    if(e.target.id === 'lightbox') cerrarLightbox();
-};
-
-const lb = document.getElementById('lightbox');
-lb.addEventListener('touchstart', (e) => { xDown = e.touches[0].clientX; }, {passive: true});
-lb.addEventListener('touchmove', (e) => {
-    if (!xDown || idAbiertoLightbox === null) return;
-    let xDiff = xDown - e.touches[0].clientX;
-    if (Math.abs(xDiff) > 40) {
-        cambiarFoto(idAbiertoLightbox, xDiff > 0 ? 1 : -1);
-        xDown = null;
-    }
-}, {passive: true});
-
-window.cambiarFotoLightbox = (dir) => { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); };
 
