@@ -4,7 +4,7 @@
         "nroFunko": 1355,
         "personaje": "INDIANA JONES",
         "nroSerie": "FAC-053571-23051",
-        "precio": 14.95,
+        "precio": "14,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "???",
@@ -17,16 +17,12 @@
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg"
+            "imagenes/funkos/1355-Indiana_1.jpg",
+            "imagenes/funkos/1355-Indiana_2.jpg",
+            "imagenes/funkos/1355-Indiana_3.jpg",
+            "imagenes/funkos/1355-Indiana_4.jpg"
         ],
-        "video": "#",
+        "video": "https://www.youtube.com/watch?v=Pbzn79TSRO0",
         "notas": "-"
     },
     {
@@ -34,7 +30,7 @@
         "nroFunko": 1613,
         "personaje": "DANA SCULLY",
         "nroSerie": "FAC-092788-24182",
-        "precio": "-",
+        "precio": "0,00€",
         "gastosEnvio": "-",
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon (Santi)",
@@ -46,7 +42,12 @@
         "estadoCaja": "Caja perfecta. No hay ticket.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1613-Dana_1.jpg",
+            "imagenes/funkos/1613-Dana_2.jpg",
+            "imagenes/funkos/1613-Dana_3.jpg",
+            "imagenes/funkos/1613-Dana_4.jpg"
+        ],
         "video": "#",
         "notas": "Regalo de Cris"
     },
@@ -55,7 +56,7 @@
         "nroFunko": 1614,
         "personaje": "FOX MULDER",
         "nroSerie": "FAC-092788-24182",
-        "precio": "-",
+        "precio": "0,00€",
         "gastosEnvio": "-",
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon (Santi)",
@@ -67,7 +68,12 @@
         "estadoCaja": "Caja perfecta. No hay ticket.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1614-Fox_1.jpg",
+            "imagenes/funkos/1614-Fox_2.jpg",
+            "imagenes/funkos/1614-Fox_3.jpg",
+            "imagenes/funkos/1614-Fox_4.jpg"
+        ],
         "video": "#",
         "notas": "Regalo de Cris"
     },
@@ -76,7 +82,7 @@
         "nroFunko": 1659,
         "personaje": "SAMANTHA CARTER",
         "nroSerie": "GWT240901",
-        "precio": 16.95,
+        "precio": "16,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -88,7 +94,12 @@
         "estadoCaja": "Llego con esquina de apertura dañada.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1659-Sam_1.jpg",
+            "imagenes/funkos/1659-Sam_2.jpg",
+            "imagenes/funkos/1659-Sam_3.jpg",
+            "imagenes/funkos/1659-Sam_4.jpg"
+        ],
         "video": "#",
         "notas": "Pistoletazo de salida a coleccionar Funkos. Factura en su caja."
     },
@@ -97,7 +108,7 @@
         "nroFunko": 1755,
         "personaje": "DATA WITH SPOT",
         "nroSerie": "DRM250700",
-        "precio": 15.99,
+        "precio": "15,99€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -109,7 +120,12 @@
         "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1755-Data_1.jpg",
+            "imagenes/funkos/1755-Data_2.jpg",
+            "imagenes/funkos/1755-Data_3.jpg",
+            "imagenes/funkos/1755-Data_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter)."
     },
@@ -118,7 +134,7 @@
         "nroFunko": 1688,
         "personaje": "WILLIAM T. RIKER",
         "nroSerie": "DRM250203",
-        "precio": 12.79,
+        "precio": "12,79€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -130,7 +146,12 @@
         "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1688-Riker_1.jpg",
+            "imagenes/funkos/1688-Riker_2.jpg",
+            "imagenes/funkos/1688-Riker_3.jpg",
+            "imagenes/funkos/1688-Riker_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter)."
     },
@@ -139,7 +160,7 @@
         "nroFunko": 1842,
         "personaje": "DR. GREGORY HOUSE",
         "nroSerie": "DRM250818",
-        "precio": 15.99,
+        "precio": "15,99€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -151,7 +172,12 @@
         "estadoCaja": "Tapa superior ligeramente arrugada. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1842-House_1.jpg",
+            "imagenes/funkos/1842-House_2.jpg",
+            "imagenes/funkos/1842-House_3.jpg",
+            "imagenes/funkos/1842-House_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter). Lo vio Cris mientras buscabamos otros."
     },
@@ -160,7 +186,7 @@
         "nroFunko": 1687,
         "personaje": "JEAN-LUC PICARD",
         "nroSerie": "DRM250203",
-        "precio": 12.79,
+        "precio": "12,79€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -172,7 +198,12 @@
         "estadoCaja": "Caja perfecta. Ticket en su caja.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1687-Picard_1.jpg",
+            "imagenes/funkos/1687-Picard_2.jpg",
+            "imagenes/funkos/1687-Picard_3.jpg",
+            "imagenes/funkos/1687-Picard_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en su caja. Encargado en Fnac (Sanse) el 21/02/2026 para recoger a partir del día 24/02/2026."
     },
@@ -181,7 +212,7 @@
         "nroFunko": 1924,
         "personaje": "BENJAMIN SISKO",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -193,7 +224,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
@@ -202,7 +242,7 @@
         "nroFunko": 1925,
         "personaje": "GEORDI LAFORGE",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -214,7 +254,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
@@ -223,7 +272,7 @@
         "nroFunko": 1926,
         "personaje": "WORF",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -235,7 +284,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
@@ -244,7 +302,7 @@
         "nroFunko": 1928,
         "personaje": "THE DOCTOR",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -256,7 +314,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
@@ -265,7 +332,7 @@
         "nroFunko": 1631,
         "personaje": "JEAN-LUC PICARD",
         "nroSerie": "TTC240798",
-        "precio": 10.95,
+        "precio": "10,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -277,7 +344,12 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1631-Picard_1.jpg",
+            "imagenes/funkos/1631-Picard_2.jpg",
+            "imagenes/funkos/1631-Picard_3.jpg",
+            "imagenes/funkos/1631-Picard_4.jpg"
+        ],
         "video": "#",
         "notas": "-"
     },
@@ -286,7 +358,7 @@
         "nroFunko": 1172,
         "personaje": "NEO",
         "nroSerie": "DRM210997",
-        "precio": 14.95,
+        "precio": "14,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -298,7 +370,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1172-Neo_1.jpg",
+            "imagenes/funkos/1172-Neo_2.jpg",
+            "imagenes/funkos/1172-Neo_3.jpg",
+            "imagenes/funkos/1172-Neo_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en su caja."
     },
@@ -307,7 +384,7 @@
         "nroFunko": 1173,
         "personaje": "TRINITY",
         "nroSerie": "DRM210997",
-        "precio": 14.91,
+        "precio": "14,91€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -319,7 +396,12 @@
         "estadoCaja": "Vino con un lateral golpeado y un pelin arrugado.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1173-Trinity_1.jpg",
+            "imagenes/funkos/1173-Trinity_2.jpg",
+            "imagenes/funkos/1173-Trinity_3.jpg",
+            "imagenes/funkos/1173-Trinity_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en su caja."
     },
@@ -328,7 +410,7 @@
         "nroFunko": 1660,
         "personaje": "TEAL’C",
         "nroSerie": "GWT240901",
-        "precio": 16.95,
+        "precio": "16,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "El Corte Ingles (Campo de las Naciones)",
@@ -340,7 +422,12 @@
         "estadoCaja": "SI ME LO QUEDO, PDTE QUITAR PEGATINA CORTE INGLES. El plastico interior vino roto. Vendedor: El Corte Ingles",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1660-Tealc_1.jpg",
+            "imagenes/funkos/1660-Tealc_2.jpg",
+            "imagenes/funkos/1660-Tealc_3.jpg",
+            "imagenes/funkos/1660-Tealc_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en su caja."
     },
@@ -349,7 +436,7 @@
         "nroFunko": 1982,
         "personaje": "ÉOMER",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -361,7 +448,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
@@ -370,7 +466,7 @@
         "nroFunko": 1986,
         "personaje": "BOROMIR",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -382,7 +478,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
@@ -391,7 +496,7 @@
         "nroFunko": 1745,
         "personaje": "ARWEN",
         "nroSerie": "DRM241195",
-        "precio": 13.42,
+        "precio": "13,42€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -403,7 +508,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1745-Arwen_1.jpg",
+            "imagenes/funkos/1745-Arwen_2.jpg",
+            "imagenes/funkos/1745-Arwen_3.jpg",
+            "imagenes/funkos/1745-Arwen_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -412,7 +522,7 @@
         "nroFunko": 778,
         "personaje": "LEONARD HOFSTADTER",
         "nroSerie": "TTC250602",
-        "precio": 16.6,
+        "precio": "16,60€",
         "gastosEnvio": 3.99,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -424,7 +534,12 @@
         "estadoCaja": "Un pelin marcada en el frente.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/778-Leonard_1.jpg",
+            "imagenes/funkos/778-Leonard_2.jpg",
+            "imagenes/funkos/778-Leonard_3.jpg",
+            "imagenes/funkos/778-Leonard_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura de compra en la caja de Amy."
     },
@@ -433,7 +548,7 @@
         "nroFunko": 779,
         "personaje": "AMY FARRAH FOWLER",
         "nroSerie": "FM230609",
-        "precio": 19.9,
+        "precio": "19,90€",
         "gastosEnvio": null,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -445,7 +560,12 @@
         "estadoCaja": "Plastico pelin marcado. Color distinto al de Leonard.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/779-Amy_1.jpg",
+            "imagenes/funkos/779-Amy_2.jpg",
+            "imagenes/funkos/779-Amy_3.jpg",
+            "imagenes/funkos/779-Amy_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura de compra en su caja."
     },
@@ -454,7 +574,7 @@
         "nroFunko": 1927,
         "personaje": "SEVEN OF NINE",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -466,7 +586,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 8/09/2026."
     },
@@ -475,7 +604,7 @@
         "nroFunko": 1753,
         "personaje": "QUARK",
         "nroSerie": "DRM250700",
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -487,7 +616,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1753-Quark_1.jpg",
+            "imagenes/funkos/1753-Quark_2.jpg",
+            "imagenes/funkos/1753-Quark_3.jpg",
+            "imagenes/funkos/1753-Quark_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -496,7 +630,7 @@
         "nroFunko": 1989,
         "personaje": "ROBOCOP",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -508,7 +642,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 16/03/2026."
     },
@@ -517,7 +660,7 @@
         "nroFunko": 1984,
         "personaje": "GURITZ",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -529,7 +672,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
     },
@@ -538,7 +690,7 @@
         "nroFunko": 1983,
         "personaje": "FARAMIR",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -550,7 +702,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
     },
@@ -559,7 +720,7 @@
         "nroFunko": 834,
         "personaje": "MACE WINDU",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -571,7 +732,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 3/05/2026."
     },
@@ -580,7 +750,7 @@
         "nroFunko": 740,
         "personaje": "DARTH MAUL",
         "nroSerie": "FAC-053571-25251",
-        "precio": 13.42,
+        "precio": "13,42€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -592,7 +762,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/740-DarthMaul_1.jpg",
+            "imagenes/funkos/740-DarthMaul_2.jpg",
+            "imagenes/funkos/740-DarthMaul_3.jpg",
+            "imagenes/funkos/740-DarthMaul_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -601,7 +776,7 @@
         "nroFunko": 749,
         "personaje": "AHSOKA TANO",
         "nroSerie": "FAC-053571-24992",
-        "precio": 10,
+        "precio": "10,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -613,7 +788,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/749-Ahsoka_1.jpg",
+            "imagenes/funkos/749-Ahsoka_2.jpg",
+            "imagenes/funkos/749-Ahsoka_3.jpg",
+            "imagenes/funkos/749-Ahsoka_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -622,7 +802,7 @@
         "nroFunko": 961,
         "personaje": "MARTY IN PUFFY VEST",
         "nroSerie": "DRM250217",
-        "precio": 16.95,
+        "precio": "16,95€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "El Corte Ingles (Sanchinarro)",
@@ -634,7 +814,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/961-Marty_1.jpg",
+            "imagenes/funkos/961-Marty_2.jpg",
+            "imagenes/funkos/961-Marty_3.jpg",
+            "imagenes/funkos/961-Marty_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en su caja."
     },
@@ -643,7 +828,7 @@
         "nroFunko": 1575,
         "personaje": "DANIEL JACKSON",
         "nroSerie": "TTC240493",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -655,7 +840,12 @@
         "estadoCaja": "Vino con chip antirrobo pegado en la parte de abajo. Lo saque con secador de pelo pero no pude sacar todo el pegamento. Le pegue otra encima para que quede menos pegajosa tras el desastre.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1575-Daniel_1.jpg",
+            "imagenes/funkos/1575-Daniel_2.jpg",
+            "imagenes/funkos/1575-Daniel_3.jpg",
+            "imagenes/funkos/1575-Daniel_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket de compra en su caja."
     },
@@ -664,7 +854,7 @@
         "nroFunko": 1743,
         "personaje": "ÉOWYN",
         "nroSerie": "DRM250901",
-        "precio": 10.99,
+        "precio": "10,99€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -676,7 +866,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1743-Eowyn_1.jpg",
+            "imagenes/funkos/1743-Eowyn_2.jpg",
+            "imagenes/funkos/1743-Eowyn_3.jpg",
+            "imagenes/funkos/1743-Eowyn_4.jpg"
+        ],
         "video": "#",
         "notas": "Pone que 1/6 posibilidades de recibir una version Chase... y obviamente no tocó... Factura en su caja."
     },
@@ -685,7 +880,7 @@
         "nroFunko": 751,
         "personaje": "ANAKIN SKYWALKER",
         "nroSerie": "FAC-053571-25209",
-        "precio": 9.99,
+        "precio": "9,99€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -697,7 +892,12 @@
         "estadoCaja": "Vino con un toque diminito en la esquina abajo.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/751-Anakin_1.jpg",
+            "imagenes/funkos/751-Anakin_2.jpg",
+            "imagenes/funkos/751-Anakin_3.jpg",
+            "imagenes/funkos/751-Anakin_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -706,7 +906,7 @@
         "nroFunko": 501,
         "personaje": "LUKE SKYWALKER",
         "nroSerie": "FAC-053571-22066",
-        "precio": 15.99,
+        "precio": "15,99€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -718,7 +918,12 @@
         "estadoCaja": "Vino con el latera un poco aplastado en la parte superior.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/501-Luke_1.jpg",
+            "imagenes/funkos/501-Luke_2.jpg",
+            "imagenes/funkos/501-Luke_3.jpg",
+            "imagenes/funkos/501-Luke_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja."
     },
@@ -727,7 +932,7 @@
         "nroFunko": 599,
         "personaje": "SUPERMAN",
         "nroSerie": "DRM250804",
-        "precio": 13.42,
+        "precio": "13,42€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -739,7 +944,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/599-Superman_1.jpg",
+            "imagenes/funkos/599-Superman_2.jpg",
+            "imagenes/funkos/599-Superman_3.jpg",
+            "imagenes/funkos/599-Superman_4.jpg"
+        ],
         "video": "#",
         "notas": "Factura en su caja. El numero de serie no llego a verlo en el funko. Esta en la base de la cabeza pero el cuerpo no gira y no quiero forzarlo."
     },
@@ -748,7 +958,7 @@
         "nroFunko": 1554,
         "personaje": "DONATELLO",
         "nroSerie": "GFT240401",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -760,7 +970,12 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1554-Donatello_1.jpg",
+            "imagenes/funkos/1554-Donatello_2.jpg",
+            "imagenes/funkos/1554-Donatello_3.jpg",
+            "imagenes/funkos/1554-Donatello_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
@@ -769,7 +984,7 @@
         "nroFunko": 1557,
         "personaje": "MICHELANGELO",
         "nroSerie": "GFT240401",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -781,7 +996,12 @@
         "estadoCaja": "Pelin tocada y despegado el carton en esquina superior. Y pelin marcada en la trasera. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1557-Michelangelo_1.jpg",
+            "imagenes/funkos/1557-Michelangelo_2.jpg",
+            "imagenes/funkos/1557-Michelangelo_3.jpg",
+            "imagenes/funkos/1557-Michelangelo_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
@@ -790,7 +1010,7 @@
         "nroFunko": 1555,
         "personaje": "LEONARDO",
         "nroSerie": "GFT240401",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -802,7 +1022,12 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1555-Leonardo_1.jpg",
+            "imagenes/funkos/1555-Leonardo_2.jpg",
+            "imagenes/funkos/1555-Leonardo_3.jpg",
+            "imagenes/funkos/1555-Leonardo_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
@@ -811,7 +1036,7 @@
         "nroFunko": 1556,
         "personaje": "RAPHAEL",
         "nroSerie": "GFT240401",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -823,7 +1048,12 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1556-Raphael_1.jpg",
+            "imagenes/funkos/1556-Raphael_2.jpg",
+            "imagenes/funkos/1556-Raphael_3.jpg",
+            "imagenes/funkos/1556-Raphael_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
@@ -832,7 +1062,7 @@
         "nroFunko": 629,
         "personaje": "OBI-WAN KENOBI",
         "nroSerie": "FAC-046670-24344",
-        "precio": 12.79,
+        "precio": "12,79€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -844,7 +1074,12 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/629-ObiWan_1.jpg",
+            "imagenes/funkos/629-ObiWan_2.jpg",
+            "imagenes/funkos/629-ObiWan_3.jpg",
+            "imagenes/funkos/629-ObiWan_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en su caja."
     },
@@ -853,7 +1088,7 @@
         "nroFunko": 598,
         "personaje": "STROMTROOPER",
         "nroSerie": "FAC-053571-25146",
-        "precio": 10.98,
+        "precio": "10,98€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -865,7 +1100,12 @@
         "estadoCaja": "La tapa superior viene un poco cortado el pliegue.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/598-Stormtrooper_1.jpg",
+            "imagenes/funkos/598-Stormtrooper_2.jpg",
+            "imagenes/funkos/598-Stormtrooper_3.jpg",
+            "imagenes/funkos/598-Stormtrooper_4.jpg"
+        ],
         "video": "#",
         "notas": "Devolvi el comprado (llego el 27-2-26) y lo volvi a comprar en pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en su caja."
     },
@@ -874,7 +1114,7 @@
         "nroFunko": 368,
         "personaje": "THE CHILD",
         "nroSerie": "FAC-053571-25167",
-        "precio": 10.98,
+        "precio": "10,98€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -886,7 +1126,12 @@
         "estadoCaja": "Un pelin rota en la esquina de apertura.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/368-Grogu_1.jpg",
+            "imagenes/funkos/368-Grogu_2.jpg",
+            "imagenes/funkos/368-Grogu_3.jpg",
+            "imagenes/funkos/368-Grogu_4.jpg"
+        ],
         "video": "#",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en caja de Stormtrooper."
     },
@@ -895,7 +1140,7 @@
         "nroFunko": 402,
         "personaje": "THE MANDALORIAN WITH THE CHILD",
         "nroSerie": "FAC-053571-25307",
-        "precio": 10.98,
+        "precio": "10,98€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Amazon",
@@ -907,7 +1152,12 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/402-Mandalorian_1.jpg",
+            "imagenes/funkos/402-Mandalorian_2.jpg",
+            "imagenes/funkos/402-Mandalorian_3.jpg",
+            "imagenes/funkos/402-Mandalorian_4.jpg"
+        ],
         "video": "#",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian), Factura en caja de Stormtrooper."
     },
@@ -916,7 +1166,7 @@
         "nroFunko": 2003,
         "personaje": "JOHN RAMBO",
         "nroSerie": null,
-        "precio": 16,
+        "precio": "16,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Preventa",
         "compradoEn": "Amazon",
@@ -928,7 +1178,16 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
+        "foto": [
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg",
+            "imagenes/funkoLogoNOHAYFOTO.jpg"
+        ],
         "video": "#",
         "notas": "Comprado en preventa el 1/03/2026. Me lo entregarán el 12/04/2026."
     },
@@ -937,7 +1196,7 @@
         "nroFunko": 1573,
         "personaje": "RA",
         "nroSerie": "TTC240493",
-        "precio": 8,
+        "precio": "8,00€",
         "gastosEnvio": 0,
         "estadoPedido": "Recibido",
         "compradoEn": "Fnac (Sanse)",
@@ -949,7 +1208,12 @@
         "estadoCaja": "Caja perfecta. Al igual que con Daniel, intenté sacarle la pegatina de la alarma de la base y queda pegamento. Asique le pegué otra encima para que no quede pegasoda.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
+        "foto": [
+            "imagenes/funkos/1573-Ra_1.jpg",
+            "imagenes/funkos/1573-Ra_2.jpg",
+            "imagenes/funkos/1573-Ra_3.jpg",
+            "imagenes/funkos/1573-Ra_4.jpg"
+        ],
         "video": "#",
         "notas": "Ticket en su caja."
     }
