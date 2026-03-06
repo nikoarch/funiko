@@ -78,11 +78,18 @@ function render(items) {
         const card = document.createElement('div');
         card.className = 'card';
         
+        // Lógica específica para el badge de precio (mostrar N/A si es 0)
+        const precioBadge = (() => {
+            const lp = item.precio.replace('€','').replace(',','.').trim();
+            const val = parseFloat(lp);
+            return (isNaN(val) || val <= 0 || item.precio === '-') ? 'N/A' : item.precio;
+        })();
+
         card.innerHTML = `
             <div class="card-img-container" style="touch-action: pan-y;">
                 <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
-                <div class="price-badge">${item.precio}</div>
-                <div class="status-badge ${claseEstado}">${item.estadoPedido}</div>
+                <div class="price-badge">${precioBadge}</div>
+                <div class="status-badge ${claseEstado}">${f(item.estadoPedido)}</div>
                 ${fotos.length > 1 ? `
                 <div class="nav-overlay">
                     <button class="nav-btn prev-btn">❮</button>
