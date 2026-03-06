@@ -159,7 +159,8 @@ h1 {
     .filter-btn { padding: 5px 8px; font-size: 0.6rem; border-radius: 15px; }
     
     .grid { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; width: 100%; }
-    .card-img-container { height: 450px; }
+    .card-img-container { height: auto; min-height: 350px; aspect-ratio: 3 / 4; background: #000; }
+    .card img { height: 100%; width: 100%; object-fit: contain; display: block; }
     .card-content { padding: 15px; }
     h3 { font-size: 1.2rem; margin: 5px 0 12px; white-space: normal; overflow: visible; text-overflow: clip; }
     
