@@ -33,7 +33,7 @@ header { text-align: center; margin-bottom: 20px; }
 h1 { font-size: 2rem; margin-bottom: 10px; }
 
 .stats-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-.stat-pill { padding: 10px 18px; border-radius: 25px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+.stat-pill { padding: 10px 18px; border-radius: 25px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
 .pill-count { background: var(--pill-bg); color: var(--text); }
 .pill-price { background: var(--success-bg); color: var(--success-text); }
 .pill-total { background: var(--info-bg); color: var(--info-text); }
@@ -45,7 +45,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .status-filters { margin-top: 5px; }
-.filter-btn { padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px; background: var(--pill-bg); color: var(--muted); cursor: pointer; font-weight: 600; transition: 0.2s; }
+.filter-btn { padding: 8px 16px; border: 1px solid var(--border); border-radius: 20px; background: var(--pill-bg); color: var(--muted); cursor: pointer; font-weight: 600; transition: 0.2s; font-size: 1.1rem; }
 .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
 
 /* Estilos específicos para botones de estado cuando están activos */
@@ -148,7 +148,7 @@ h1 {
     .header-logo { height: 28px; }
     
     .stats-container { gap: 4px; margin-bottom: 15px; width: 100%; padding: 0 4px; justify-content: center; }
-    .stat-pill { padding: 5px 8px; font-size: 0.6rem; white-space: nowrap; flex: 1; text-align: center; min-width: 80px; }
+    .stat-pill { padding: 5px 8px; font-size: 0.8rem; white-space: nowrap; flex: 1; text-align: center; min-width: 80px; }
     
     .controls { gap: 8px; margin-bottom: 15px; padding: 0 10px; width: 100%; }
     .search-wrapper { width: 90%; max-width: 350px; gap: 6px; }
@@ -156,7 +156,7 @@ h1 {
     .reset-btn { padding: 0 10px; border-radius: 8px; font-size: 0.8rem; flex-shrink: 0; }
     
     .filters { width: 100%; gap: 4px; }
-    .filter-btn { padding: 5px 8px; font-size: 0.6rem; border-radius: 15px; }
+    .filter-btn { padding: 5px 8px; font-size: 0.8rem; border-radius: 15px; }
     
     .grid { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; width: 100%; }
     .card-img-container { height: auto; min-height: 350px; aspect-ratio: 3 / 4; background: #000; }
