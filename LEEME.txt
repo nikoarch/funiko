@@ -2,3 +2,8 @@ Levantar servidor web para probar:
 /home/niko/Desktop/funiko
 python -m http.server 8000
 http://localhost:8000/
+
+
+Actualizar fichero JSON:
+Bajar el excel de mi drive a este directorio y ejecutar:
+python3 excel2json.py
