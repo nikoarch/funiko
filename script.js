@@ -14,6 +14,12 @@ async function cargarDatos() {
         const respuesta = await fetch('Funiko_BBDD.json?t=' + new Date().getTime());
         if (!respuesta.ok) throw new Error("JSON no encontrado");
         datosCompletos = await respuesta.json();
+        
+        // Inicializamos los índices de fotos para todos los elementos
+        datosCompletos.forEach((_, index) => {
+            indicesFotos[index] = 0;
+        });
+
         generarBotonesFiltro();
         filtrarTodo();
     } catch (e) { 
@@ -31,8 +37,14 @@ function render(items) {
     let itemsConPrecio = 0;
 
     items.forEach(item => {
-        const p = parseFloat(item.precio.replace('€','').replace(',','.').trim());
-        if(!isNaN(p)) { totalInv += p; itemsConPrecio++; }
+        // Limpiamos el texto: quitamos '€', cambiamos ',' por '.' y quitamos espacios
+        const precioLimpio = item.precio.replace('€','').replace(',','.').trim();
+        const p = parseFloat(precioLimpio);
+        
+        if(!isNaN(p) && p > 0) { 
+            totalInv += p; 
+            itemsConPrecio++; 
+        }
     });
 
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
@@ -148,12 +160,32 @@ function cambiarFoto(id, dir) {
     const item = datosCompletos[id];
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
     if (fotos.length <= 1) return;
-    indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
+
     const imgElement = document.getElementById(`img-${id}`);
-    const countElement = document.getElementById(`count-${id}`);
-    if (imgElement) imgElement.src = fotos[indicesFotos[id]];
-    if (countElement) countElement.innerText = `${indicesFotos[id] + 1}/${fotos.length}`;
-    if (idAbiertoLightbox === id) document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
+    const lbImgElement = document.getElementById('img-ampliada');
+    const isLightbox = (idAbiertoLightbox === id);
+    const targetImg = isLightbox ? lbImgElement : imgElement;
+
+    if (targetImg) {
+        targetImg.classList.add('img-changing');
+        
+        setTimeout(() => {
+            indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
+            targetImg.src = fotos[indicesFotos[id]];
+            
+            const countElement = document.getElementById(`count-${id}`);
+            if (countElement) countElement.innerText = `${indicesFotos[id] + 1}/${fotos.length}`;
+            
+            // Si estamos en el lightbox, también actualizamos la imagen de la tarjeta de fondo
+            if (isLightbox && imgElement) imgElement.src = fotos[indicesFotos[id]];
+            
+            targetImg.onload = () => {
+                targetImg.classList.remove('img-changing');
+            };
+            // Fallback por si no dispara el onload (cache)
+            setTimeout(() => targetImg.classList.remove('img-changing'), 300);
+        }, 150);
+    }
 }
 
 function abrirLightbox(id) {
