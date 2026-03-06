@@ -101,3 +101,14 @@ h1 {
     .header-logo { height: 35px; }
 }
 
+.card-img-container img {
+    pointer-events: none; /* Evita que el navegador agarre la imagen */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.card-img-container {
+    overflow: hidden;
+    touch-action: pan-y; /* Permite scroll vertical pero bloquea el horizontal nativo */
+}
+
