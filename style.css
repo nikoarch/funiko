@@ -34,7 +34,7 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 
 .stats-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
 .footer-stats { display: flex; justify-content: center; margin-top: 40px; margin-bottom: 40px; }
-.stat-pill { padding: 12px 24px; border-radius: 25px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; min-width: 200px; gap: 8px; }
+.stat-pill { padding: 12px 24px; border-radius: 25px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; min-width: 200px; }
 .pill-count { background: var(--pill-bg); color: var(--text); }
 .pill-price { background: var(--success-bg); color: var(--success-text); }
 .pill-total { background: var(--info-bg); color: var(--info-text); }
