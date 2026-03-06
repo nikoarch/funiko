@@ -53,8 +53,12 @@ function render(items) {
         contadorDiv.innerHTML = `
             <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
             <div class="stat-pill pill-price">📊 Media: <b>${promedio}€</b></div>
-            <div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>
         `;
+    }
+
+    const footerInv = document.getElementById('footer-inversion');
+    if (footerInv) {
+        footerInv.innerHTML = `<div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>`;
     }
 
     items.forEach((item, index) => {
