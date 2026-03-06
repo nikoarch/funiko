@@ -13,7 +13,8 @@
     --info-text: #93c5fd;
 }
 
-body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 10px; }
+* { box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 10px; overflow-x: hidden; width: 100%; }
 
 header { text-align: center; margin-bottom: 20px; }
 h1 { font-size: 2rem; margin-bottom: 10px; }
@@ -24,8 +25,8 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .pill-price { background: var(--success-bg); color: var(--success-text); }
 .pill-total { background: var(--info-bg); color: var(--info-text); }
 
-.controls { max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
-.search-wrapper { display: flex; gap: 10px; width: 100%; max-width: 450px; }
+.controls { width: 100%; max-width: 1200px; margin: 0 auto 30px; display: flex; flex-direction: column; gap: 15px; align-items: center; padding: 0 5px; }
+.search-wrapper { display: flex; gap: 8px; width: 100%; max-width: 450px; }
 #search-bar { flex-grow: 1; padding: 14px; background: var(--card); border: 2px solid var(--border); border-radius: 12px; color: white; outline: none; }
 .reset-btn { padding: 0 15px; background: #450a0a; color: #fca5a5; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; }
 
@@ -79,7 +80,7 @@ h3 { margin: 5px 0 15px; font-size: 1.3rem; color: white; line-height: 1.2; }
 .notes-box { margin-top: 20px; padding: 12px; background: var(--bg); border-radius: 10px; border-left: 4px solid var(--primary); font-size: 0.85rem; }
 
 .lightbox { z-index: 2000; background: rgba(0,0,0,0.95); }
-.lightbox img { max-width: 90%; max-height: 80vh; border-radius: 10px; position: relative; z-index: 2010; transition: opacity 0.3s ease, transform 0.3s ease; }
+.lightbox img { max-width: 95%; max-height: 85vh; border-radius: 10px; position: relative; z-index: 2010; transition: opacity 0.3s ease, transform 0.3s ease; object-fit: contain; }
 .lightbox img.img-changing { opacity: 0; transform: scale(0.9); }
 .nav-btn-light { position: absolute; background: none; color: white; border: none; font-size: 3rem; cursor: pointer; padding: 20px; z-index: 2100; transition: 0.2s; }
 .nav-btn-light:hover { color: var(--primary); transform: scale(1.1); }
@@ -110,26 +111,31 @@ h1 {
     h1 { font-size: 1.6rem; gap: 10px; }
     .header-logo { height: 35px; }
     
-    .stats-container { gap: 5px; margin-bottom: 20px; }
-    .stat-pill { padding: 6px 12px; font-size: 0.75rem; }
+    .stats-container { gap: 5px; margin-bottom: 20px; width: 100%; padding: 0 5px; }
+    .stat-pill { padding: 6px 10px; font-size: 0.7rem; }
     
-    .controls { gap: 10px; margin-bottom: 20px; }
-    .search-wrapper { max-width: 100%; }
-    #search-bar { padding: 10px; font-size: 0.9rem; }
+    .controls { gap: 10px; margin-bottom: 20px; padding: 0 5px; }
+    .search-wrapper { width: 100%; }
+    #search-bar { padding: 10px; font-size: 0.9rem; border-radius: 10px; }
+    .reset-btn { padding: 0 12px; border-radius: 10px; }
     
-    .filter-btn { padding: 6px 12px; font-size: 0.75rem; }
+    .filter-btn { padding: 6px 10px; font-size: 0.7rem; }
     
-    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 0 5px; }
     .card-img-container { height: 240px; }
-    .card-content { padding: 12px; }
-    h3 { font-size: 1rem; margin-bottom: 10px; }
+    .card-content { padding: 10px; }
+    h3 { font-size: 0.95rem; margin-bottom: 8px; }
     
-    .price-badge { top: 8px; right: 8px; padding: 3px 8px; font-size: 0.75rem; }
-    .status-badge { top: 8px; left: 8px; padding: 3px 8px; font-size: 0.65rem; }
+    .price-badge { top: 6px; right: 6px; padding: 2px 6px; font-size: 0.7rem; }
+    .status-badge { top: 6px; left: 6px; padding: 2px 6px; font-size: 0.6rem; }
     
-    .btn-group { gap: 8px; }
-    .btn-detail, .btn-video { padding: 8px; font-size: 0.8rem; }
+    .btn-group { gap: 6px; }
+    .btn-detail, .btn-video { padding: 6px; font-size: 0.75rem; border-radius: 8px; }
     
-    .nro-funko-tag { font-size: 0.8rem; padding: 1px 6px; }
+    .nro-funko-tag { font-size: 0.75rem; padding: 1px 5px; }
+
+    /* Lightbox en móvil */
+    .lightbox img { max-width: 98%; max-height: 75vh; }
+    .nav-btn-light { font-size: 2rem; padding: 10px; }
 }
 
