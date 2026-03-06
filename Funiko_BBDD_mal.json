@@ -16,17 +16,6 @@
         "estadoCaja": "Un pelín de pegamento en la base de una etiqueta quitada. No hay ticket.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg",
-            "imagenes/funkoLogoNOHAYFOTO.jpg"
-        ],
-        "video": "#",
         "notas": "-"
     },
     {
@@ -46,8 +35,6 @@
         "estadoCaja": "Caja perfecta. No hay ticket.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Regalo de Cris"
     },
     {
@@ -67,8 +54,6 @@
         "estadoCaja": "Caja perfecta. No hay ticket.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Regalo de Cris"
     },
     {
@@ -88,8 +73,6 @@
         "estadoCaja": "Llego con esquina de apertura dañada.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Pistoletazo de salida a coleccionar Funkos. Factura en su caja."
     },
     {
@@ -109,8 +92,6 @@
         "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter)."
     },
     {
@@ -130,8 +111,6 @@
         "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter)."
     },
     {
@@ -151,8 +130,6 @@
         "estadoCaja": "Tapa superior ligeramente arrugada. Ticket en la caja de Picard (Glitter)",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en caja de Picard (Gliter). Lo vio Cris mientras buscabamos otros."
     },
     {
@@ -172,8 +149,6 @@
         "estadoCaja": "Caja perfecta. Ticket en su caja.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en su caja. Encargado en Fnac (Sanse) el 21/02/2026 para recoger a partir del día 24/02/2026."
     },
     {
@@ -193,8 +168,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -214,8 +187,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -235,8 +206,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -256,8 +225,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -277,8 +244,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "-"
     },
     {
@@ -298,8 +263,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en su caja."
     },
     {
@@ -319,8 +282,6 @@
         "estadoCaja": "Vino con un lateral golpeado y un pelin arrugado.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en su caja."
     },
     {
@@ -340,8 +301,6 @@
         "estadoCaja": "SI ME LO QUEDO, PDTE QUITAR PEGATINA CORTE INGLES. El plastico interior vino roto. Vendedor: El Corte Ingles",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en su caja."
     },
     {
@@ -361,8 +320,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
     {
@@ -382,8 +339,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
     {
@@ -403,8 +358,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -424,8 +377,6 @@
         "estadoCaja": "Un pelin marcada en el frente.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura de compra en la caja de Amy."
     },
     {
@@ -445,8 +396,6 @@
         "estadoCaja": "Plastico pelin marcado. Color distinto al de Leonard.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura de compra en su caja."
     },
     {
@@ -466,8 +415,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 8/09/2026."
     },
     {
@@ -487,8 +434,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -508,8 +453,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 16/03/2026."
     },
     {
@@ -529,8 +472,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
     },
     {
@@ -550,8 +491,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
     },
     {
@@ -571,8 +510,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 3/05/2026."
     },
     {
@@ -592,8 +529,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -613,8 +548,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -634,8 +567,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en su caja."
     },
     {
@@ -655,8 +586,6 @@
         "estadoCaja": "Vino con chip antirrobo pegado en la parte de abajo. Lo saque con secador de pelo pero no pude sacar todo el pegamento. Le pegue otra encima para que quede menos pegajosa tras el desastre.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket de compra en su caja."
     },
     {
@@ -676,8 +605,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Pone que 1/6 posibilidades de recibir una version Chase... y obviamente no tocó... Factura en su caja."
     },
     {
@@ -697,8 +624,6 @@
         "estadoCaja": "Vino con un toque diminito en la esquina abajo.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -718,8 +643,6 @@
         "estadoCaja": "Vino con el latera un poco aplastado en la parte superior.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja."
     },
     {
@@ -739,8 +662,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Factura en su caja. El numero de serie no llego a verlo en el funko. Esta en la base de la cabeza pero el cuerpo no gira y no quiero forzarlo."
     },
     {
@@ -760,8 +681,6 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
@@ -781,8 +700,6 @@
         "estadoCaja": "Pelin tocada y despegado el carton en esquina superior. Y pelin marcada en la trasera. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
@@ -802,8 +719,6 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
@@ -823,8 +738,6 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
@@ -844,8 +757,6 @@
         "estadoCaja": "Caja perfecta. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en su caja."
     },
     {
@@ -865,8 +776,6 @@
         "estadoCaja": "La tapa superior viene un poco cortado el pliegue.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Devolvi el comprado (llego el 27-2-26) y lo volvi a comprar en pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en su caja."
     },
     {
@@ -886,8 +795,6 @@
         "estadoCaja": "Un pelin rota en la esquina de apertura.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en caja de Stormtrooper."
     },
     {
@@ -907,8 +814,6 @@
         "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian), Factura en caja de Stormtrooper."
     },
     {
@@ -928,8 +833,6 @@
         "estadoCaja": "-",
         "estado": "Nuevo",
         "fullWave": "??????",
-        "foto": [],
-        "video": "#",
         "notas": "Comprado en preventa el 1/03/2026. Me lo entregarán el 12/04/2026."
     },
     {
@@ -949,8 +852,6 @@
         "estadoCaja": "Caja perfecta. Al igual que con Daniel, intenté sacarle la pegatina de la alarma de la base y queda pegamento. Asique le pegué otra encima para que no quede pegasoda.",
         "estado": "Nuevo",
         "fullWave": "No",
-        "foto": [],
-        "video": "#",
         "notas": "Ticket en su caja."
     }
 ]
