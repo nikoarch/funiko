@@ -57,7 +57,7 @@ function render(items) {
     }
 
     items.forEach((item, index) => {
-        const realID = datosCompletos.findIndex(d => d.nroSerie === item.nroSerie);
+        const realID = datosCompletos.indexOf(item);
         const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
         if (!(realID in indicesFotos)) indicesFotos[realID] = 0;
 
@@ -158,32 +158,42 @@ function verFichaTecnica(id) {
 
 function cambiarFoto(id, dir) {
     const item = datosCompletos[id];
+    if (!item) return;
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
     if (fotos.length <= 1) return;
 
     const imgElement = document.getElementById(`img-${id}`);
     const lbImgElement = document.getElementById('img-ampliada');
-    const isLightbox = (idAbiertoLightbox === id);
-    const targetImg = isLightbox ? lbImgElement : imgElement;
+    const isThisIdOpenInLightbox = (idAbiertoLightbox === id);
+    
+    // Identificamos qué imágenes debemos actualizar y animar
+    const targets = [];
+    if (imgElement) targets.push(imgElement);
+    if (isThisIdOpenInLightbox && lbImgElement) targets.push(lbImgElement);
 
-    if (targetImg) {
-        targetImg.classList.add('img-changing');
+    if (targets.length > 0) {
+        targets.forEach(t => t.classList.add('img-changing'));
         
         setTimeout(() => {
             indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
-            targetImg.src = fotos[indicesFotos[id]];
+            const nuevaSrc = fotos[indicesFotos[id]];
             
+            targets.forEach(target => {
+                target.src = nuevaSrc;
+                
+                const finalizarAnimacion = () => target.classList.remove('img-changing');
+                
+                if (target.complete) {
+                    finalizarAnimacion();
+                } else {
+                    target.onload = finalizarAnimacion;
+                }
+                // Seguridad por si falla el evento
+                setTimeout(finalizarAnimacion, 400);
+            });
+
             const countElement = document.getElementById(`count-${id}`);
             if (countElement) countElement.innerText = `${indicesFotos[id] + 1}/${fotos.length}`;
-            
-            // Si estamos en el lightbox, también actualizamos la imagen de la tarjeta de fondo
-            if (isLightbox && imgElement) imgElement.src = fotos[indicesFotos[id]];
-            
-            targetImg.onload = () => {
-                targetImg.classList.remove('img-changing');
-            };
-            // Fallback por si no dispara el onload (cache)
-            setTimeout(() => targetImg.classList.remove('img-changing'), 300);
         }, 150);
     }
 }
@@ -192,7 +202,9 @@ function abrirLightbox(id) {
     idAbiertoLightbox = id;
     const item = datosCompletos[id];
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
-    document.getElementById('img-ampliada').src = fotos[indicesFotos[id]];
+    const imgAmpliada = document.getElementById('img-ampliada');
+    imgAmpliada.src = fotos[indicesFotos[id]];
+    imgAmpliada.classList.remove('img-changing');
     document.getElementById('lightbox').style.display = 'flex';
 }
 
@@ -247,9 +259,9 @@ window.onclick = (e) => {
 const lb = document.getElementById('lightbox');
 lb.addEventListener('touchstart', (e) => { xDown = e.touches[0].clientX; }, {passive: true});
 lb.addEventListener('touchmove', (e) => {
-    if (!xDown || idAbiertoLightbox === null) return;
+    if (xDown === null || idAbiertoLightbox === null) return;
     let xDiff = xDown - e.touches[0].clientX;
-    if (Math.abs(xDiff) > 40) {
+    if (Math.abs(xDiff) > 50) {
         cambiarFoto(idAbiertoLightbox, xDiff > 0 ? 1 : -1);
         xDown = null;
     }
