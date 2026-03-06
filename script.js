@@ -1,5 +1,6 @@
 let datosCompletos = [];
 let categoriaActual = 'todos';
+let filtroEstadoActual = 'todos';
 let indicesFotos = {};
 let idAbiertoLightbox = null;
 let xDown = null;                                                        
@@ -212,9 +213,16 @@ function cerrarLightbox() { document.getElementById('lightbox').style.display = 
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
 function filterByCategory(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#filter-container .filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     categoriaActual = cat;
+    filtrarTodo();
+}
+
+function filterByStatus(status, btn) {
+    document.querySelectorAll('#status-filter-container .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filtroEstadoActual = status;
     filtrarTodo();
 }
 
@@ -240,8 +248,23 @@ function filtrarTodo() {
     const searchVal = document.getElementById('search-bar').value.toLowerCase();
     const filtrados = datosCompletos.filter(item => {
         const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+        
+        // Lógica de estado: normalizamos para comparar
+        const estadoItem = item.estadoPedido ? item.estadoPedido.toLowerCase().trim() : '';
+        const estadoFiltro = filtroEstadoActual.toLowerCase().trim();
+        
+        let matchesStatus = (filtroEstadoActual === 'todos');
+        if (!matchesStatus) {
+            if (estadoFiltro === 'en tránsito') {
+                matchesStatus = estadoItem.includes('transito') || estadoItem.includes('tránsito');
+            } else {
+                matchesStatus = (estadoItem === estadoFiltro);
+            }
+        }
+
         const matchesText = item.personaje.toLowerCase().includes(searchVal) || item.franquicia.toLowerCase().includes(searchVal);
-        return matchesCat && matchesText;
+        
+        return matchesCat && matchesStatus && matchesText;
     });
     render(filtrados);
 }
@@ -249,6 +272,7 @@ function filtrarTodo() {
 window.resetearFiltros = () => {
     document.getElementById('search-bar').value = '';
     filterByCategory('todos', document.getElementById('btn-todos'));
+    filterByStatus('todos', document.getElementById('btn-status-todos'));
 };
 
 window.onclick = (e) => {

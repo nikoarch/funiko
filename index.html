@@ -22,7 +22,13 @@
         <button class="reset-btn" onclick="resetearFiltros()" title="Limpiar todo">✕</button>
     </div>
     <div class="filters" id="filter-container">
-        <button id="btn-todos" class="filter-btn active" onclick="filterByCategory('todos', this)">Todos</button>
+        <button id="btn-todos" class="filter-btn active" onclick="filterByCategory('todos', this)">Todas las Franquicias</button>
+    </div>
+    <div class="filters status-filters" id="status-filter-container">
+        <button id="btn-status-todos" class="filter-btn active" onclick="filterByStatus('todos', this)">Todos los Estados</button>
+        <button class="filter-btn status-btn-recibido" onclick="filterByStatus('Recibido', this)">Recibido</button>
+        <button class="filter-btn status-btn-transito" onclick="filterByStatus('En tránsito', this)">En tránsito</button>
+        <button class="filter-btn status-btn-preventa" onclick="filterByStatus('Preventa', this)">Preventa</button>
     </div>
 </div>
 
