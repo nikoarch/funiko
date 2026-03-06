@@ -33,7 +33,8 @@ header { text-align: center; margin-bottom: 20px; }
 h1 { font-size: 2rem; margin-bottom: 10px; }
 
 .stats-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-.stat-pill { padding: 10px 18px; border-radius: 25px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+.footer-stats { display: flex; justify-content: center; margin-top: 40px; margin-bottom: 40px; }
+.stat-pill { padding: 12px 24px; border-radius: 25px; font-size: 1.1rem; font-weight: 700; box-shadow: 0 4px 6px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; min-width: 200px; }
 .pill-count { background: var(--pill-bg); color: var(--text); }
 .pill-price { background: var(--success-bg); color: var(--success-text); }
 .pill-total { background: var(--info-bg); color: var(--info-text); }
@@ -59,8 +60,8 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .card img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease, transform 0.3s ease; }
 .img-changing { opacity: 0.5; transform: scale(0.95); }
 
-.price-badge { position: absolute; top: 12px; right: 12px; background: rgba(15,23,42,0.85); padding: 5px 12px; border-radius: 10px; font-size: 0.85rem; font-weight: 800; border: 1px solid var(--border); z-index: 10; color: white; }
-.status-badge { position: absolute; top: 12px; left: 12px; padding: 5px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; z-index: 10; letter-spacing: 0.5px; }
+.price-badge { position: absolute; top: 12px; right: 12px; background: rgba(15,23,42,0.85); padding: 10px 20px; border-radius: 12px; font-size: 1.6rem; font-weight: 800; border: 2px solid var(--border); z-index: 10; color: white; }
+.status-badge { position: absolute; top: 12px; left: 12px; padding: 10px 20px; border-radius: 12px; font-size: 1.4rem; font-weight: 800; text-transform: uppercase; z-index: 10; letter-spacing: 0.5px; }
 
 /* NUEVOS COLORES DE ESTADO INTENSOS */
 .estado-recibido { background: #064e3b; color: #6ee7b7; border: 1px solid #059669; }
@@ -147,8 +148,9 @@ h1 {
     h1 { font-size: 1.3rem; gap: 6px; width: 100%; justify-content: center; margin-top: 10px; }
     .header-logo { height: 28px; }
     
-    .stats-container { gap: 4px; margin-bottom: 15px; width: 100%; padding: 0 4px; justify-content: center; }
-    .stat-pill { padding: 5px 8px; font-size: 0.8rem; white-space: nowrap; flex: 1; text-align: center; min-width: 80px; }
+    .stats-container { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 20px; width: 100%; padding: 0 10px; }
+    .footer-stats { margin-top: 30px; margin-bottom: 30px; padding: 0 10px; }
+    .stat-pill { padding: 10px 20px; font-size: 1rem; width: 100%; max-width: 300px; min-width: 0; }
     
     .controls { gap: 8px; margin-bottom: 15px; padding: 0 10px; width: 100%; }
     .search-wrapper { width: 90%; max-width: 350px; gap: 6px; }
@@ -168,8 +170,8 @@ h1 {
     .tvshow-tag { font-size: 0.6rem; }
     .nro-funko-tag { font-size: 0.65rem; padding: 1px 4px; }
 
-    .price-badge { top: 4px; right: 4px; padding: 2px 4px; font-size: 0.6rem; }
-    .status-badge { top: 4px; left: 4px; padding: 2px 4px; font-size: 0.5rem; }
+    .price-badge { top: 8px; right: 8px; padding: 6px 12px; font-size: 1.2rem; border-radius: 8px; }
+    .status-badge { top: 8px; left: 8px; padding: 6px 12px; font-size: 1rem; border-radius: 8px; }
     
     .btn-group { gap: 4px; }
     .btn-detail, .btn-video { padding: 5px 2px; font-size: 0.65rem; border-radius: 6px; }
