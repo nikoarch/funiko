@@ -13,7 +13,7 @@
     --info-text: #93c5fd;
 }
 
-body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 15px; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 10px; }
 
 header { text-align: center; margin-bottom: 20px; }
 h1 { font-size: 2rem; margin-bottom: 10px; }
@@ -39,9 +39,9 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .status-btn-transito.active { background: #854d0e; color: #fef08a; border-color: #eab308; }
 .status-btn-preventa.active { background: #991b1b; color: #fecaca; border-color: #ef4444; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1400px; margin: 0 auto; }
 .card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; animation: fadeInUp 0.4s ease backwards; position: relative; }
-.card-img-container { position: relative; height: 250px; background: #000; cursor: zoom-in; }
+.card-img-container { position: relative; height: 400px; background: #000; cursor: zoom-in; }
 .card img { width: 100%; height: 100%; object-fit: contain; transition: opacity 0.3s ease, transform 0.3s ease; }
 .img-changing { opacity: 0.5; transform: scale(0.95); }
 
@@ -106,7 +106,30 @@ h1 {
 
 /* Ajuste para móviles */
 @media (max-width: 600px) {
+    body { padding: 5px; }
     h1 { font-size: 1.6rem; gap: 10px; }
     .header-logo { height: 35px; }
+    
+    .stats-container { gap: 5px; margin-bottom: 20px; }
+    .stat-pill { padding: 6px 12px; font-size: 0.75rem; }
+    
+    .controls { gap: 10px; margin-bottom: 20px; }
+    .search-wrapper { max-width: 100%; }
+    #search-bar { padding: 10px; font-size: 0.9rem; }
+    
+    .filter-btn { padding: 6px 12px; font-size: 0.75rem; }
+    
+    .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+    .card-img-container { height: 240px; }
+    .card-content { padding: 12px; }
+    h3 { font-size: 1rem; margin-bottom: 10px; }
+    
+    .price-badge { top: 8px; right: 8px; padding: 3px 8px; font-size: 0.75rem; }
+    .status-badge { top: 8px; left: 8px; padding: 3px 8px; font-size: 0.65rem; }
+    
+    .btn-group { gap: 8px; }
+    .btn-detail, .btn-video { padding: 8px; font-size: 0.8rem; }
+    
+    .nro-funko-tag { font-size: 0.8rem; padding: 1px 6px; }
 }
 
