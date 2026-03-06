@@ -128,3 +128,14 @@ h1 {
     overflow: hidden;
 }
 
+#img-ampliada {
+    touch-action: pinch-zoom pan-x pan-y; /* Permite zoom y moverte DENTRO de la foto */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox {
+    touch-action: none; /* Bloquea el scroll de la web de fondo */
+    overflow: hidden;
+}
+
