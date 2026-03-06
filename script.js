@@ -51,14 +51,14 @@ function render(items) {
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
     if (contadorDiv) {
         contadorDiv.innerHTML = `
-            <div class="stat-pill pill-count">📦 <b>${items.length}</b> Funkos</div>
-            <div class="stat-pill pill-price">📊 Media: <b>${promedio}€</b></div>
+            <div class="stat-pill pill-count"><span>📦</span><span><b>${items.length}</b></span><span>Funkos</span></div>
+            <div class="stat-pill pill-price"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
         `;
     }
 
     const footerInv = document.getElementById('footer-inversion');
     if (footerInv) {
-        footerInv.innerHTML = `<div class="stat-pill pill-total">💰 Inversión: <b>${totalInv.toFixed(2)}€</b></div>`;
+        footerInv.innerHTML = `<div class="stat-pill pill-total"><span>💰</span><span>Inversión:</span><span><b>${totalInv.toFixed(2)}€</b></span></div>`;
     }
 
     items.forEach((item, index) => {
