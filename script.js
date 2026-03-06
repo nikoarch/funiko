@@ -33,6 +33,9 @@ function render(items) {
     const contadorDiv = document.getElementById('contador');
     if (!grid) return;
 
+    // Función auxiliar para formatear valores "-" como "N/A"
+    const f = (v) => (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
+
     grid.innerHTML = '';
     let totalInv = 0;
     let itemsConPrecio = 0;
@@ -92,15 +95,15 @@ function render(items) {
             <div class="card-content">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
                     <div style="display:flex; flex-direction:column;">
-                        <span class="category-tag">${item.franquicia}</span>
-                        <span class="tvshow-tag">${item.tvShow !== '-' ? item.tvShow : ''}</span>
+                        <span class="category-tag">${f(item.franquicia)}</span>
+                        <span class="tvshow-tag">${f(item.tvShow)}</span>
                     </div>
-                    <span class="nro-funko-tag">#${item.nroFunko}</span>
+                    <span class="nro-funko-tag">#${f(item.nroFunko)}</span>
                 </div>
-                <h3>${item.personaje}</h3>
+                <h3>${f(item.personaje)}</h3>
                 <div class="btn-group">
                     <button class="btn-detail btn-detail-trigger">📋 Detalles</button>
-                    ${item.video && item.video !== '#' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
+                    ${item.video && item.video !== '#' && item.video !== '-' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
                 </div>
             </div>`;
         
@@ -140,23 +143,24 @@ function render(items) {
 
 function verFichaTecnica(id) {
     const item = datosCompletos[id];
+    const f = (v) => (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
     const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
     const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
     
     document.getElementById('modal-body').innerHTML = `
-        <h2 style="margin:0 0 5px; color:white;">${item.personaje}</h2>
-        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${item.franquicia} · ${item.linea} · ${item.tvShow}</p>
+        <h2 style="margin:0 0 5px; color:white;">${f(item.personaje)}</h2>
+        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${f(item.franquicia)} · ${f(item.linea)} · ${f(item.tvShow)}</p>
         <div class="modal-info-grid">
-            <div class="info-item">Fecha Compra<b>${item.fecha}</b></div>
-            <div class="info-item">Nº Serie<b>${item.nroSerie}</b></div>
-            <div class="info-item">Tienda<b>${item.compradoEn}${sub}</b></div>
-            <div class="info-item">Gastos Envío<b>${item.gastosEnvio}</b></div>
-            <div class="info-item">Full Wave<b style="${waveStyle}">${item.fullWave}</b></div>
-            <div class="info-item">Estado Pieza<b>${item.estado}</b></div>
-            <div class="info-item">Estado Caja<b>${item.estadoCaja}</b></div>
-            <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${item.caracteristicasEspeciales}</b></div>
+            <div class="info-item">Fecha Compra<b>${f(item.fecha)}</b></div>
+            <div class="info-item">Nº Serie<b>${f(item.nroSerie)}</b></div>
+            <div class="info-item">Tienda<b>${f(item.compradoEn)}${sub}</b></div>
+            <div class="info-item">Gastos Envío<b>${f(item.gastosEnvio)}</b></div>
+            <div class="info-item">Full Wave<b style="${waveStyle}">${f(item.fullWave)}</b></div>
+            <div class="info-item">Estado Pieza<b>${f(item.estado)}</b></div>
+            <div class="info-item">Estado Caja<b>${f(item.estadoCaja)}</b></div>
+            <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${f(item.caracteristicasEspeciales)}</b></div>
         </div>
-        <div class="notes-box"><strong>📝 Notas:</strong><br>${item.notas || 'Sin notas.'}</div>
+        <div class="notes-box"><strong>📝 Notas:</strong><br>${f(item.notas) === 'N/A' ? 'Sin notas.' : item.notas}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
 }
