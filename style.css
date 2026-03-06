@@ -158,10 +158,10 @@ h1 {
     .filters { width: 100%; gap: 4px; }
     .filter-btn { padding: 5px 8px; font-size: 0.6rem; border-radius: 15px; }
     
-    .grid { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 0 4px; width: 100%; }
-    .card-img-container { height: 200px; }
-    .card-content { padding: 8px; }
-    h3 { font-size: 0.85rem; margin: 4px 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .grid { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; width: 100%; }
+    .card-img-container { height: 450px; }
+    .card-content { padding: 15px; }
+    h3 { font-size: 1.2rem; margin: 5px 0 12px; white-space: normal; overflow: visible; text-overflow: clip; }
     
     .category-tag { font-size: 0.65rem; }
     .tvshow-tag { font-size: 0.6rem; }
