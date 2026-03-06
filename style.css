@@ -150,8 +150,8 @@ h1 {
     .stats-container { gap: 4px; margin-bottom: 15px; width: 100%; padding: 0 4px; justify-content: center; }
     .stat-pill { padding: 5px 8px; font-size: 0.6rem; white-space: nowrap; flex: 1; text-align: center; min-width: 80px; }
     
-    .controls { gap: 8px; margin-bottom: 15px; padding: 0 4px; width: 100%; }
-    .search-wrapper { width: 100%; max-width: 100%; gap: 6px; }
+    .controls { gap: 8px; margin-bottom: 15px; padding: 0 10px; width: 100%; }
+    .search-wrapper { width: 90%; max-width: 350px; gap: 6px; }
     #search-bar { padding: 8px 12px; font-size: 0.8rem; border-radius: 8px; }
     .reset-btn { padding: 0 10px; border-radius: 8px; font-size: 0.8rem; flex-shrink: 0; }
     
