@@ -13,12 +13,16 @@ function renderMonitor(items) {
         // Formatear valores (ya no convertimos '-' en 'N/A' por petición del usuario)
         const f = (v) => (v === '' || v === null || v === undefined) ? 'N/A' : v;
         
+        // Lógica para alerta de vendedor
+        const alertaVendedor = (item.alertaVendedor || '').toString().trim().toLowerCase() === 'si';
+        const vendedorStyle = alertaVendedor ? 'color: #ef4444; font-weight: 800;' : '';
+        
         card.innerHTML = `
             <div class="card-content">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
                     <div style="display:flex; flex-direction:column;">
                         <span class="category-tag">${f(item.franquicia)}</span>
-                        <span class="tvshow-tag">${f(item.vendedor)}</span>
+                        <span class="tvshow-tag" style="${vendedorStyle}">${f(item.vendedor)}</span>
                     </div>
                     <span class="nro-funko-tag">#${f(item.nroFunko)}</span>
                 </div>
