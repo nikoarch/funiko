@@ -1,33 +1,43 @@
 # Se ejecuta asi: python3 excel2json.py
 
-
-
 import pandas as pd
 import json
+import random
+import string
 
-import pandas as pd
-import json
+def ofuscar_serie(serie):
+    if pd.isnull(serie) or str(serie).strip() == "-":
+        return serie
+    
+    resultado = []
+    for char in str(serie):
+        if char.isalpha():
+            if char.isupper():
+                resultado.append(random.choice(string.ascii_uppercase))
+            else:
+                resultado.append(random.choice(string.ascii_lowercase))
+        elif char.isdigit():
+            resultado.append(random.choice(string.digits))
+        else:
+            resultado.append(char)
+    return "".join(resultado)
 
 def excel_a_json(archivo_excel, hoja_nombre, archivo_json):
     # Leer el Excel (Fila 7 cabeceras -> header=6)
     df = pd.read_excel(archivo_excel, sheet_name=hoja_nombre, header=6)
     
-    # 1. Eliminar la columna 'nroSerie' original si existe
+    # 1. Ofuscar la columna 'nroSerie' si existe
     if 'nroSerie' in df.columns:
-        df = df.drop(columns=['nroSerie'])
+        df['nroSerie'] = df['nroSerie'].apply(ofuscar_serie)
     
-    # 2. Renombrar 'nroSerieFake' a 'nroSerie'
-    if 'nroSerieFake' in df.columns:
-        df = df.rename(columns={'nroSerieFake': 'nroSerie'})
-    
-    # 3. Convertir columna 'foto' en un ARRAY (Lista)
+    # 2. Convertir columna 'foto' en un ARRAY (Lista)
     if 'foto' in df.columns:
         df['foto'] = df['foto'].apply(
             lambda x: [item.strip() for item in str(x).split(',')] if pd.notnull(x) and str(x).strip() != "-" else []
         )
     
-    # --- MODIFICACIÓN: Formatear precio y gastoEnvio como "0,00€" ---
-    for col in ['precio', 'gastoEnvio']:
+    # --- MODIFICACIÓN: Formatear precio y gastosEnvio como "0,00€" ---
+    for col in ['precio', 'gastosEnvio']:
         if col in df.columns:
             df[col] = df[col].apply(
                 lambda x: f"{float(x):.2f}".replace('.', ',') + "€" if pd.notnull(x) and x != "-" else "0,00€"
@@ -59,9 +69,9 @@ json_output = "Funiko_BBDD.json"
 # Ejecución única
 excel_a_json(excel_input, hoja, json_output)
 print(f"¡Éxito! El archivo {json_output} se ha generado.")
-print("- Columna 'nroSerie' eliminada.")
-print("- Columna 'nroSerieFake' renombrada a 'nroSerie'.")
+print("- Columna 'nroSerie' ofuscada (formato original mantenido con caracteres aleatorios).")
 print("- Fechas formateadas y columnas vacías eliminadas.")
-print(f"¡Listo! Columna 'foto' convertida en array y 'nroSerie' renombrada.")
+print(f"¡Listo! Columna 'foto' convertida en array.")
 print(f"¡Éxito! Archivo {json_output} generado con precios formateados (ej. '16,55€').")
+
 
