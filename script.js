@@ -55,7 +55,7 @@ function render(items) {
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
     if (contadorDiv) {
         contadorDiv.innerHTML = `
-            <div class="stat-pill pill-count"><span>📦</span><span><b>${items.length}</b></span><span>Funkos</span></div>
+            <div class="stat-pill pill-count"><span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span><span><b>${items.length}</b></span><span>Funkos</span></div>
             <div class="stat-pill pill-price blur-stat ${statsReveladas ? 'revealed' : ''}"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
         `;
         
