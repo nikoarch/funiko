@@ -239,9 +239,31 @@ function abrirLightbox(id) {
     imgAmpliada.src = fotos[indicesFotos[id]];
     imgAmpliada.classList.remove('img-changing');
     document.getElementById('lightbox').style.display = 'flex';
+    
+    // Añadimos una entrada al historial para capturar el botón atrás del móvil
+    history.pushState({ lightbox: true }, "");
 }
 
-function cerrarLightbox() { document.getElementById('lightbox').style.display = 'none'; idAbiertoLightbox = null; }
+function cerrarLightbox() { 
+    if (idAbiertoLightbox === null) return;
+    
+    document.getElementById('lightbox').style.display = 'none'; 
+    idAbiertoLightbox = null; 
+    
+    // Si el cierre es manual (click en X o fuera), volvemos atrás en el historial para limpiarlo
+    if (history.state && history.state.lightbox) {
+        history.back();
+    }
+}
+
+// Escuchador para detectar cuando el usuario pulsa el botón "Atrás" del móvil
+window.addEventListener('popstate', (event) => {
+    if (idAbiertoLightbox !== null) {
+        // Cerramos el lightbox visualmente
+        document.getElementById('lightbox').style.display = 'none';
+        idAbiertoLightbox = null;
+    }
+});
 function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
 
 function filterByCategory(cat, btn) {
