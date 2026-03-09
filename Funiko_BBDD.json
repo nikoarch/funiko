@@ -3,7 +3,7 @@
         "fecha": "28/01/2024",
         "nroFunko": 1355,
         "personaje": "INDIANA JONES",
-        "nroSerie": "XVP-467716-77815",
+        "nroSerie": "ORR-596480-38360",
         "precio": "14,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -23,13 +23,14 @@
             "imagenes/funkos/1355-Indiana_4.jpg"
         ],
         "video": "https://www.youtube.com/watch?v=Pbzn79TSRO0",
+        "fechaLanzamiento": "2023",
         "notas": "No hay ticket."
     },
     {
         "fecha": "14/02/2025",
         "nroFunko": 1613,
         "personaje": "DANA SCULLY",
-        "nroSerie": "WJI-853160-71662",
+        "nroSerie": "VAA-490020-88573",
         "precio": "0,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -49,13 +50,14 @@
             "imagenes/funkos/1613-Dana_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Regalo de Cris No hay ticket."
     },
     {
         "fecha": "14/02/2025",
         "nroFunko": 1614,
         "personaje": "FOX MULDER",
-        "nroSerie": "APC-406664-84454",
+        "nroSerie": "DKP-887864-33183",
         "precio": "0,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -75,13 +77,14 @@
             "imagenes/funkos/1614-Fox_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Regalo de Cris No hay ticket."
     },
     {
         "fecha": "21/02/2026",
         "nroFunko": 1659,
         "personaje": "SAMANTHA CARTER",
-        "nroSerie": "VMT073639",
+        "nroSerie": "EEU203886",
         "precio": "16,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -101,13 +104,14 @@
             "imagenes/funkos/1659-Sam_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2025",
         "notas": "Pistoletazo de salida a coleccionar Funkos. Factura en su caja."
     },
     {
         "fecha": "21/02/2026",
         "nroFunko": 1755,
         "personaje": "DATA WITH SPOT",
-        "nroSerie": "AXC890903",
+        "nroSerie": "JBR832838",
         "precio": "15,99€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -127,13 +131,14 @@
             "imagenes/funkos/1755-Data_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Sep 2025 (estimado)",
         "notas": "Ticket de compra en caja de Picard (Glitter)."
     },
     {
         "fecha": "21/02/2026",
         "nroFunko": 1688,
         "personaje": "WILLIAM T. RIKER",
-        "nroSerie": "PUC506832",
+        "nroSerie": "HKS987858",
         "precio": "12,79€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -153,13 +158,14 @@
             "imagenes/funkos/1688-Riker_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Abr 2025 (estimado)",
         "notas": "Ticket de compra en caja de Picard (Glitter)."
     },
     {
         "fecha": "21/02/2026",
         "nroFunko": 1842,
         "personaje": "DR. GREGORY HOUSE",
-        "nroSerie": "HDN429982",
+        "nroSerie": "JHY734483",
         "precio": "15,99€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -179,13 +185,14 @@
             "imagenes/funkos/1842-House_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Oct 2025",
         "notas": "Ticket de compra en caja de Picard (Glitter). Lo vio Cris mientras buscabamos otros."
     },
     {
         "fecha": "24/02/2026",
         "nroFunko": 1687,
         "personaje": "JEAN-LUC PICARD",
-        "nroSerie": "AFF976210",
+        "nroSerie": "TTL419582",
         "precio": "12,79€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -205,6 +212,7 @@
             "imagenes/funkos/1687-Picard_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Abr 2025",
         "notas": "Ticket de compra en su caja. Encargado en Fnac (Sanse) el 21/02/2026 para recoger a partir del día 24/02/2026."
     },
     {
@@ -228,6 +236,7 @@
             "imagenes/funkos/preventas/sisko.png"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2026 (estimado)",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -251,6 +260,7 @@
             "imagenes/funkos/preventas/geordi.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2026 (estimado)",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -274,6 +284,7 @@
             "imagenes/funkos/preventas/worf.png"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2026 (estimado)",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
@@ -297,13 +308,14 @@
             "imagenes/funkos/preventas/doctor.png"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2026 (estimado)",
         "notas": "Comprado en preventa el 20/02/2026. Me lo entregarán el 9/09/2026."
     },
     {
         "fecha": "22/02/2026",
         "nroFunko": 1631,
         "personaje": "JEAN-LUC PICARD",
-        "nroSerie": "ABB092435",
+        "nroSerie": "PXL670121",
         "precio": "10,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -323,13 +335,14 @@
             "imagenes/funkos/1631-Picard_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "-"
     },
     {
         "fecha": "26/02/2026",
         "nroFunko": 1172,
         "personaje": "NEO",
-        "nroSerie": "XBV820919",
+        "nroSerie": "ELA553628",
         "precio": "14,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -349,13 +362,14 @@
             "imagenes/funkos/1172-Neo_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2022",
         "notas": "Ticket en su caja."
     },
     {
         "fecha": "25/02/2026",
         "nroFunko": 1173,
         "personaje": "TRINITY",
-        "nroSerie": "SIY836464",
+        "nroSerie": "ZQI821699",
         "precio": "14,91€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -375,13 +389,14 @@
             "imagenes/funkos/1173-Trinity_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2022",
         "notas": "Ticket en su caja."
     },
     {
         "fecha": "22/02/2026",
         "nroFunko": 1660,
         "personaje": "TEAL’C",
-        "nroSerie": "BCF451240",
+        "nroSerie": "GRD439897",
         "precio": "16,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -401,6 +416,7 @@
             "imagenes/funkos/1660-Tealc_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2025",
         "notas": "Ticket en su caja."
     },
     {
@@ -424,6 +440,7 @@
             "imagenes/funkos/preventas/eomer.webp"
         ],
         "video": "#",
+        "fechaLanzamiento": "Feb 2026 (estimado)",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
     {
@@ -447,13 +464,14 @@
             "imagenes/funkos/preventas/boromir.webp"
         ],
         "video": "#",
+        "fechaLanzamiento": "Feb 2026 (estimado)",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 18/04/2026."
     },
     {
         "fecha": "26/02/2026",
         "nroFunko": 1745,
         "personaje": "ARWEN",
-        "nroSerie": "ZEU100568",
+        "nroSerie": "HWA046732",
         "precio": "13,42€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -473,13 +491,14 @@
             "imagenes/funkos/1745-Arwen_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2025",
         "notas": "Factura en su caja."
     },
     {
         "fecha": "24/02/2026",
         "nroFunko": 778,
         "personaje": "LEONARD HOFSTADTER",
-        "nroSerie": "SLY703528",
+        "nroSerie": "SWW307423",
         "precio": "16,60€",
         "gastosEnvio": "3,99€",
         "estadoPedido": "Recibido",
@@ -499,13 +518,14 @@
             "imagenes/funkos/778-Leonard_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Abr 2019",
         "notas": "Factura de compra en la caja de Amy."
     },
     {
         "fecha": "24/02/2026",
         "nroFunko": 779,
         "personaje": "AMY FARRAH FOWLER",
-        "nroSerie": "SX931186",
+        "nroSerie": "CG659229",
         "precio": "19,90€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -525,6 +545,7 @@
             "imagenes/funkos/779-Amy_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Abr 2019",
         "notas": "Factura de compra en su caja."
     },
     {
@@ -548,13 +569,14 @@
             "imagenes/funkos/preventas/seven.png"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2026 (estimado)",
         "notas": "Comprado en preventa el 22/02/2026. Me lo entregarán el 8/09/2026."
     },
     {
         "fecha": "26/02/2026",
         "nroFunko": 1753,
         "personaje": "QUARK",
-        "nroSerie": "VNL530244",
+        "nroSerie": "QXQ039767",
         "precio": "16,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -574,6 +596,7 @@
             "imagenes/funkos/1753-Quark_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Sep 2025 (estimado)",
         "notas": "Factura en su caja."
     },
     {
@@ -597,6 +620,7 @@
             "imagenes/funkos/preventas/robocop.webp"
         ],
         "video": "#",
+        "fechaLanzamiento": "Feb 2026 (estimado)",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 16/03/2026."
     },
     {
@@ -620,13 +644,14 @@
             "imagenes/funkos/preventas/mace.png"
         ],
         "video": "#",
+        "fechaLanzamiento": "Mar 2026 (estimado)",
         "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 3/05/2026."
     },
     {
         "fecha": "27/02/2026",
         "nroFunko": 740,
         "personaje": "DARTH MAUL",
-        "nroSerie": "FPY-170282-47052",
+        "nroSerie": "URK-397741-37547",
         "precio": "13,42€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -646,13 +671,14 @@
             "imagenes/funkos/740-DarthMaul_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Sep 2024",
         "notas": "Factura en su caja."
     },
     {
         "fecha": "27/02/2026",
         "nroFunko": 749,
         "personaje": "AHSOKA TANO",
-        "nroSerie": "QDF-466245-52235",
+        "nroSerie": "SZS-013000-59688",
         "precio": "10,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -672,13 +698,14 @@
             "imagenes/funkos/749-Ahsoka_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Oct 2024",
         "notas": "Factura en su caja."
     },
     {
         "fecha": "24/02/2026",
         "nroFunko": 961,
         "personaje": "MARTY IN PUFFY VEST",
-        "nroSerie": "HDK432445",
+        "nroSerie": "WXX635029",
         "precio": "16,95€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -698,13 +725,14 @@
             "imagenes/funkos/961-Marty_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2020",
         "notas": "Ticket de compra en su caja."
     },
     {
         "fecha": "24/02/2026",
         "nroFunko": 1575,
         "personaje": "DANIEL JACKSON",
-        "nroSerie": "TVC442735",
+        "nroSerie": "BMW061261",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -724,13 +752,14 @@
             "imagenes/funkos/1575-Daniel_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket de compra en su caja."
     },
     {
         "fecha": "26/02/2026",
         "nroFunko": 1743,
         "personaje": "ÉOWYN",
-        "nroSerie": "PJV180253",
+        "nroSerie": "VTQ857223",
         "precio": "10,99€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -750,13 +779,14 @@
             "imagenes/funkos/1743-Eowyn_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Ene 2025",
         "notas": "Pone que 1/6 posibilidades de recibir una version Chase... y obviamente no tocó... Factura en su caja."
     },
     {
         "fecha": "28/02/2026",
         "nroFunko": 751,
         "personaje": "ANAKIN SKYWALKER",
-        "nroSerie": "ECC-922889-03406",
+        "nroSerie": "VVZ-519515-54010",
         "precio": "9,99€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -776,13 +806,14 @@
             "imagenes/funkos/751-Anakin_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Oct 2024",
         "notas": "Factura en su caja."
     },
     {
         "fecha": "27/02/2026",
         "nroFunko": 501,
         "personaje": "LUKE SKYWALKER",
-        "nroSerie": "GGJ-700699-07351",
+        "nroSerie": "USA-508474-80609",
         "precio": "15,99€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -802,13 +833,14 @@
             "imagenes/funkos/501-Luke_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Mar 2022",
         "notas": "Factura en su caja."
     },
     {
         "fecha": "04/03/2026",
         "nroFunko": 599,
         "personaje": "SUPERMAN",
-        "nroSerie": "IVQ148030",
+        "nroSerie": "NJG203261",
         "precio": "13,42€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -828,13 +860,14 @@
             "imagenes/funkos/599-Superman_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Oct 2025",
         "notas": "Factura en su caja. El numero de serie no llego a verlo en el funko. Esta en la base de la cabeza pero el cuerpo no gira y no quiero forzarlo."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 1554,
         "personaje": "DONATELLO",
-        "nroSerie": "SOR837941",
+        "nroSerie": "CMN905203",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -854,13 +887,14 @@
             "imagenes/funkos/1554-Donatello_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 1557,
         "personaje": "MICHELANGELO",
-        "nroSerie": "PNT542389",
+        "nroSerie": "LVW383532",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -880,13 +914,14 @@
             "imagenes/funkos/1557-Michelangelo_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 1555,
         "personaje": "LEONARDO",
-        "nroSerie": "FYC056202",
+        "nroSerie": "DUR688384",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -906,13 +941,14 @@
             "imagenes/funkos/1555-Leonardo_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 1556,
         "personaje": "RAPHAEL",
-        "nroSerie": "CHH991382",
+        "nroSerie": "GZG898953",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -932,13 +968,14 @@
             "imagenes/funkos/1556-Raphael_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket en caja de Obi-Wan (629)."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 629,
         "personaje": "OBI-WAN KENOBI",
-        "nroSerie": "AOW-685947-17274",
+        "nroSerie": "VAM-619488-43257",
         "precio": "12,79€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -958,13 +995,14 @@
             "imagenes/funkos/629-ObiWan_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Jul 2023",
         "notas": "Ticket en su caja."
     },
     {
         "fecha": "02/03/2026",
         "nroFunko": 598,
         "personaje": "STROMTROOPER",
-        "nroSerie": "CAO-572242-10974",
+        "nroSerie": "ZGA-807800-65416",
         "precio": "10,98€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -984,13 +1022,14 @@
             "imagenes/funkos/598-Stormtrooper_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Dic 2022",
         "notas": "Devolví el comprado (llego el 27-2-26) y lo volví a comprar en pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian). Factura en su caja."
     },
     {
         "fecha": "02/03/2026",
         "nroFunko": 368,
         "personaje": "THE CHILD",
-        "nroSerie": "CJW-344939-34099",
+        "nroSerie": "NOL-294021-61616",
         "precio": "10,98€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -1010,13 +1049,14 @@
             "imagenes/funkos/368-Grogu_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "May 2020",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian). Factura en caja de Stormtrooper."
     },
     {
         "fecha": "02/03/2026",
         "nroFunko": 402,
         "personaje": "THE MANDALORIAN WITH THE CHILD",
-        "nroSerie": "TZF-458492-02727",
+        "nroSerie": "PIJ-178403-85061",
         "precio": "10,98€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -1036,6 +1076,7 @@
             "imagenes/funkos/402-Mandalorian_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Sep 2020",
         "notas": "Pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian), Factura en caja de Stormtrooper."
     },
     {
@@ -1059,13 +1100,14 @@
             "imagenes/funkos/preventas/rambo.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "Mar 2026 (estimado)",
         "notas": "Comprado en preventa el 1/03/2026. Me lo entregarán el 12/04/2026."
     },
     {
         "fecha": "03/03/2026",
         "nroFunko": 1573,
         "personaje": "RA",
-        "nroSerie": "PYI484349",
+        "nroSerie": "HFP204821",
         "precio": "8,00€",
         "gastosEnvio": "0,00€",
         "estadoPedido": "Recibido",
@@ -1085,6 +1127,7 @@
             "imagenes/funkos/1573-Ra_4.jpg"
         ],
         "video": "#",
+        "fechaLanzamiento": "2024",
         "notas": "Ticket en su caja."
     }
 ]
