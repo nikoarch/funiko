@@ -11,9 +11,14 @@
     <style>
         .monitor-card {
             border-left: 4px solid var(--primary);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .monitor-grid {
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            padding: 0 15px;
+            width: 100%;
+            box-sizing: border-box;
         }
         .price-info {
             display: flex;
@@ -89,4 +94,3 @@
 <script src="monitorizacion.js"></script>
 </body>
 </html>
-
