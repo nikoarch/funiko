@@ -181,9 +181,9 @@ function verFichaTecnica(id) {
             <div class="info-item">Gastos Envío<b>${f(item.gastosEnvio)}</b></div>
             <div class="info-item">Full Wave<b style="${waveStyle}">${f(item.fullWave)}</b></div>
             <div class="info-item">Estado Pieza<b>${f(item.estado)}</b></div>
-            <div class="info-item">Estado Caja<b>${f(item.estadoCaja)}</b></div>
             <div class="info-item" style="grid-column: 1 / -1;">Especial<b>${f(item.caracteristicasEspeciales)}</b></div>
         </div>
+        <div class="notes-box" style="margin-top: 15px; border-left-color: #eab308;"><strong>📦 Estado Caja:</strong><br>${f(item.estadoCaja) === 'N/A' ? 'Sin detalles del estado.' : item.estadoCaja}</div>
         <div class="notes-box"><strong>📝 Notas:</strong><br>${f(item.notas) === 'N/A' ? 'Sin notas.' : item.notas}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
