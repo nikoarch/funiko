@@ -190,6 +190,9 @@ function verFichaTecnica(id) {
         <div class="notes-box"><strong>📝 Notas:</strong><br>${f(item.notas) === 'N/A' ? 'Sin notas.' : item.notas}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
+    
+    // Añadimos una entrada al historial para capturar el botón atrás del móvil
+    history.pushState({ modal: true }, "");
 }
 
 function cambiarFoto(id, dir) {
@@ -266,8 +269,25 @@ window.addEventListener('popstate', (event) => {
         document.getElementById('lightbox').style.display = 'none';
         idAbiertoLightbox = null;
     }
+    
+    // Cerramos el modal de detalles si está abierto
+    const modal = document.getElementById('infoModal');
+    if (modal && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+    }
 });
-function cerrarModal() { document.getElementById('infoModal').style.display = 'none'; }
+
+function cerrarModal() { 
+    const modal = document.getElementById('infoModal');
+    if (modal.style.display === 'none') return;
+
+    modal.style.display = 'none'; 
+    
+    // Si el cierre es manual, volvemos atrás en el historial para limpiarlo
+    if (history.state && history.state.modal) {
+        history.back();
+    }
+}
 
 function filterByCategory(cat, btn) {
     document.querySelectorAll('#filter-container .filter-btn').forEach(b => b.classList.remove('active'));
