@@ -171,9 +171,12 @@ function verFichaTecnica(id) {
     const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
     const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
     
+    // Si tvShow es igual a franquicia, mostramos "TV Show" para evitar repetición
+    const tvShowDisplay = (item.tvShow === item.franquicia) ? "TV Show" : f(item.tvShow);
+    
     document.getElementById('modal-body').innerHTML = `
         <h2 style="margin:0 0 5px; color:white;">${f(item.personaje)}</h2>
-        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${f(item.franquicia)} · ${f(item.linea)} · ${f(item.tvShow)}</p>
+        <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${f(item.franquicia)} · ${f(item.linea)} · ${tvShowDisplay}</p>
         <div class="modal-info-grid">
             <div class="info-item">Fecha Compra<b>${f(item.fecha)}</b></div>
             <div class="info-item">Nº Serie<b>${f(item.nroSerie)}</b></div>
