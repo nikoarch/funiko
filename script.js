@@ -179,6 +179,7 @@ function verFichaTecnica(id) {
         <p style="color:var(--primary); font-weight:bold; margin-bottom:20px;">${f(item.franquicia)} · ${f(item.linea)} · ${tvShowDisplay}</p>
         <div class="modal-info-grid">
             <div class="info-item">Fecha Compra<b>${f(item.fecha)}</b></div>
+            <div class="info-item">Lanzamiento<b>${f(item.fechaLanzamiento)}</b></div>
             <div class="info-item">Nº Serie<b>${f(item.nroSerie)}</b></div>
             <div class="info-item">Tienda<b>${f(item.compradoEn)}${sub}</b></div>
             <div class="info-item">Gastos Envío<b>${f(item.gastosEnvio)}</b></div>
@@ -369,4 +370,3 @@ lb.addEventListener('touchmove', (e) => {
 }, {passive: true});
 
 window.cambiarFotoLightbox = (dir) => { if(idAbiertoLightbox !== null) cambiarFoto(idAbiertoLightbox, dir); };
-
