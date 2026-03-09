@@ -65,6 +65,10 @@ h1 { font-size: 2rem; margin-bottom: 10px; }
 .status-btn-transito.active { background: #854d0e; color: #fef08a; border-color: #eab308; }
 .status-btn-preventa.active { background: #991b1b; color: #fecaca; border-color: #ef4444; }
 
+/* Botón especial de Monitorización */
+.btn-monitorizacion { background: #facc15; color: #422006; border-color: #eab308; opacity: 1; }
+.btn-monitorizacion:hover { background: #eab308; color: #422006; transform: scale(1.05); }
+
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; max-width: 1400px; margin: 0 auto; }
 .card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; animation: fadeInUp 0.4s ease backwards; position: relative; }
 .card-img-container { position: relative; height: 400px; background: #000; cursor: zoom-in; }
