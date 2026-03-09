@@ -35,14 +35,14 @@ function renderMonitor(items) {
                         <span class="price-value min-price" style="font-size: 1.1rem;">${f(item.minimoHistorico)}</span>
                     </div>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px;">
-                        <div class="price-row" style="flex-direction: column; align-items: flex-start; gap: 2px;">
-                            <span class="price-label" style="font-size: 0.7rem;">Fecha Visto:</span>
-                            <span class="price-value" style="font-size: 0.85rem;">${f(item.fechaPrecioVisto)}</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 5px;">
+                        <div class="price-row" style="flex-direction: column; align-items: flex-start; gap: 2px; padding: 6px;">
+                            <span class="price-label" style="font-size: 0.6rem;">Fecha Visto:</span>
+                            <span class="price-value" style="font-size: 0.75rem;">${f(item.fechaPrecioVisto)}</span>
                         </div>
-                        <div class="price-row" style="flex-direction: column; align-items: flex-start; gap: 2px;">
-                            <span class="price-label" style="font-size: 0.7rem;">Fecha Mínimo:</span>
-                            <span class="price-value" style="font-size: 0.85rem;">${f(item.fechaMinimo)}</span>
+                        <div class="price-row" style="flex-direction: column; align-items: flex-start; gap: 2px; padding: 6px;">
+                            <span class="price-label" style="font-size: 0.6rem;">Fecha Mínimo:</span>
+                            <span class="price-value" style="font-size: 0.75rem;">${f(item.fechaMinimo)}</span>
                         </div>
                     </div>
 
