@@ -10,8 +10,8 @@ function renderMonitor(items) {
         const card = document.createElement('div');
         card.className = 'card monitor-card';
         
-        // Formatear valores
-        const f = (v) => (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
+        // Formatear valores (ya no convertimos '-' en 'N/A' por petición del usuario)
+        const f = (v) => (v === '' || v === null || v === undefined) ? 'N/A' : v;
         
         card.innerHTML = `
             <div class="card-content">
@@ -46,7 +46,7 @@ function renderMonitor(items) {
                         </div>
                     </div>
 
-                    ${item.caracteristica && item.caracteristica !== '-' ? `
+                    ${item.caracteristica !== undefined && item.caracteristica !== null && item.caracteristica !== '' ? `
                     <div style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.85rem; color: var(--muted); border-left: 3px solid var(--primary);">
                         <span style="display:block; font-size: 0.7rem; text-transform: uppercase; font-weight: 800; margin-bottom: 4px; color: var(--primary);">Característica:</span>
                         ${item.caracteristica}
