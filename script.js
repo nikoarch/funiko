@@ -1,6 +1,7 @@
 let datosCompletos = [];
 let categoriaActual = 'todos';
 let filtroEstadoActual = 'todos';
+let statsReveladas = false;
 let indicesFotos = {};
 let idAbiertoLightbox = null;
 let xDown = null;                                                        
@@ -55,13 +56,29 @@ function render(items) {
     if (contadorDiv) {
         contadorDiv.innerHTML = `
             <div class="stat-pill pill-count"><span>📦</span><span><b>${items.length}</b></span><span>Funkos</span></div>
-            <div class="stat-pill pill-price"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
+            <div class="stat-pill pill-price blur-stat ${statsReveladas ? 'revealed' : ''}"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
         `;
+        
+        const mediaPill = contadorDiv.querySelector('.pill-price');
+        if (mediaPill) {
+            mediaPill.onclick = () => {
+                statsReveladas = !statsReveladas;
+                render(items); // Re-renderizamos para sincronizar ambos indicadores
+            };
+        }
     }
 
     const footerInv = document.getElementById('footer-inversion');
     if (footerInv) {
-        footerInv.innerHTML = `<div class="stat-pill pill-total"><span>💰</span><span>Inversión:</span><span><b>${totalInv.toFixed(2)}€</b></span></div>`;
+        footerInv.innerHTML = `<div class="stat-pill pill-total blur-stat ${statsReveladas ? 'revealed' : ''}"><span>💰</span><span>Inversión:</span><span><b>${totalInv.toFixed(2)}€</b></span></div>`;
+        
+        const totalPill = footerInv.querySelector('.pill-total');
+        if (totalPill) {
+            totalPill.onclick = () => {
+                statsReveladas = !statsReveladas;
+                render(items);
+            };
+        }
     }
 
     items.forEach((item, index) => {
