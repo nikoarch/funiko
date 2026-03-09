@@ -13,7 +13,7 @@
         "franquicia": "Indiana Jones",
         "linea": "-",
         "tvShow": "-",
-        "estadoCaja": "Un pelín de pegamento en la base de una etiqueta quitada. No hay ticket.",
+        "estadoCaja": "Un pelín de pegamento en la base de una etiqueta quitada.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -23,7 +23,7 @@
             "imagenes/funkos/1355-Indiana_4.jpg"
         ],
         "video": "https://www.youtube.com/watch?v=Pbzn79TSRO0",
-        "notas": "-"
+        "notas": "No hay ticket."
     },
     {
         "fecha": "14/02/2025",
@@ -39,7 +39,7 @@
         "franquicia": "The X-Files",
         "linea": "Television",
         "tvShow": "The X-Files",
-        "estadoCaja": "Caja perfecta. No hay ticket.",
+        "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -49,7 +49,7 @@
             "imagenes/funkos/1613-Dana_4.jpg"
         ],
         "video": "#",
-        "notas": "Regalo de Cris"
+        "notas": "Regalo de Cris No hay ticket."
     },
     {
         "fecha": "14/02/2025",
@@ -65,7 +65,7 @@
         "franquicia": "The X-Files",
         "linea": "Television",
         "tvShow": "The X-Files",
-        "estadoCaja": "Caja perfecta. No hay ticket.",
+        "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -75,7 +75,7 @@
             "imagenes/funkos/1614-Fox_4.jpg"
         ],
         "video": "#",
-        "notas": "Regalo de Cris"
+        "notas": "Regalo de Cris No hay ticket."
     },
     {
         "fecha": "21/02/2026",
@@ -117,7 +117,7 @@
         "franquicia": "Star Trek",
         "linea": "Television",
         "tvShow": "TNG",
-        "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
+        "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -127,7 +127,7 @@
             "imagenes/funkos/1755-Data_4.jpg"
         ],
         "video": "#",
-        "notas": "Ticket de compra en caja de Picard (Gliter)."
+        "notas": "Ticket de compra en caja de Picard (Glitter)."
     },
     {
         "fecha": "21/02/2026",
@@ -143,7 +143,7 @@
         "franquicia": "Star Trek",
         "linea": "Plus",
         "tvShow": "TNG",
-        "estadoCaja": "Caja perfecta. Ticket en la caja de Picard (Glitter)",
+        "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -153,7 +153,7 @@
             "imagenes/funkos/1688-Riker_4.jpg"
         ],
         "video": "#",
-        "notas": "Ticket de compra en caja de Picard (Gliter)."
+        "notas": "Ticket de compra en caja de Picard (Glitter)."
     },
     {
         "fecha": "21/02/2026",
@@ -169,7 +169,7 @@
         "franquicia": "House",
         "linea": "Television",
         "tvShow": "House",
-        "estadoCaja": "Tapa superior ligeramente arrugada. Ticket en la caja de Picard (Glitter)",
+        "estadoCaja": "Tapa superior ligeramente arrugada.",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -179,7 +179,7 @@
             "imagenes/funkos/1842-House_4.jpg"
         ],
         "video": "#",
-        "notas": "Ticket de compra en caja de Picard (Gliter). Lo vio Cris mientras buscabamos otros."
+        "notas": "Ticket de compra en caja de Picard (Glitter). Lo vio Cris mientras buscabamos otros."
     },
     {
         "fecha": "24/02/2026",
@@ -195,7 +195,7 @@
         "franquicia": "Star Trek",
         "linea": "Plus",
         "tvShow": "TNG",
-        "estadoCaja": "Caja perfecta. Ticket en su caja.",
+        "estadoCaja": "Caja perfecta.",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -391,7 +391,7 @@
         "franquicia": "Stargate",
         "linea": "Television",
         "tvShow": "SG-1",
-        "estadoCaja": "SI ME LO QUEDO, PDTE QUITAR PEGATINA CORTE INGLES. El plastico interior vino roto. Vendedor: El Corte Ingles",
+        "estadoCaja": "SI ME LO QUEDO, PDTE QUITAR PEGATINA CORTE INGLES. El plástico interior vino roto. Vendedor: El Corte Ingles",
         "estado": "Nuevo",
         "fullWave": "Si",
         "foto": [
@@ -489,7 +489,7 @@
         "franquicia": "TBBT",
         "linea": "Television",
         "tvShow": "TBBT",
-        "estadoCaja": "Un pelin marcada en el frente.",
+        "estadoCaja": "Un pelín marcada en el frente.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -515,7 +515,7 @@
         "franquicia": "TBBT",
         "linea": "Television",
         "tvShow": "TBBT",
-        "estadoCaja": "Plastico pelin marcado. Color distinto al de Leonard.",
+        "estadoCaja": "Plástico pelín marcado. Color distinto al de Leonard.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -766,7 +766,7 @@
         "franquicia": "Star Wars",
         "linea": "-",
         "tvShow": "-",
-        "estadoCaja": "Vino con un toque diminito en la esquina abajo.",
+        "estadoCaja": "Vino con un toque diminuto en la esquina abajo.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -870,7 +870,7 @@
         "franquicia": "Tortugas Ninja",
         "linea": "Television",
         "tvShow": "Tortugas Ninja",
-        "estadoCaja": "Pelin tocada y despegado el carton en esquina superior. Y pelin marcada en la trasera. Pegatina de alarma en la base. Imposible de quitar.",
+        "estadoCaja": "Pelin tocada y despegado el cartón en esquina superior. Y pelín marcada en la trasera. Pegatina de alarma en la base. Imposible de quitar.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -984,7 +984,7 @@
             "imagenes/funkos/598-Stormtrooper_4.jpg"
         ],
         "video": "#",
-        "notas": "Devolvi el comprado (llego el 27-2-26) y lo volvi a comprar en pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en su caja."
+        "notas": "Devolví el comprado (llego el 27-2-26) y lo volví a comprar en pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian). Factura en su caja."
     },
     {
         "fecha": "02/03/2026",
@@ -1000,7 +1000,7 @@
         "franquicia": "Star Wars",
         "linea": "-",
         "tvShow": "-",
-        "estadoCaja": "Un pelin rota en la esquina de apertura.",
+        "estadoCaja": "Un pelín rota en la esquina de apertura.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
@@ -1010,7 +1010,7 @@
             "imagenes/funkos/368-Grogu_4.jpg"
         ],
         "video": "#",
-        "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian). Factura en caja de Stormtrooper."
+        "notas": "Pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian). Factura en caja de Stormtrooper."
     },
     {
         "fecha": "02/03/2026",
@@ -1036,7 +1036,7 @@
             "imagenes/funkos/402-Mandalorian_4.jpg"
         ],
         "video": "#",
-        "notas": "Pack de 3x2 (sale mas barato y los otros dos tambien, incluso por debajo de sus minimos historicos individuales. (Stormtooper, Grogu y Mandalorian), Factura en caja de Stormtrooper."
+        "notas": "Pack de 3x2 (sale mas barato y los otros dos también, incluso por debajo de sus mínimos históricos individuales. (Stormtooper, Grogu y Mandalorian), Factura en caja de Stormtrooper."
     },
     {
         "fecha": null,
@@ -1075,7 +1075,7 @@
         "franquicia": "Stargate",
         "linea": "Movies",
         "tvShow": "-",
-        "estadoCaja": "Caja perfecta. Al igual que con Daniel, intenté sacarle la pegatina de la alarma de la base y queda pegamento. Asique le pegué otra encima para que no quede pegasoda.",
+        "estadoCaja": "Caja perfecta. Al igual que con Daniel, intenté sacarle la pegatina de la alarma de la base y queda pegamento. Así que le pegué otra encima para que no quede pegajosa.",
         "estado": "Nuevo",
         "fullWave": "No",
         "foto": [
