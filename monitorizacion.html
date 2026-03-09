@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitorización - Funiko</title>
+    <link rel="icon" type="image/png" href="imagenes/funkoIcon.png">
+    <link rel="apple-touch-icon" href="imagenes/funkoIcon.png">
+    <meta name="theme-color" content="#1e293b">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .monitor-card {
+            border-left: 4px solid var(--primary);
+        }
+        .monitor-grid {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+        .price-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+        .price-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .price-value {
+            font-weight: 800;
+            color: white;
+        }
+        .min-price {
+            color: #6ee7b7;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: var(--card);
+            color: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @media (max-width: 600px) {
+            .back-btn {
+                position: static;
+                margin-bottom: 20px;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">❮ Volver a Colección</a>
+
+<header>
+    <h1>
+        <img src="imagenes/funkoLogo.png" alt="Logo" class="header-logo"> 
+        Monitorización
+    </h1>
+</header>
+
+<div class="controls">
+    <div class="search-wrapper">
+        <input type="text" id="search-bar" placeholder="Buscar personaje o franquicia..." oninput="filtrarMonitorizacion()">
+        <button class="reset-btn" onclick="resetSearch()" title="Limpiar">✕</button>
+    </div>
+</div>
+
+<div class="grid monitor-grid" id="monitor-grid"></div>
+
+<script src="monitorizacion.js"></script>
+</body>
+</html>
+
