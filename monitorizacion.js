@@ -1,15 +1,5 @@
 let monitorData = [];
 
-async function init() {
-    try {
-        const response = await fetch('Monitorizacion_BBDD.json');
-        monitorData = await response.json();
-        renderMonitor(monitorData);
-    } catch (error) {
-        console.error('Error cargando monitorización:', error);
-    }
-}
-
 function renderMonitor(items) {
     const grid = document.getElementById('monitor-grid');
     if (!grid) return;
@@ -94,6 +84,20 @@ function resetSearch() {
     renderMonitor(monitorData);
 }
 
-// Iniciar
-init();
+// Iniciar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', init);
 
+async function init() {
+    console.log('Iniciando monitorización...');
+    try {
+        const response = await fetch('Monitorizacion_BBDD.json');
+        if (!response.ok) throw new Error('No se pudo cargar el JSON');
+        monitorData = await response.json();
+        console.log('Datos cargados:', monitorData.length);
+        renderMonitor(monitorData);
+    } catch (error) {
+        console.error('Error cargando monitorización:', error);
+        const grid = document.getElementById('monitor-grid');
+        if (grid) grid.innerHTML = `<p style="color: white; text-align: center; grid-column: 1/-1;">Error al cargar los datos: ${error.message}</p>`;
+    }
+}
