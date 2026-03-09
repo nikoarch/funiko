@@ -1,0 +1,22 @@
+{
+  "name": "Colección Funiko",
+  "short_name": "Funiko",
+  "description": "Mi colección personal de Funko Pops",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "imagenes/funkoIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "imagenes/funkoIcon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
