@@ -601,52 +601,6 @@
     },
     {
         "fecha": null,
-        "nroFunko": 1984,
-        "personaje": "GURITZ",
-        "nroSerie": null,
-        "precio": "16,00€",
-        "gastosEnvio": 0,
-        "estadoPedido": "Preventa",
-        "compradoEn": "Amazon",
-        "subtienda": "-",
-        "caracteristicasEspeciales": "-",
-        "franquicia": "LOTR",
-        "linea": "Movies",
-        "tvShow": "-",
-        "estadoCaja": "-",
-        "estado": "Nuevo",
-        "fullWave": "??????",
-        "foto": [
-            "imagenes/funkos/preventas/guritz.webp"
-        ],
-        "video": "#",
-        "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
-    },
-    {
-        "fecha": null,
-        "nroFunko": 1983,
-        "personaje": "FARAMIR",
-        "nroSerie": null,
-        "precio": "16,00€",
-        "gastosEnvio": 0,
-        "estadoPedido": "Preventa",
-        "compradoEn": "Amazon",
-        "subtienda": "-",
-        "caracteristicasEspeciales": "-",
-        "franquicia": "LOTR",
-        "linea": "Movies",
-        "tvShow": "-",
-        "estadoCaja": "-",
-        "estado": "Nuevo",
-        "fullWave": "??????",
-        "foto": [
-            "imagenes/funkos/preventas/faramir.webp"
-        ],
-        "video": "#",
-        "notas": "Comprado en preventa el 24/02/2026. Me lo entregarán el 19/04/2026."
-    },
-    {
-        "fecha": null,
         "nroFunko": 834,
         "personaje": "MACE WINDU",
         "nroSerie": null,
