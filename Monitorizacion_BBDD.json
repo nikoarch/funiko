@@ -547,19 +547,6 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 763,
-        "personaje": "Luke (Red 5)",
-        "vistoA": "16,95€",
-        "fechaPrecioVisto": "09/03/2026",
-        "minimoHistorico": "9,23€",
-        "fechaMinimo": "08/06/2025",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "Cabeza oscilante",
-        "link": "https://www.amazon.es/dp/B0D98TB3PJ/?coliid=I1HQ3WNZQTVOBV&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Star Wars",
         "nroFunko": 594,
         "personaje": "Luke (pelis originales)",
         "vistoA": "17,79€",
@@ -869,19 +856,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B08HH41ZSC/?coliid=I3GMF8MIM81UQ4&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 1580,
-        "personaje": "Cave Troll",
-        "vistoA": "18,39€",
-        "fechaPrecioVisto": "09/03/2026",
-        "minimoHistorico": "16,80€",
-        "fechaMinimo": "21/12/2025",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0CNCY1MC2/?coliid=I1Q46NU1R5TE17&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "LOTR",
