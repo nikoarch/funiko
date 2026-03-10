@@ -404,16 +404,16 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 814,
+        "nroFunko": 735,
         "personaje": "Boba Fett",
-        "vistoA": "16,00€",
-        "fechaPrecioVisto": "01/03/2026",
-        "minimoHistorico": "10,30€",
-        "fechaMinimo": "17/02/2026",
-        "vendedor": "Amazon ext?",
+        "vistoA": "12,80€",
+        "fechaPrecioVisto": "10/03/2026",
+        "minimoHistorico": "11,20€",
+        "fechaMinimo": "12/06/2025",
+        "vendedor": "Amazon",
         "alertaVendedor": "No",
         "caracteristica": "Cabeza oscilante",
-        "link": "https://www.amazon.es/dp/B0F9YTJP19/?coliid=I1GHIRI28CCNPW&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
+        "link": "https://www.amazon.es/dp/B0CSVB916K/?coliid=I14FNOJEQ3JWCU&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "Star Wars",
@@ -505,6 +505,19 @@
         "alertaVendedor": "Si",
         "caracteristica": "Cabeza oscilante",
         "link": "https://www.amazon.es/dp/B0CGGVN496/?coliid=I26UJT5FOEDPCQ&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
+    },
+    {
+        "franquicia": "Star Wars",
+        "nroFunko": 744,
+        "personaje": "Count Dooku",
+        "vistoA": null,
+        "fechaPrecioVisto": null,
+        "minimoHistorico": "9,91€",
+        "fechaMinimo": "24/11/2024",
+        "vendedor": null,
+        "alertaVendedor": "No",
+        "caracteristica": "Cabeza oscilante",
+        "link": "https://www.amazon.es/dp/B0CSVJXYSQ/?coliid=I2ITS7MIPZ9FU9&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "Star Wars",
@@ -1415,6 +1428,19 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B09JRPR2RY/?coliid=I3DI3FJX9Q8NAU&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "El juego del Calamar",
+        "nroFunko": 1730,
+        "personaje": "Player 001",
+        "vistoA": "9,85€",
+        "fechaPrecioVisto": "10/03/2026",
+        "minimoHistorico": "9,37€",
+        "fechaMinimo": "04/09/2025",
+        "vendedor": "Amazon",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B0DP7B544C/?coliid=I38KK8BNEOKBN&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "El silencio de los inocentes",
