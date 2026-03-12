@@ -7,6 +7,9 @@ let idAbiertoLightbox = null;
 let xDown = null;                                                        
 let yDown = null;
 
+const urlParams = new URLSearchParams(window.location.search);
+const esModoSecreto = urlParams.get('secreto') === 'yes';
+
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
 });
@@ -54,30 +57,40 @@ function render(items) {
 
     const promedio = itemsConPrecio > 0 ? (totalInv / itemsConPrecio).toFixed(2) : 0;
     if (contadorDiv) {
-        contadorDiv.innerHTML = `
-            <div class="stat-pill pill-count"><span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span><span><b>${items.length}</b></span><span>Funkos</span></div>
-            <div class="stat-pill pill-price blur-stat ${statsReveladas ? 'revealed' : ''}"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
-        `;
-        
-        const mediaPill = contadorDiv.querySelector('.pill-price');
-        if (mediaPill) {
-            mediaPill.onclick = () => {
-                statsReveladas = !statsReveladas;
-                render(items); // Re-renderizamos para sincronizar ambos indicadores
-            };
+        if (esModoSecreto) {
+            contadorDiv.innerHTML = `
+                <div class="stat-pill pill-count"><span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span><span><b>${items.length}</b></span><span>Funkos</span></div>
+                <div class="stat-pill pill-price blur-stat ${statsReveladas ? 'revealed' : ''}"><span>📊</span><span>Media:</span><span><b>${promedio}€</b></span></div>
+            `;
+            
+            const mediaPill = contadorDiv.querySelector('.pill-price');
+            if (mediaPill) {
+                mediaPill.onclick = () => {
+                    statsReveladas = !statsReveladas;
+                    render(items); // Re-renderizamos para sincronizar ambos indicadores
+                };
+            }
+        } else {
+            contadorDiv.innerHTML = `
+                <div class="stat-pill pill-count"><span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span><span><b>${items.length}</b></span><span>Funkos</span></div>
+            `;
         }
     }
 
     const footerInv = document.getElementById('footer-inversion');
     if (footerInv) {
-        footerInv.innerHTML = `<div class="stat-pill pill-total blur-stat ${statsReveladas ? 'revealed' : ''}"><span>💰</span><span>Inversión:</span><span><b>${totalInv.toFixed(2)}€</b></span></div>`;
-        
-        const totalPill = footerInv.querySelector('.pill-total');
-        if (totalPill) {
-            totalPill.onclick = () => {
-                statsReveladas = !statsReveladas;
-                render(items);
-            };
+        if (esModoSecreto) {
+            footerInv.innerHTML = `<div class="stat-pill pill-total blur-stat ${statsReveladas ? 'revealed' : ''}"><span>💰</span><span>Inversión:</span><span><b>${totalInv.toFixed(2)}€</b></span></div>`;
+            
+            const totalPill = footerInv.querySelector('.pill-total');
+            if (totalPill) {
+                totalPill.onclick = () => {
+                    statsReveladas = !statsReveladas;
+                    render(items);
+                };
+            }
+        } else {
+            footerInv.innerHTML = '';
         }
     }
 
@@ -105,7 +118,7 @@ function render(items) {
         card.innerHTML = `
             <div class="card-img-container" style="touch-action: pan-y;">
                 <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
-                <div class="price-badge">${precioBadge}</div>
+                ${esModoSecreto ? `<div class="price-badge">${precioBadge}</div>` : ''}
                 <div class="status-badge ${claseEstado}">${f(item.estadoPedido)}</div>
                 ${fotos.length > 1 ? `
                 <div class="nav-overlay">
@@ -182,7 +195,7 @@ function verFichaTecnica(id) {
             <div class="info-item">Lanzamiento<b>${f(item.fechaLanzamiento)}</b></div>
             <div class="info-item">Nº Serie<b>${f(item.nroSerie)}</b></div>
             <div class="info-item">Tienda<b>${f(item.compradoEn)}${sub}</b></div>
-            <div class="info-item">Gastos Envío<b>${f(item.gastosEnvio)}</b></div>
+            ${esModoSecreto ? `<div class="info-item">Gastos Envío<b>${f(item.gastosEnvio)}</b></div>` : ''}
             <div class="info-item">Full Wave<b style="${waveStyle}">${f(item.fullWave)}</b></div>
             <div class="info-item">Estado Pieza<b>${f(item.estado)}</b></div>
         </div>
