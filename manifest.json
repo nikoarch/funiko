@@ -2,7 +2,7 @@
   "name": "Colección Funiko",
   "short_name": "Funiko",
   "description": "Mi colección personal de Funko Pops",
-  "start_url": "./index.html",
+  "start_url": "./index.html?secreto=yes",
   "scope": "./",
   "display": "standalone",
   "background_color": "#1e293b",
