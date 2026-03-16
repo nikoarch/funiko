@@ -1,4 +1,5 @@
 let monitorData = [];
+let categoriaActual = 'todos';
 
 function renderMonitor(items) {
     const grid = document.getElementById('monitor-grid');
@@ -71,21 +72,52 @@ function filtrarMonitorizacion() {
     const searchVal = document.getElementById('search-bar').value.toLowerCase().trim();
     
     const filtrados = monitorData.filter(item => {
+        const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+        
         const personaje = (item.personaje || '').toLowerCase();
         const franquicia = (item.franquicia || '').toLowerCase();
         const vendedor = (item.vendedor || '').toLowerCase();
         
-        return personaje.includes(searchVal) || 
-               franquicia.includes(searchVal) || 
-               vendedor.includes(searchVal);
+        const matchesText = personaje.includes(searchVal) || 
+                           franquicia.includes(searchVal) || 
+                           vendedor.includes(searchVal);
+        
+        return matchesCat && matchesText;
     });
     
     renderMonitor(filtrados);
 }
 
+function filterByCategoryMonitor(cat, btn) {
+    document.querySelectorAll('#filter-container .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    categoriaActual = cat;
+    filtrarMonitorizacion();
+}
+
+function generarBotonesFiltroMonitorizacion() {
+    const container = document.getElementById('filter-container');
+    if (!container) return;
+
+    // Obtenemos franquicias únicas de los datos de monitorización
+    const franquicias = [...new Set(monitorData.map(i => i.franquicia))].filter(Boolean).sort();
+    
+    franquicias.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.innerText = cat;
+        btn.onclick = (e) => filterByCategoryMonitor(cat, e.target);
+        container.appendChild(btn);
+    });
+}
+
 function resetSearch() {
     document.getElementById('search-bar').value = '';
-    renderMonitor(monitorData);
+    categoriaActual = 'todos';
+    document.querySelectorAll('#filter-container .filter-btn').forEach(b => b.classList.remove('active'));
+    const btnTodos = document.getElementById('btn-todos');
+    if (btnTodos) btnTodos.classList.add('active');
+    filtrarMonitorizacion();
 }
 
 // Iniciar cuando el DOM esté listo
@@ -104,6 +136,7 @@ async function init() {
         if (!response.ok) throw new Error('No se pudo cargar el JSON');
         monitorData = await response.json();
         console.log('Datos cargados:', monitorData.length);
+        generarBotonesFiltroMonitorizacion();
         renderMonitor(monitorData);
     } catch (error) {
         console.error('Error cargando monitorización:', error);
