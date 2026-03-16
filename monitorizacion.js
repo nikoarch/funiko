@@ -92,6 +92,12 @@ function resetSearch() {
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
+    // Preservar el parámetro secreto en el botón de volver
+    const backBtn = document.querySelector('.back-btn');
+    if (backBtn && window.location.search) {
+        backBtn.href = 'index.html' + window.location.search;
+    }
+
     console.log('Iniciando monitorización...');
     try {
         const response = await fetch('Monitorizacion_BBDD.json');
