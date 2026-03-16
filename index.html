@@ -34,7 +34,7 @@
         <button class="filter-btn status-btn-recibido" onclick="filterByStatus('Recibido', this)">Recibido</button>
         <button class="filter-btn status-btn-transito" onclick="filterByStatus('En tránsito', this)">En tránsito</button>
         <button class="filter-btn status-btn-preventa" onclick="filterByStatus('Preventa', this)">Preventa</button>
-        <button class="filter-btn btn-monitorizacion" onclick="window.location.href='monitorizacion.html'">Monitorización</button>
+        <button class="filter-btn btn-monitorizacion" onclick="window.location.href='monitorizacion.html' + (window.location.search || '')">Monitorización</button>
     </div>
 </div>
 
