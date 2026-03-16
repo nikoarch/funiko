@@ -86,6 +86,9 @@
         <input type="text" id="search-bar" placeholder="Buscar personaje o franquicia..." oninput="filtrarMonitorizacion()">
         <button class="reset-btn" onclick="resetSearch()" title="Limpiar">✕</button>
     </div>
+    <div class="filters" id="filter-container">
+        <button id="btn-todos" class="filter-btn active" onclick="filterByCategoryMonitor('todos', this)">Todas las Franquicias</button>
+    </div>
 </div>
 
 <div class="grid monitor-grid" id="monitor-grid"></div>
