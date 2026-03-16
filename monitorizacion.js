@@ -3,7 +3,19 @@ let categoriaActual = 'todos';
 
 function renderMonitor(items) {
     const grid = document.getElementById('monitor-grid');
+    const contadorDiv = document.getElementById('contador');
     if (!grid) return;
+
+    // Renderizar contador
+    if (contadorDiv) {
+        contadorDiv.innerHTML = `
+            <div class="stat-pill pill-count">
+                <span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span>
+                <span><b>${items.length}</b></span>
+                <span>Funkos</span>
+            </div>
+        `;
+    }
 
     grid.innerHTML = '';
 
