@@ -96,12 +96,41 @@ function filterByCategoryMonitor(cat, btn) {
 }
 
 function generarBotonesFiltroMonitorizacion() {
+    console.log('Generando botones de filtro...');
     const container = document.getElementById('filter-container');
-    if (!container) return;
+    if (!container) {
+        console.error('No se encontró el contenedor de filtros');
+        return;
+    }
 
-    // Obtenemos franquicias únicas de los datos de monitorización
-    const franquicias = [...new Set(monitorData.map(i => i.franquicia))].filter(Boolean).sort();
+    if (!Array.isArray(monitorData) || monitorData.length === 0) {
+        console.warn('No hay datos para generar botones de filtro');
+        return;
+    }
+
+    // Obtenemos franquicias únicas, manejando posibles variaciones de nombre de campo
+    const franquicias = [...new Set(monitorData.map(i => {
+        const val = i.franquicia || i.Franquicia || i.linea || i.Linea || '';
+        return String(val).trim();
+    }))].filter(f => f !== '').sort();
     
+    console.log('Franquicias detectadas:', franquicias.length, franquicias);
+
+    // Limpiamos botones previos excepto el de "Todas"
+    const btnTodos = document.getElementById('btn-todos');
+    container.innerHTML = '';
+    if (btnTodos) {
+        container.appendChild(btnTodos);
+    } else {
+        // Si por alguna razón no está, lo creamos
+        const btn = document.createElement('button');
+        btn.id = 'btn-todos';
+        btn.className = 'filter-btn active';
+        btn.innerText = 'Todas las Franquicias';
+        btn.onclick = (e) => filterByCategoryMonitor('todos', e.target);
+        container.appendChild(btn);
+    }
+
     franquicias.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
@@ -120,9 +149,6 @@ function resetSearch() {
     filtrarMonitorizacion();
 }
 
-// Iniciar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', init);
-
 async function init() {
     // Preservar el parámetro secreto en el botón de volver
     const backBtn = document.querySelector('.back-btn');
@@ -132,9 +158,27 @@ async function init() {
 
     console.log('Iniciando monitorización...');
     try {
-        const response = await fetch('Monitorizacion_BBDD.json');
+        const response = await fetch('Monitorizacion_BBDD.json?t=' + new Date().getTime());
         if (!response.ok) throw new Error('No se pudo cargar el JSON');
-        monitorData = await response.json();
+        
+        const data = await response.json();
+        
+        // Manejar tanto si es un array directo como si está envuelto en un objeto
+        if (Array.isArray(data)) {
+            monitorData = data;
+        } else if (data && Array.isArray(data.data)) {
+            monitorData = data.data;
+        } else if (data && typeof data === 'object') {
+            const firstArrayKey = Object.keys(data).find(key => Array.isArray(data[key]));
+            if (firstArrayKey) {
+                monitorData = data[firstArrayKey];
+            } else {
+                throw new Error('El formato del JSON no es un array válido');
+            }
+        } else {
+            throw new Error('Formato de datos no reconocido');
+        }
+
         console.log('Datos cargados:', monitorData.length);
         generarBotonesFiltroMonitorizacion();
         renderMonitor(monitorData);
@@ -143,4 +187,11 @@ async function init() {
         const grid = document.getElementById('monitor-grid');
         if (grid) grid.innerHTML = `<p style="color: white; text-align: center; grid-column: 1/-1;">Error al cargar los datos: ${error.message}</p>`;
     }
+}
+
+// Ejecutar init si el DOM ya está listo, o esperar al evento
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
 }
