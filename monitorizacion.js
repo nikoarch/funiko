@@ -160,10 +160,13 @@ function resetSearch() {
 }
 
 async function init() {
-    // Preservar el parámetro secreto en el botón de volver
-    const backBtn = document.querySelector('.back-btn');
-    if (backBtn && window.location.search) {
-        backBtn.href = 'index.html' + window.location.search;
+    // Mostramos siempre el modal de contraseña al entrar
+    const modal = document.getElementById('passwordModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') verificarPassword();
+        });
     }
 
     console.log('Iniciando monitorización...');
@@ -197,6 +200,22 @@ async function init() {
         const grid = document.getElementById('monitor-grid');
         if (grid) grid.innerHTML = `<p style="color: white; text-align: center; grid-column: 1/-1;">Error al cargar los datos: ${error.message}</p>`;
     }
+}
+
+function verificarPassword() {
+    const pass = document.getElementById('passwordInput').value;
+    // Contraseña: 1
+    if (pass === '1') {
+        // En monitorización no usamos esModoSecreto globalmente pero lo dejamos listo
+        // por si en el futuro se añade lógica de precios aquí también.
+        renderMonitor(monitorData);
+    }
+    // En cualquier caso cerramos el modal sin avisar si es incorrecta
+    cerrarPasswordModal();
+}
+
+function cerrarPasswordModal() {
+    document.getElementById('passwordModal').style.display = 'none';
 }
 
 // Ejecutar init si el DOM ya está listo, o esperar al evento
