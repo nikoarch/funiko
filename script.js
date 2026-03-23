@@ -7,30 +7,43 @@ let idAbiertoLightbox = null;
 let xDown = null;                                                        
 let yDown = null;
 
-// El modo secreto se activa por sesión (no persistente)
-let esModoSecreto = false;
+// El modo secreto se activa por sesión (se borra al cerrar la pestaña)
+let esModoSecreto = (sessionStorage.getItem('modoSecreto') === 'true');
+let sesionIniciada = (sessionStorage.getItem('sesionIniciada') === 'true');
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
     
-    // Mostramos siempre el modal de contraseña al entrar
-    document.getElementById('passwordModal').style.display = 'flex';
-    
-    // Permitir pulsar Enter en el input
-    document.getElementById('passwordInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') verificarPassword();
-    });
+    // Solo mostramos el modal si es la primera vez que entramos en esta sesión
+    if (!sesionIniciada) {
+        document.getElementById('passwordModal').style.display = 'flex';
+        
+        // Permitir pulsar Enter en el input
+        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') verificarPassword();
+        });
+    }
 });
 
 function verificarPassword() {
     const pass = document.getElementById('passwordInput').value;
+    
+    // Marcamos que la sesión ha iniciado para que no vuelva a pedir la clave al navegar
+    sessionStorage.setItem('sesionIniciada', 'true');
+    sesionIniciada = true;
+
     // Contraseña: 1
     if (pass === '1') {
+        sessionStorage.setItem('modoSecreto', 'true');
         esModoSecreto = true;
         // Recargamos los datos para aplicar la lógica de modo secreto
         filtrarTodo();
+    } else {
+        // Si la clave es mal, nos aseguramos de que no esté el modo secreto activo
+        sessionStorage.removeItem('modoSecreto');
+        esModoSecreto = false;
     }
-    // En cualquier caso cerramos el modal sin avisar si es incorrecta
+    
     cerrarPasswordModal();
 }
 
