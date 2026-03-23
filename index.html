@@ -34,7 +34,7 @@
         <button class="filter-btn status-btn-recibido" onclick="filterByStatus('Recibido', this)">Recibido</button>
         <button class="filter-btn status-btn-transito" onclick="filterByStatus('En tránsito', this)">En tránsito</button>
         <button class="filter-btn status-btn-preventa" onclick="filterByStatus('Preventa', this)">Preventa</button>
-        <button class="filter-btn btn-monitorizacion" onclick="window.location.href='monitorizacion.html' + (window.location.search || '')">Monitorización</button>
+        <button class="filter-btn btn-monitorizacion" onclick="window.location.href='monitorizacion.html'">Monitorización</button>
     </div>
 </div>
 
@@ -44,6 +44,16 @@
 <footer class="footer-stats">
     <div id="footer-inversion"></div>
 </footer>
+
+<!-- Modal de Contraseña -->
+<div id="passwordModal">
+    <div class="password-content">
+        <h2>Modo Privado</h2>
+        <p style="margin-bottom: 20px; color: var(--muted);">Introduce la contraseña para ver estadísticas y precios.</p>
+        <input type="password" id="passwordInput" placeholder="Contraseña...">
+        <button class="btn-unlock" onclick="verificarPassword()">Entrar</button>
+    </div>
+</div>
 
 <!-- Modal para Detalles -->
 <div id="infoModal" class="modal">
