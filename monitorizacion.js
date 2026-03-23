@@ -160,13 +160,19 @@ function resetSearch() {
 }
 
 async function init() {
-    // Mostramos siempre el modal de contraseña al entrar
-    const modal = document.getElementById('passwordModal');
-    if (modal) {
-        modal.style.display = 'flex';
-        document.getElementById('passwordInput').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') verificarPassword();
-        });
+    // El modo secreto se activa por sesión (se borra al cerrar la pestaña)
+    const esModoSecreto = (sessionStorage.getItem('modoSecreto') === 'true');
+    const sesionIniciada = (sessionStorage.getItem('sesionIniciada') === 'true');
+
+    // Solo mostramos el modal si es la primera vez que entramos en esta sesión
+    if (!sesionIniciada) {
+        const modal = document.getElementById('passwordModal');
+        if (modal) {
+            modal.style.display = 'flex';
+            document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') verificarPassword();
+            });
+        }
     }
 
     console.log('Iniciando monitorización...');
@@ -204,13 +210,18 @@ async function init() {
 
 function verificarPassword() {
     const pass = document.getElementById('passwordInput').value;
+    
+    // Marcamos que la sesión ha iniciado para que no vuelva a pedir la clave al navegar
+    sessionStorage.setItem('sesionIniciada', 'true');
+
     // Contraseña: 1
     if (pass === '1') {
-        // En monitorización no usamos esModoSecreto globalmente pero lo dejamos listo
-        // por si en el futuro se añade lógica de precios aquí también.
+        sessionStorage.setItem('modoSecreto', 'true');
         renderMonitor(monitorData);
+    } else {
+        sessionStorage.removeItem('modoSecreto');
     }
-    // En cualquier caso cerramos el modal sin avisar si es incorrecta
+    
     cerrarPasswordModal();
 }
 
