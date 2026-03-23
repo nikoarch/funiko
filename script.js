@@ -108,9 +108,7 @@ function render(items) {
                 };
             }
         } else {
-            contadorDiv.innerHTML = `
-                <div class="stat-pill pill-count"><span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span><span><b>${items.length}</b></span><span>Funkos</span></div>
-            `;
+            contadorDiv.innerHTML = '';
         }
     }
 
