@@ -8,13 +8,18 @@ function renderMonitor(items) {
 
     // Renderizar contador
     if (contadorDiv) {
-        contadorDiv.innerHTML = `
-            <div class="stat-pill pill-count">
-                <span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span>
-                <span><b>${items.length}</b></span>
-                <span>Funkos</span>
-            </div>
-        `;
+        const esModoSecreto = (sessionStorage.getItem('modoSecreto') === 'true');
+        if (esModoSecreto) {
+            contadorDiv.innerHTML = `
+                <div class="stat-pill pill-count">
+                    <span><img src="imagenes/funkoIcon.png" alt="Icono" class="stat-icon"></span>
+                    <span><b>${items.length}</b></span>
+                    <span>Funkos</span>
+                </div>
+            `;
+        } else {
+            contadorDiv.innerHTML = '';
+        }
     }
 
     grid.innerHTML = '';
