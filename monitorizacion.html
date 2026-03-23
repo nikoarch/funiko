@@ -94,6 +94,16 @@
 
 <div class="grid monitor-grid" id="monitor-grid"></div>
 
+<!-- Modal de Contraseña -->
+<div id="passwordModal">
+    <div class="password-content">
+        <h2>Modo Privado</h2>
+        <p style="margin-bottom: 20px; color: var(--muted);">Introduce la contraseña para ver estadísticas y precios.</p>
+        <input type="password" id="passwordInput" placeholder="Contraseña...">
+        <button class="btn-unlock" onclick="verificarPassword()">Entrar</button>
+    </div>
+</div>
+
 <script src="monitorizacion.js?v=1.2"></script>
 </body>
 </html>
