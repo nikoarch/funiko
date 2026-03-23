@@ -8,7 +8,19 @@ let xDown = null;
 let yDown = null;
 
 const urlParams = new URLSearchParams(window.location.search);
-const esModoSecreto = urlParams.get('secreto') === 'yes';
+const paramSecreto = urlParams.get('secreto');
+
+// Si el parámetro es 'yes', guardamos en memoria local
+if (paramSecreto === 'yes') {
+    localStorage.setItem('modoSecreto', 'true');
+} 
+// Si el parámetro es 'no', borramos de memoria local
+else if (paramSecreto === 'no') {
+    localStorage.removeItem('modoSecreto');
+}
+
+// El modo secreto se activa si el parámetro es 'yes' O si ya estaba guardado en memoria
+const esModoSecreto = (paramSecreto === 'yes') || (localStorage.getItem('modoSecreto') === 'true');
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
@@ -353,7 +365,11 @@ function filtrarTodo() {
             }
         }
 
-        const matchesText = item.personaje.toLowerCase().includes(searchVal) || item.franquicia.toLowerCase().includes(searchVal);
+        // Búsqueda en TODOS los campos del objeto
+        const matchesText = Object.values(item).some(val => 
+            val !== null && val !== undefined && 
+            String(val).toLowerCase().includes(searchVal)
+        );
         
         return matchesCat && matchesStatus && matchesText;
     });
