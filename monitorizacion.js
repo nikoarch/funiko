@@ -86,13 +86,11 @@ function filtrarMonitorizacion() {
     const filtrados = monitorData.filter(item => {
         const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
         
-        const personaje = (item.personaje || '').toLowerCase();
-        const franquicia = (item.franquicia || '').toLowerCase();
-        const vendedor = (item.vendedor || '').toLowerCase();
-        
-        const matchesText = personaje.includes(searchVal) || 
-                           franquicia.includes(searchVal) || 
-                           vendedor.includes(searchVal);
+        // Búsqueda en TODOS los campos del objeto
+        const matchesText = Object.values(item).some(val => 
+            val !== null && val !== undefined && 
+            String(val).toLowerCase().includes(searchVal)
+        );
         
         return matchesCat && matchesText;
     });
