@@ -373,7 +373,7 @@ function generarBotonesFiltro() {
 function filtrarTodo() {
     const searchVal = document.getElementById('search-bar').value.toLowerCase();
     const filtrados = datosCompletos.filter(item => {
-        const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+        const matchesCat = (categoriaActual === 'todos' || String(item.franquicia) === categoriaActual);
         
         // Lógica de estado: normalizamos para comparar
         const estadoItem = item.estadoPedido ? item.estadoPedido.toLowerCase().trim() : '';
