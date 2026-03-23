@@ -34,6 +34,11 @@ function renderMonitor(items) {
         // Lógica para alerta de vendedor
         const alertaVendedor = (item.alertaVendedor || '').toString().trim().toLowerCase() === 'si';
         const vendedorStyle = alertaVendedor ? 'color: #ef4444; font-weight: 800;' : '';
+
+        // Extraer ASIN para el link de Keepa (Amazon España es dominio 9 en Keepa)
+        const asinMatch = (item.link && typeof item.link === 'string') ? item.link.match(/(?:dp|gp\/product)\/([A-Z0-9]{10})/i) : null;
+        const asin = asinMatch ? asinMatch[1] : null;
+        const keepaLink = asin ? `https://keepa.com/#!product/9-${asin}` : null;
         
         card.innerHTML = `
             <div class="card-content">
@@ -75,8 +80,9 @@ function renderMonitor(items) {
                     </div>` : ''}
 
                     ${item.link && item.link !== '#' && item.link !== '-' ? `
-                    <div style="margin-top: 15px; text-align: center;">
+                    <div style="margin-top: 15px; text-align: center; display: flex; flex-direction: column; gap: 8px;">
                         <a href="${item.link}" target="_blank" style="color: var(--primary); font-size: 0.8rem; text-decoration: underline; font-weight: 600;">Abrir enlace de oferta ↗</a>
+                        ${keepaLink ? `<a href="${keepaLink}" target="_blank" style="color: #ff9900; font-size: 0.75rem; text-decoration: underline; font-weight: 600;">Abrir histórico (Keepa) 📊</a>` : ''}
                     </div>` : ''}
                 </div>
             </div>
