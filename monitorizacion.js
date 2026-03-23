@@ -95,7 +95,7 @@ function filtrarMonitorizacion() {
     const searchVal = document.getElementById('search-bar').value.toLowerCase().trim();
     
     const filtrados = monitorData.filter(item => {
-        const matchesCat = (categoriaActual === 'todos' || item.franquicia === categoriaActual);
+        const matchesCat = (categoriaActual === 'todos' || String(item.franquicia) === categoriaActual);
         
         // Búsqueda en TODOS los campos del objeto
         const matchesText = Object.values(item).some(val => 
