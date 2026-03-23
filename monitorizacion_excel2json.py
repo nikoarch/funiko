@@ -30,6 +30,9 @@ def excel_a_json(archivo_excel, hoja_nombre, archivo_json):
     df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
 
     # Aplicar formatos seguros
+    if 'franquicia' in df.columns:
+        df['franquicia'] = df['franquicia'].apply(lambda x: str(int(x)) if isinstance(x, float) and x.is_integer() else (str(x) if pd.notnull(x) else None))
+
     for col in ['vistoA', 'minimoHistorico']:
         if col in df.columns:
             df[col] = df[col].apply(format_precio_seguro)
