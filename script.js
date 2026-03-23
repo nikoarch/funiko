@@ -7,24 +7,36 @@ let idAbiertoLightbox = null;
 let xDown = null;                                                        
 let yDown = null;
 
-const urlParams = new URLSearchParams(window.location.search);
-const paramSecreto = urlParams.get('secreto');
-
-// Si el parámetro es 'yes', guardamos en memoria local
-if (paramSecreto === 'yes') {
-    localStorage.setItem('modoSecreto', 'true');
-} 
-// Si el parámetro es 'no', borramos de memoria local
-else if (paramSecreto === 'no') {
-    localStorage.removeItem('modoSecreto');
-}
-
-// El modo secreto se activa si el parámetro es 'yes' O si ya estaba guardado en memoria
-const esModoSecreto = (paramSecreto === 'yes') || (localStorage.getItem('modoSecreto') === 'true');
+// El modo secreto se activa por sesión (no persistente)
+let esModoSecreto = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
+    
+    // Mostramos siempre el modal de contraseña al entrar
+    document.getElementById('passwordModal').style.display = 'flex';
+    
+    // Permitir pulsar Enter en el input
+    document.getElementById('passwordInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') verificarPassword();
+    });
 });
+
+function verificarPassword() {
+    const pass = document.getElementById('passwordInput').value;
+    // Contraseña: 1
+    if (pass === '1') {
+        esModoSecreto = true;
+        // Recargamos los datos para aplicar la lógica de modo secreto
+        filtrarTodo();
+    }
+    // En cualquier caso cerramos el modal sin avisar si es incorrecta
+    cerrarPasswordModal();
+}
+
+function cerrarPasswordModal() {
+    document.getElementById('passwordModal').style.display = 'none';
+}
 
 async function cargarDatos() {
     try {
