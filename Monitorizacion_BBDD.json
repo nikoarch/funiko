@@ -365,16 +365,16 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 289,
+        "nroFunko": 433,
         "personaje": "Palpatine",
-        "vistoA": "25,03€",
-        "fechaPrecioVisto": "26/02/2026",
-        "minimoHistorico": "9,28€",
-        "fechaMinimo": "16/07/2025",
-        "vendedor": "Amazon/Sega Genesis",
+        "vistoA": "16,95€",
+        "fechaPrecioVisto": "24/03/2026",
+        "minimoHistorico": "14,19€",
+        "fechaMinimo": "27/12/2025",
+        "vendedor": "Amazon/Importtoys_1",
         "alertaVendedor": "No",
         "caracteristica": "Cabeza oscilante",
-        "link": "https://www.amazon.es/dp/B07KPSJTY9/?coliid=I3MK3ZDT1W1UPY&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
+        "link": "https://www.amazon.es/dp/B08HN9R1RQ/?coliid=I3VWGCX8EJFCGW&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "Star Wars",
@@ -1222,7 +1222,7 @@
         "link": "https://www.amazon.es/dp/B0D19LPHJB/?coliid=IL6M6QZM5YX1K&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
-        "franquicia": 300,
+        "franquicia": "300",
         "nroFunko": 1472,
         "personaje": "Dilios",
         "vistoA": "17,69€",
@@ -1235,7 +1235,7 @@
         "link": "https://www.amazon.es/dp/B0BWFTBSTT/?coliid=I1PRBGQPVUOLJV&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
-        "franquicia": 300,
+        "franquicia": "300",
         "nroFunko": 1475,
         "personaje": "Xerxes",
         "vistoA": "11,98€",
@@ -1248,7 +1248,7 @@
         "link": "https://www.amazon.es/dp/B0BWFS81P9/?coliid=I3UJU60GI7C1DA&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
-        "franquicia": 300,
+        "franquicia": "300",
         "nroFunko": 1474,
         "personaje": "Queen Gorgo",
         "vistoA": "5,25€",
