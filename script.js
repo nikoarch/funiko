@@ -13,6 +13,13 @@ function esc(str) {
         .replace(/'/g, '&#039;');
 }
 
+// Función para validar URLs seguras (http, https o rutas locales permitidas)
+function getSafeUrl(url, fallback = 'https://via.placeholder.com') {
+    if (!url || typeof url !== 'string') return fallback;
+    const isSafe = url.startsWith('http') || url.startsWith('imagenes/');
+    return isSafe ? esc(url) : fallback;
+}
+
 let statsReveladas = false;
 let indicesFotos = {};
 let idAbiertoLightbox = null;
@@ -166,8 +173,8 @@ function render(items) {
         })();
 
         // Validar URL de foto
-        const fotoUrl = (fotos[indicesFotos[realID]] && typeof fotos[indicesFotos[realID]] === 'string') ? fotos[indicesFotos[realID]] : 'https://via.placeholder.com';
-        const safeFotoUrl = fotoUrl.startsWith('http') ? esc(fotoUrl) : 'https://via.placeholder.com';
+        const rawFoto = fotos[indicesFotos[realID]];
+        const safeFotoUrl = getSafeUrl(rawFoto);
 
         // Validar link de video
         const rawVideo = (item.video && typeof item.video === 'string') ? item.video : '';
@@ -291,7 +298,7 @@ function cambiarFoto(id, dir) {
         
         setTimeout(() => {
             indicesFotos[id] = (indicesFotos[id] + dir + fotos.length) % fotos.length;
-            const nuevaSrc = fotos[indicesFotos[id]];
+            const nuevaSrc = getSafeUrl(fotos[indicesFotos[id]]);
             
             targets.forEach(target => {
                 target.src = nuevaSrc;
@@ -318,7 +325,7 @@ function abrirLightbox(id) {
     const item = datosCompletos[id];
     const fotos = Array.isArray(item.foto) ? item.foto : [item.foto];
     const imgAmpliada = document.getElementById('img-ampliada');
-    imgAmpliada.src = fotos[indicesFotos[id]];
+    imgAmpliada.src = getSafeUrl(fotos[indicesFotos[id]]);
     imgAmpliada.classList.remove('img-changing');
     document.getElementById('lightbox').style.display = 'flex';
     
