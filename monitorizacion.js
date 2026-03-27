@@ -12,6 +12,13 @@ function esc(str) {
         .replace(/'/g, '&#039;');
 }
 
+// Función para validar URLs seguras (http, https o rutas locales permitidas)
+function getSafeUrl(url, fallback = 'https://via.placeholder.com') {
+    if (!url || typeof url !== 'string') return fallback;
+    const isSafe = url.startsWith('http') || url.startsWith('imagenes/');
+    return isSafe ? esc(url) : fallback;
+}
+
 function renderMonitor(items) {
     const grid = document.getElementById('monitor-grid');
     const contadorDiv = document.getElementById('contador');
@@ -233,7 +240,7 @@ async function init() {
     } catch (error) {
         console.error('Error cargando monitorización:', error);
         const grid = document.getElementById('monitor-grid');
-        if (grid) grid.innerHTML = `<p style="color: white; text-align: center; grid-column: 1/-1;">Error al cargar los datos: ${error.message}</p>`;
+        if (grid) grid.innerHTML = `<p style="color: white; text-align: center; grid-column: 1/-1;">Error al cargar los datos: ${esc(error.message)}</p>`;
     }
 }
 
