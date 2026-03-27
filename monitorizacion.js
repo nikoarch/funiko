@@ -1,6 +1,17 @@
 let monitorData = [];
 let categoriaActual = 'todos';
 
+// Función para escapar HTML y prevenir XSS
+function esc(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 function renderMonitor(items) {
     const grid = document.getElementById('monitor-grid');
     const contadorDiv = document.getElementById('contador');
@@ -28,17 +39,24 @@ function renderMonitor(items) {
         const card = document.createElement('div');
         card.className = 'card monitor-card';
         
-        // Formatear valores (ya no convertimos '-' en 'N/A' por petición del usuario)
-        const f = (v) => (v === '' || v === null || v === undefined) ? 'N/A' : v;
+        // Formatear valores y escapar para seguridad
+        const f = (v) => {
+            const val = (v === '' || v === null || v === undefined) ? 'N/A' : v;
+            return esc(val);
+        };
         
         // Lógica para alerta de vendedor
         const alertaVendedor = (item.alertaVendedor || '').toString().trim().toLowerCase() === 'si';
         const vendedorStyle = alertaVendedor ? 'color: #ef4444; font-weight: 800;' : '';
 
         // Extraer ASIN para el link de Keepa (Amazon España es dominio 9 en Keepa)
-        const asinMatch = (item.link && typeof item.link === 'string') ? item.link.match(/(?:dp|gp\/product)\/([A-Z0-9]{10})/i) : null;
+        const rawLink = (item.link && typeof item.link === 'string') ? item.link : '';
+        const asinMatch = rawLink.match(/(?:dp|gp\/product)\/([A-Z0-9]{10})/i);
         const asin = asinMatch ? asinMatch[1] : null;
         const keepaLink = asin ? `https://keepa.com/#!product/9-${asin}` : null;
+        
+        // Validar que el link sea seguro (empiece por http)
+        const esLinkSeguro = rawLink.startsWith('http');
         
         card.innerHTML = `
             <div class="card-content">
@@ -76,13 +94,13 @@ function renderMonitor(items) {
                     ${item.caracteristica !== undefined && item.caracteristica !== null && item.caracteristica !== '' ? `
                     <div style="margin-top: 15px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 0.85rem; color: var(--muted); border-left: 3px solid var(--primary);">
                         <span style="display:block; font-size: 0.7rem; text-transform: uppercase; font-weight: 800; margin-bottom: 4px; color: var(--primary);">Característica:</span>
-                        ${item.caracteristica}
+                        ${f(item.caracteristica)}
                     </div>` : ''}
 
-                    ${item.link && item.link !== '#' && item.link !== '-' ? `
+                    ${esLinkSeguro ? `
                     <div style="margin-top: 15px; text-align: center; display: flex; flex-direction: column; gap: 8px;">
-                        <a href="${item.link}" target="_blank" style="color: var(--primary); font-size: 0.8rem; text-decoration: underline; font-weight: 600;">Abrir enlace de oferta ↗</a>
-                        ${keepaLink ? `<a href="${keepaLink}" target="_blank" style="color: #ff9900; font-size: 0.75rem; text-decoration: underline; font-weight: 600;">Abrir histórico (Keepa) 📊</a>` : ''}
+                        <a href="${esc(rawLink)}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-size: 0.8rem; text-decoration: underline; font-weight: 600;">Abrir enlace de oferta ↗</a>
+                        ${keepaLink ? `<a href="${esc(keepaLink)}" target="_blank" rel="noopener noreferrer" style="color: #ff9900; font-size: 0.75rem; text-decoration: underline; font-weight: 600;">Abrir histórico (Keepa) 📊</a>` : ''}
                     </div>` : ''}
                 </div>
             </div>
