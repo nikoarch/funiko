@@ -1,6 +1,18 @@
 let datosCompletos = [];
 let categoriaActual = 'todos';
 let filtroEstadoActual = 'todos';
+
+// Función para escapar HTML y prevenir XSS
+function esc(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 let statsReveladas = false;
 let indicesFotos = {};
 let idAbiertoLightbox = null;
@@ -74,8 +86,11 @@ function render(items) {
     const contadorDiv = document.getElementById('contador');
     if (!grid) return;
 
-    // Función auxiliar para formatear valores "-" como "N/A"
-    const f = (v) => (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
+    // Función auxiliar para formatear valores "-" como "N/A" y escapar para seguridad
+    const f = (v) => {
+        const val = (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
+        return esc(val);
+    };
 
     grid.innerHTML = '';
     let totalInv = 0;
@@ -147,12 +162,20 @@ function render(items) {
         const precioBadge = (() => {
             const lp = item.precio.replace('€','').replace(',','.').trim();
             const val = parseFloat(lp);
-            return (isNaN(val) || val <= 0 || item.precio === '-') ? 'N/A' : item.precio;
+            return (isNaN(val) || val <= 0 || item.precio === '-') ? 'N/A' : esc(item.precio);
         })();
+
+        // Validar URL de foto
+        const fotoUrl = (fotos[indicesFotos[realID]] && typeof fotos[indicesFotos[realID]] === 'string') ? fotos[indicesFotos[realID]] : 'https://via.placeholder.com';
+        const safeFotoUrl = fotoUrl.startsWith('http') ? esc(fotoUrl) : 'https://via.placeholder.com';
+
+        // Validar link de video
+        const rawVideo = (item.video && typeof item.video === 'string') ? item.video : '';
+        const esVideoSeguro = rawVideo.startsWith('http');
 
         card.innerHTML = `
             <div class="card-img-container" style="touch-action: pan-y;">
-                <img id="img-${realID}" src="${fotos[indicesFotos[realID]]}" onerror="this.src='https://via.placeholder.com'">
+                <img id="img-${realID}" src="${safeFotoUrl}" onerror="this.src='https://via.placeholder.com'">
                 ${esModoSecreto ? `<div class="price-badge">${precioBadge}</div>` : ''}
                 <div class="status-badge ${claseEstado}">${f(item.estadoPedido)}</div>
                 ${fotos.length > 1 ? `
@@ -175,7 +198,7 @@ function render(items) {
                 <h3>${f(item.personaje)}</h3>
                 <div class="btn-group">
                     <button class="btn-detail btn-detail-trigger">📋 Detalles</button>
-                    ${item.video && item.video !== '#' && item.video !== '-' ? `<a href="${item.video}" target="_blank" class="btn-video">▶ Video</a>` : '<span></span>'}
+                    ${esVideoSeguro ? `<a href="${esc(rawVideo)}" target="_blank" rel="noopener noreferrer" class="btn-video">▶ Video</a>` : '<span></span>'}
                 </div>
             </div>`;
         
@@ -215,8 +238,12 @@ function render(items) {
 
 function verFichaTecnica(id) {
     const item = datosCompletos[id];
-    const f = (v) => (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
-    const sub = item.subtienda && item.subtienda !== '-' ? ` (${item.subtienda})` : '';
+    // Función auxiliar para formatear valores "-" como "N/A" y escapar para seguridad
+    const f = (v) => {
+        const val = (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
+        return esc(val);
+    };
+    const sub = item.subtienda && item.subtienda !== '-' ? ` (${f(item.subtienda)})` : '';
     const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
     
     // Si tvShow es igual a franquicia, mostramos "TV Show" para evitar repetición
@@ -234,9 +261,9 @@ function verFichaTecnica(id) {
             <div class="info-item">Full Wave<b style="${waveStyle}">${f(item.fullWave)}</b></div>
             <div class="info-item">Estado Pieza<b>${f(item.estado)}</b></div>
         </div>
-        <div class="notes-box" style="margin-top: 15px; border-left-color: #a855f7;"><strong>✨ Especial:</strong><br>${f(item.caracteristicasEspeciales) === 'N/A' ? 'Sin características especiales.' : item.caracteristicasEspeciales}</div>
-        <div class="notes-box" style="margin-top: 15px; border-left-color: #eab308;"><strong>📦 Estado Caja:</strong><br>${f(item.estadoCaja) === 'N/A' ? 'Sin detalles del estado.' : item.estadoCaja}</div>
-        <div class="notes-box"><strong>📝 Notas:</strong><br>${f(item.notas) === 'N/A' ? 'Sin notas.' : item.notas}</div>
+        <div class="notes-box" style="margin-top: 15px; border-left-color: #a855f7;"><strong>✨ Especial:</strong><br>${f(item.caracteristicasEspeciales) === 'N/A' ? 'Sin características especiales.' : f(item.caracteristicasEspeciales)}</div>
+        <div class="notes-box" style="margin-top: 15px; border-left-color: #eab308;"><strong>📦 Estado Caja:</strong><br>${f(item.estadoCaja) === 'N/A' ? 'Sin detalles del estado.' : f(item.estadoCaja)}</div>
+        <div class="notes-box"><strong>📝 Notas:</strong><br>${f(item.notas) === 'N/A' ? 'Sin notas.' : f(item.notas)}</div>
     `;
     document.getElementById('infoModal').style.display = 'flex';
     
