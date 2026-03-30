@@ -43,6 +43,9 @@ let sesionIniciada = (sessionStorage.getItem('sesionIniciada') === 'true');
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos();
     
+    // Forzamos scroll al principio al cargar con un pequeño retardo
+    setTimeout(() => window.scrollTo(0, 0), 100);
+    
     // Solo mostramos el modal si es la primera vez que entramos en esta sesión
     if (!sesionIniciada) {
         document.getElementById('passwordModal').style.display = 'flex';
@@ -55,8 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function verificarPassword() {
-    const pass = document.getElementById('passwordInput').value;
+    const passInput = document.getElementById('passwordInput');
+    const pass = passInput.value;
     
+    // Quitamos el foco del input para evitar que el móvil se quede "enganchado" en él
+    if (passInput) passInput.blur();
+
     // Marcamos que la sesión ha iniciado para que no vuelva a pedir la clave al navegar
     sessionStorage.setItem('sesionIniciada', 'true');
     sesionIniciada = true;
@@ -74,6 +81,8 @@ function verificarPassword() {
     }
     
     cerrarPasswordModal();
+    // Forzamos el scroll al principio con un pequeño retardo para asegurar que el navegador lo procese
+    setTimeout(() => window.scrollTo(0, 0), 100);
 }
 
 function cerrarPasswordModal() {
