@@ -1,6 +1,7 @@
 let datosCompletos = [];
 let categoriaActual = 'todos';
 let filtroEstadoActual = 'todos';
+let currentSearchTerm = '';
 
 // Función para escapar HTML y prevenir XSS
 function esc(str) {
@@ -18,6 +19,15 @@ function getSafeUrl(url, fallback = 'https://via.placeholder.com') {
     if (!url || typeof url !== 'string') return fallback;
     const isSafe = url.startsWith('http') || url.startsWith('imagenes/');
     return isSafe ? esc(url) : fallback;
+}
+
+// Función para resaltar el texto buscado
+function highlight(text, term) {
+    if (!term || term.trim() === '') return text;
+    // Escapamos caracteres especiales de regex en el término de búsqueda
+    const cleanTerm = term.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+    const regex = new RegExp(`(${cleanTerm})`, 'gi');
+    return text.replace(regex, '<span class="search-highlight">$1</span>');
 }
 
 let statsReveladas = false;
@@ -96,7 +106,7 @@ function render(items) {
     // Función auxiliar para formatear valores "-" como "N/A" y escapar para seguridad
     const f = (v) => {
         const val = (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
-        return esc(val);
+        return highlight(esc(val), currentSearchTerm);
     };
 
     grid.innerHTML = '';
@@ -248,7 +258,7 @@ function verFichaTecnica(id) {
     // Función auxiliar para formatear valores "-" como "N/A" y escapar para seguridad
     const f = (v) => {
         const val = (v === '-' || v === '' || v === null || v === undefined) ? 'N/A' : v;
-        return esc(val);
+        return highlight(esc(val), currentSearchTerm);
     };
     const sub = item.subtienda && item.subtienda !== '-' ? ` (${f(item.subtienda)})` : '';
     const waveStyle = (item.fullWave === 'Si' || item.fullWave === 'So') ? 'color:#6ee7b7; font-weight:800;' : '';
@@ -405,7 +415,10 @@ function generarBotonesFiltro() {
 }
 
 function filtrarTodo() {
-    const searchVal = document.getElementById('search-bar').value.toLowerCase();
+    const searchInput = document.getElementById('search-bar');
+    const searchVal = searchInput.value.toLowerCase().trim();
+    currentSearchTerm = searchInput.value.trim();
+
     const filtrados = datosCompletos.filter(item => {
         const matchesCat = (categoriaActual === 'todos' || String(item.franquicia) === categoriaActual);
         
@@ -435,6 +448,7 @@ function filtrarTodo() {
 
 window.resetearFiltros = () => {
     document.getElementById('search-bar').value = '';
+    currentSearchTerm = '';
     filterByCategory('todos', document.getElementById('btn-todos'));
     filterByStatus('todos', document.getElementById('btn-status-todos'));
 };
