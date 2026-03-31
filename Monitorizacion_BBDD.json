@@ -1,31 +1,5 @@
 [
     {
-        "franquicia": "Regreso al futuro",
-        "nroFunko": 959,
-        "personaje": "Doc Brown",
-        "vistoA": "19,99€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "9,99€",
-        "fechaMinimo": "29/11/2025",
-        "vendedor": "Pressstart",
-        "alertaVendedor": "No",
-        "caracteristica": "Con casco",
-        "link": "https://www.amazon.es/dp/B082FS24L3/?coliid=I2SD3L4Z3J0TQM&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Regreso al futuro",
-        "nroFunko": 690,
-        "personaje": "Doc Brown",
-        "vistoA": "30,00€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "11,06€",
-        "fechaMinimo": "14/10/2024",
-        "vendedor": "SferaTech",
-        "alertaVendedor": "No",
-        "caracteristica": "Con gafas ciegas",
-        "link": "https://www.amazon.es/Pop-Movie-Back-Future-2015/dp/B082FS2JN2/ref=sr_1_2?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=ASNW5M10608K&dib=eyJ2IjoiMSJ9.MwNhgaX7IzX2k7s-YfJx6YIZDZljfEYXXqtH9cUrst3Z34X8oTNhAnRq5YiV4i6qpfZxodTuDx4ar3g4jz8MEj1JudR96ckQrZ6xhx9ig4V1WxnLU-gY_1H9Bi6-mfcZYpfM6ki0aUX2ZQSw5ZuVHs3wM9S4enlGQ1zoJl7MEdKyn7iu8qQsEpXT7JbXxY7LzoKkgdf7SH339QTO2mPW1cHP6uYPjlPGJc2FP7YSV4EGO2ly0nclq35srzIeQP7z0puq_uPJbg1I3_EC3TXNOC7-KiuDGIenMV4A-XsbdE0.5CO6QZiabkY23JDfO0jJTWBzQBjMdZY20gXkCjqPer0&dib_tag=se&keywords=funko%2Bdoc%2Bbrown&qid=1771782766&s=toys&sprefix=funko%2Bdoc%2Bbrow%2Ctoys%2C246&sr=1-2&th=1"
-    },
-    {
         "franquicia": "Stranger Things",
         "nroFunko": 512,
         "personaje": "Hopper",
