@@ -625,32 +625,6 @@
     },
     {
         "franquicia": "LOTR",
-        "nroFunko": 628,
-        "personaje": "Legolas",
-        "vistoA": "21,99€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "10,54€",
-        "fechaMinimo": "30/05/2024",
-        "vendedor": "MR Popye",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B07DFDV368/?coliid=I1LYD2NXGD33IE&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 1577,
-        "personaje": "Legolas (mas rubio)",
-        "vistoA": "16,95€",
-        "fechaPrecioVisto": "03/03/2026",
-        "minimoHistorico": "10,23€",
-        "fechaMinimo": "16/09/2024",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "amazon.es/dp/B0CND18L24/?coliid=I38LEROP819WP8&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
         "nroFunko": 629,
         "personaje": "Gimli",
         "vistoA": "17,79€",
