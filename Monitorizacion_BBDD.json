@@ -430,19 +430,6 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 363,
-        "personaje": "Luke & Yoda",
-        "vistoA": "26,50€",
-        "fechaPrecioVisto": "09/03/2026",
-        "minimoHistorico": "10,00€",
-        "fechaMinimo": "02/07/2025",
-        "vendedor": "Amazon/Fandomized",
-        "alertaVendedor": "No",
-        "caracteristica": "Cabeza oscilante",
-        "link": "https://www.amazon.es/dp/B07XH4GN2K/?coliid=IZ07E5BB7SG49&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Star Wars",
         "nroFunko": 594,
         "personaje": "Luke (pelis originales)",
         "vistoA": "17,79€",
@@ -570,32 +557,6 @@
         "alertaVendedor": "No",
         "caracteristica": null,
         "link": "https://www.amazon.es/dp/B0D19K1S3V/?coliid=I1PJ209RBZZO21&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 530,
-        "personaje": "Pippin",
-        "vistoA": "18,60€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "14,90€",
-        "fechaMinimo": "02/02/2026",
-        "vendedor": "El rincon del pop",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B0777PLV38/?coliid=I36NW6FN13UOPJ&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 528,
-        "personaje": "Merry",
-        "vistoA": "21,00€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "13,88€",
-        "fechaMinimo": "03/11/2025",
-        "vendedor": "El rincon del pop",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B0777V5HWP/?coliid=ID5DE1VYY4SQS&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "LOTR",
@@ -729,6 +690,19 @@
     },
     {
         "franquicia": "LOTR",
+        "nroFunko": 1983,
+        "personaje": "Faramir",
+        "vistoA": "16,00€",
+        "fechaPrecioVisto": "20/04/2026",
+        "minimoHistorico": "16,00€",
+        "fechaMinimo": "20/04/2026",
+        "vendedor": "Amazon",
+        "alertaVendedor": "No",
+        "caracteristica": null,
+        "link": "https://www.amazon.es/dp/B08HH4KPPV/?coliid=I2AHHC0FXED3W6&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "LOTR",
         "nroFunko": 1295,
         "personaje": "Smeagol",
         "vistoA": "15,99€",
@@ -778,19 +752,6 @@
         "alertaVendedor": "No",
         "caracteristica": null,
         "link": "https://www.amazon.es/dp/B0BG39T82C/?coliid=IQN9STF8E21KT&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "MacGyver",
-        "nroFunko": 707,
-        "personaje": "MacGyver",
-        "vistoA": "N/A",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "DESCATALOGADO",
-        "fechaMinimo": null,
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B07DFF25XY/?coliid=IGHT7P6ASAE2C&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "Rocky",
@@ -859,6 +820,32 @@
     },
     {
         "franquicia": "GOT",
+        "nroFunko": "???",
+        "personaje": "Bran",
+        "vistoA": "15,72€",
+        "fechaPrecioVisto": "20/04/2026",
+        "minimoHistorico": "4,70€",
+        "fechaMinimo": "24/01/2024",
+        "vendedor": "Amazon/docsmagic",
+        "alertaVendedor": "No",
+        "caracteristica": null,
+        "link": "https://www.amazon.es/dp/B07SJH9Q92/?coliid=I1K43XDST99PWG&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
+    },
+    {
+        "franquicia": "GOT",
+        "nroFunko": "???",
+        "personaje": "Sansa",
+        "vistoA": "N/A",
+        "fechaPrecioVisto": "N/A",
+        "minimoHistorico": "17,50€",
+        "fechaMinimo": "24/11/2025",
+        "vendedor": "N/A",
+        "alertaVendedor": "No",
+        "caracteristica": null,
+        "link": "https://www.amazon.es/dp/B07RTLW3H7/?coliid=IK81VNYBD7434&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "GOT",
         "nroFunko": 68,
         "personaje": "Varys",
         "vistoA": "14,99€",
@@ -921,84 +908,6 @@
         "alertaVendedor": "No",
         "caracteristica": null,
         "link": "https://www.amazon.es/dp/B085PHLMFS/?coliid=I2PJ4JL7I189A9&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Peaky Blinders",
-        "nroFunko": 1403,
-        "personaje": "John",
-        "vistoA": "N/A",
-        "fechaPrecioVisto": "N/A",
-        "minimoHistorico": "15,34€",
-        "fechaMinimo": "30/09/2024",
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B0BT3SRLBL/?coliid=ISNLNA5LAUX96&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Peaky Blinders",
-        "nroFunko": null,
-        "personaje": "Arthur",
-        "vistoA": null,
-        "fechaPrecioVisto": null,
-        "minimoHistorico": null,
-        "fechaMinimo": null,
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": null
-    },
-    {
-        "franquicia": "Peaky Blinders",
-        "nroFunko": null,
-        "personaje": "Thomas (Tommy)",
-        "vistoA": null,
-        "fechaPrecioVisto": null,
-        "minimoHistorico": null,
-        "fechaMinimo": null,
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": null
-    },
-    {
-        "franquicia": "Peaky Blinders",
-        "nroFunko": 1401,
-        "personaje": "Polly",
-        "vistoA": "N/A",
-        "fechaPrecioVisto": "N/A",
-        "minimoHistorico": "8,00€",
-        "fechaMinimo": "02/02/2025",
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B0BT3N6JSV/?coliid=I18E1MBZ6HCWE0&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Peaky Blinders",
-        "nroFunko": 1398,
-        "personaje": "Alfie",
-        "vistoA": "16,95€",
-        "fechaPrecioVisto": "26/02/2026",
-        "minimoHistorico": "8,99€",
-        "fechaMinimo": "23/02/2026",
-        "vendedor": "Amzaon/Fandomized",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B0BT451HGJ/?coliid=IHGJ58ISVV33K&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "El Zorro",
-        "nroFunko": 1270,
-        "personaje": "El Zorro",
-        "vistoA": "27,71€",
-        "fechaPrecioVisto": "26/02/2026",
-        "minimoHistorico": "9,24€",
-        "fechaMinimo": "20/09/2025",
-        "vendedor": "Amazon/toysForKids",
-        "alertaVendedor": "No",
-        "caracteristica": null,
-        "link": "https://www.amazon.es/dp/B09Q93ZRL2/?coliid=I2VCPW3UJP52OR&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "El juego del Calamar",
@@ -1155,5 +1064,31 @@
         "alertaVendedor": "No",
         "caracteristica": null,
         "link": "https://www.amazon.es/Funko-POP-Movies-Collectible-Merchandise/dp/B0BWFT5M66?ref_=v_sp_product_dpx"
+    },
+    {
+        "franquicia": "Avatar",
+        "nroFunko": 1550,
+        "personaje": "Neytiri",
+        "vistoA": "34,73€",
+        "fechaPrecioVisto": "20/04/2026",
+        "minimoHistorico": "8,00€",
+        "fechaMinimo": "16/12/2025",
+        "vendedor": "Amazon/Grey Wizzard Toys",
+        "alertaVendedor": "No",
+        "caracteristica": null,
+        "link": "https://www.amazon.es/dp/B0BWFTC4M4/?coliid=I3U0FNLS31YEDT&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Avatar",
+        "nroFunko": 1321,
+        "personaje": "Jake",
+        "vistoA": "24,99€",
+        "fechaPrecioVisto": "20/04/2026",
+        "minimoHistorico": "7,90€",
+        "fechaMinimo": "06/05/2025",
+        "vendedor": "Amazon/Importtoys_1",
+        "alertaVendedor": "No",
+        "caracteristica": null,
+        "link": "https://www.amazon.es/dp/B09YDGPC8Y/?coliid=I2F51CV9BRDM40&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     }
 ]
