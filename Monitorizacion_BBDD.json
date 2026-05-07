@@ -546,6 +546,71 @@
         "link": "https://www.amazon.es/dp/B0D19K1S3V/?coliid=I1PJ209RBZZO21&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
+        "franquicia": "Star Trek",
+        "nroFunko": 1002,
+        "personaje": "Michael Burnham",
+        "vistoA": "12,10€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "11,90€",
+        "fechaMinimo": "13/05/2025",
+        "vendedor": "Amazon/Top Merchan",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B07ZZNWVTP/?coliid=I3IMINWERMO10B&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Star Trek",
+        "nroFunko": 1632,
+        "personaje": "Raffi Musiker",
+        "vistoA": "9,21€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "6,80€",
+        "fechaMinimo": "17/04/2026",
+        "vendedor": "Amazon",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B0CVNMNG9L/?coliid=IZTKGSS7MSONR&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Star Trek",
+        "nroFunko": 1751,
+        "personaje": "Spock",
+        "vistoA": null,
+        "fechaPrecioVisto": null,
+        "minimoHistorico": "9,06€",
+        "fechaMinimo": "24/12/2025",
+        "vendedor": "Amazon",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B0DSWGSBFT/?coliid=I3ULSN2VS1Y3M0&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Star Trek",
+        "nroFunko": 1689,
+        "personaje": "Kirk",
+        "vistoA": "14,40€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "14,40€",
+        "fechaMinimo": "07/05/2026",
+        "vendedor": "Amazon/highcommerce",
+        "alertaVendedor": "No",
+        "caracteristica": "Glitter",
+        "link": "https://www.amazon.es/dp/B0D98SM3VV/?coliid=I1PT60LR16FCDD&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Star Trek",
+        "nroFunko": 1634,
+        "personaje": "Seven of Nine (Picard)",
+        "vistoA": "14,00€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "14,00€",
+        "fechaMinimo": "07/05/2026",
+        "vendedor": "Amazon/Altiglobe",
+        "alertaVendedor": "Si",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B0CVNMBNQ8/?coliid=I6IDD5J4O578J&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
         "franquicia": "LOTR",
         "nroFunko": 445,
         "personaje": "Sam",
@@ -557,19 +622,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B06XGTSWXG/?coliid=IVHZTTDHADEGW&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 1832,
-        "personaje": "Frodo",
-        "vistoA": "15,99€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "9,56€",
-        "fechaMinimo": "14/10/2025",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0DP78FC5F/?coliid=I3N4AZJJTZLPOI&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "LOTR",
@@ -622,32 +674,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B06XGWQNS6/?coliid=I3CXL4TUBAES3W&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 1746,
-        "personaje": "Gandal puerta",
-        "vistoA": "24,99€",
-        "fechaPrecioVisto": "01/03/2026",
-        "minimoHistorico": "20,79€",
-        "fechaMinimo": "26/08/2026",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "Con puerta de durin",
-        "link": "https://www.amazon.es/Funko-Anillos-Figura-Gandalf-Multicolor/dp/B0D6DHTJXR/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3QRXLS5QDVAXZ&dib=eyJ2IjoiMSJ9.c3OizgvRsggLe1gfpgJJ9ClSW5YqflVa0xaMBihv0aF3a1H4Tl-1ysfE5YtRn8Owdzt2OtQLPoLI3xcRrrzQgb5yC9XiXPFK-9L8bUGCyYgH8nLaU0VUuGC8JWODP6SV7tkixqD6lY_1nGX7LlzyBIDMBOrm7a0aIFYbp7xC0yiQ4OY6Mby9P7PzfXRu-9A99ftE7aIbfC_U8vaUL90HXTJxjN6ZiHVNWzqCpDML1_y7BogzjQVcsUNiaR3gcw0A9PJtI601Ei4Tyu2rltyhtmwNnhQJ1Ggts0HyWzta_ME.2DizTQyyr0sdHtm1JhgA70spcppK9e1Dz6IeZhY7LRE&dib_tag=se&keywords=funko%2Bpop%2Bgandalf&qid=1772359504&sprefix=funko%2Bpop%2Bgandal%2Caps%2C246&sr=8-1&ufe=app_do%3Aamzn1.fos.fde3827e-5b32-4544-acac-9bcf8407a6a6&th=1"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 443,
-        "personaje": "Gandalf",
-        "vistoA": "16,99€",
-        "fechaPrecioVisto": "01/03/2026",
-        "minimoHistorico": "11,20€",
-        "fechaMinimo": "09/06/2025",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/Funko-Pop-Vinyl-Hobbit-Gandalf/dp/B06XGG6PLW/ref=sr_1_2?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3QRXLS5QDVAXZ&dib=eyJ2IjoiMSJ9.c3OizgvRsggLe1gfpgJJ9ClSW5YqflVa0xaMBihv0aF3a1H4Tl-1ysfE5YtRn8Owdzt2OtQLPoLI3xcRrrzQgb5yC9XiXPFK-9L8bUGCyYgH8nLaU0VUuGC8JWODP6SV7tkixqD6lY_1nGX7LlzyBIDMBOrm7a0aIFYbp7xC0yiQ4OY6Mby9P7PzfXRu-9A99ftE7aIbfC_U8vaUL90HXTJxjN6ZiHVNWzqCpDML1_y7BogzjQVcsUNiaR3gcw0A9PJtI601Ei4Tyu2rltyhtmwNnhQJ1Ggts0HyWzta_ME.2DizTQyyr0sdHtm1JhgA70spcppK9e1Dz6IeZhY7LRE&dib_tag=se&keywords=funko%2Bpop%2Bgandalf&qid=1772359504&sprefix=funko%2Bpop%2Bgandal%2Caps%2C246&sr=8-2&th=1"
     },
     {
         "franquicia": "LOTR",
@@ -885,6 +911,32 @@
     },
     {
         "franquicia": "Friends",
+        "nroFunko": 1277,
+        "personaje": "Phoebe",
+        "vistoA": "20,98€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "11,50€",
+        "fechaMinimo": "10/11/2025",
+        "vendedor": "Amazon/toysForKids",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B09YDFY6V5/?coliid=I3RMG898EYMKLX&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
+    },
+    {
+        "franquicia": "Friends",
+        "nroFunko": 701,
+        "personaje": "Joey",
+        "vistoA": "32,00€",
+        "fechaPrecioVisto": "07/05/2026",
+        "minimoHistorico": "16,52€",
+        "fechaMinimo": "24/01/2026",
+        "vendedor": "Amazon/Doodigital",
+        "alertaVendedor": "No",
+        "caracteristica": "-",
+        "link": "https://www.amazon.es/dp/B07DF9P3CQ/?coliid=I124NPUBOT5O7Q&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
+    },
+    {
+        "franquicia": "Friends",
         "nroFunko": 1064,
         "personaje": "Gunther ",
         "vistoA": "24,66€",
@@ -1012,19 +1064,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B0D19LPHJB/?coliid=IL6M6QZM5YX1K&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "300",
-        "nroFunko": 1472,
-        "personaje": "Dilios",
-        "vistoA": "17,69€",
-        "fechaPrecioVisto": "23/03/2026",
-        "minimoHistorico": "6,95€",
-        "fechaMinimo": "31/12/2024",
-        "vendedor": "El rincon del pop",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BWFTBSTT/?coliid=I1PRBGQPVUOLJV&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "300",
