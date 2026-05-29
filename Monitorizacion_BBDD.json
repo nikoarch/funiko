@@ -196,19 +196,6 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 597,
-        "personaje": "Darth Vader",
-        "vistoA": "15,99€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "10,99€",
-        "fechaMinimo": "07/07/2024",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BBYX1H6C/?coliid=I2YKMJYPCTFGWM&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Star Wars",
         "nroFunko": 596,
         "personaje": "Chewbacca",
         "vistoA": "15,99€",
@@ -248,19 +235,6 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": "???",
-        "personaje": "Rey",
-        "vistoA": "25,00€",
-        "fechaPrecioVisto": "26/02/2026",
-        "minimoHistorico": "14,51€",
-        "fechaMinimo": "29-2-26",
-        "vendedor": "Triplace Game",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B07QR6Q35M/?coliid=I3PRBX31SEKNW6&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Star Wars",
         "nroFunko": 766,
         "personaje": "R2D2 con Leia",
         "vistoA": "26,53€",
@@ -271,19 +245,6 @@
         "alertaVendedor": "Si",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B0D98WMHXN/?coliid=I1BPR9LM7BDH6D&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Star Wars",
-        "nroFunko": "???",
-        "personaje": "Kylo Ren y Rey",
-        "vistoA": "39,65€",
-        "fechaPrecioVisto": "26/02/2026",
-        "minimoHistorico": "38,95€",
-        "fechaMinimo": "08/08/2025",
-        "vendedor": "Video Dis",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0843PPTFM/?coliid=I1XUORAA0A2SSV&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "Star Wars",
@@ -521,32 +482,6 @@
     },
     {
         "franquicia": "Star Trek",
-        "nroFunko": 1754,
-        "personaje": "Janeway",
-        "vistoA": "24,06€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "13,88€",
-        "fechaMinimo": "17/12/2025",
-        "vendedor": "AS-Discount",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0DSWGR2NC/?coliid=I2RSHDPS77DWVU&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Star Trek",
-        "nroFunko": 1707,
-        "personaje": "The Borg Queen",
-        "vistoA": "12,33€",
-        "fechaPrecioVisto": "23/02/2026",
-        "minimoHistorico": "9,58€",
-        "fechaMinimo": "31/07/2025",
-        "vendedor": "Amazon/AAP10",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0D19K1S3V/?coliid=I1PJ209RBZZO21&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Star Trek",
         "nroFunko": 1002,
         "personaje": "Michael Burnham",
         "vistoA": "12,10€",
@@ -625,32 +560,6 @@
     },
     {
         "franquicia": "LOTR",
-        "nroFunko": 629,
-        "personaje": "Gimli",
-        "vistoA": "17,79€",
-        "fechaPrecioVisto": "26/03/2026",
-        "minimoHistorico": "13,82€",
-        "fechaMinimo": "05/09/2025",
-        "vendedor": "Amazon/ECOLE",
-        "alertaVendedor": "No",
-        "caracteristica": "Lo compré a este precio.",
-        "link": "https://www.amazon.es/dp/B07DFCXCQF?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 531,
-        "personaje": "Aragorn",
-        "vistoA": "17,94€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "13,88€",
-        "fechaMinimo": "21/01/2025",
-        "vendedor": "IBERMADRID",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0777TCYD3/?coliid=IQUU2S47C0WW7&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
         "nroFunko": 1831,
         "personaje": "Gollum",
         "vistoA": "16,95€",
@@ -674,19 +583,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B06XGWQNS6/?coliid=I3CXL4TUBAES3W&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": "???",
-        "personaje": "Sauron",
-        "vistoA": "35,99€",
-        "fechaPrecioVisto": "03/03/2026",
-        "minimoHistorico": "13,88€",
-        "fechaMinimo": "03/11/2025",
-        "vendedor": "Amazon/ECOLE",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B078P74384/?coliid=I1XM47VURF700Y&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "LOTR",
@@ -726,32 +622,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B0BXVT1YPS/?coliid=I1STFKZVG1G3U0&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Indiana Jones",
-        "nroFunko": 1354,
-        "personaje": "Henry Jones",
-        "vistoA": "20,27€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "8,99€",
-        "fechaMinimo": "24/04/2025",
-        "vendedor": "Latiendadirecta",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BG3BNRNL/?coliid=I2N0L62LDJ7V2Q&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Indiana Jones",
-        "nroFunko": 1352,
-        "personaje": "Sallha",
-        "vistoA": "11,67€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "6,95€",
-        "fechaMinimo": "12/07/2025",
-        "vendedor": "Amazon/docsmagic",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BG3D6FDH/?coliid=I10DMDCD9RQE37&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
     },
     {
         "franquicia": "Indiana Jones",
@@ -869,19 +739,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B07DFF81J2/?coliid=I366EYTTV2RA6F&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Shrek",
-        "nroFunko": 1596,
-        "personaje": "Gato con botas",
-        "vistoA": "16,99€",
-        "fechaPrecioVisto": "24/02/2026",
-        "minimoHistorico": "13,88€",
-        "fechaMinimo": "28/11/2024",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0CLFGBNN8/?coliid=I16XVSTFBEFKDB&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "Friends",
