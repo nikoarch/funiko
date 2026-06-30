@@ -326,19 +326,6 @@
     },
     {
         "franquicia": "Star Wars",
-        "nroFunko": 702,
-        "personaje": "Watto",
-        "vistoA": "11,98€",
-        "fechaPrecioVisto": "03/03/2026",
-        "minimoHistorico": "8,00€",
-        "fechaMinimo": "09/07/2025",
-        "vendedor": "Friki Store",
-        "alertaVendedor": "Si",
-        "caracteristica": "Cabeza oscilante",
-        "link": "https://www.amazon.es/dp/B0CGGLY17X/?coliid=I2DCI17AKNPTYU&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Star Wars",
         "nroFunko": 703,
         "personaje": "Battle Droid",
         "vistoA": "18,14€",
@@ -469,19 +456,6 @@
     },
     {
         "franquicia": "Star Trek",
-        "nroFunko": 1002,
-        "personaje": "Michael Burnham",
-        "vistoA": "12,10€",
-        "fechaPrecioVisto": "07/05/2026",
-        "minimoHistorico": "11,90€",
-        "fechaMinimo": "13/05/2025",
-        "vendedor": "Amazon/Top Merchan",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B07ZZNWVTP/?coliid=I3IMINWERMO10B&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Star Trek",
         "nroFunko": 1689,
         "personaje": "Kirk",
         "vistoA": "14,40€",
@@ -505,19 +479,6 @@
         "alertaVendedor": "Si",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B0CVNMBNQ8/?coliid=I6IDD5J4O578J&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "LOTR",
-        "nroFunko": 445,
-        "personaje": "Sam",
-        "vistoA": null,
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "11,12€",
-        "fechaMinimo": "13/08/2025",
-        "vendedor": "no hay vendedor",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B06XGTSWXG/?coliid=IVHZTTDHADEGW&colid=2ZJXUAH65T83I&psc=0&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "LOTR",
@@ -583,19 +544,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B0BXVT1YPS/?coliid=I1STFKZVG1G3U0&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "Indiana Jones",
-        "nroFunko": 1351,
-        "personaje": "Marion",
-        "vistoA": "9,98€",
-        "fechaPrecioVisto": "22/02/2026",
-        "minimoHistorico": "4,99€",
-        "fechaMinimo": "28/10/2025",
-        "vendedor": "Amazon/docsmagic",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BG39T82C/?coliid=IQN9STF8E21KT&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
     },
     {
         "franquicia": "Rocky",
@@ -739,84 +687,6 @@
         "alertaVendedor": "No",
         "caracteristica": "-",
         "link": "https://www.amazon.es/dp/B085PHLMFS/?coliid=I2PJ4JL7I189A9&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "El juego del Calamar",
-        "nroFunko": 1231,
-        "personaje": "Cuadrado",
-        "vistoA": "39,99€",
-        "fechaPrecioVisto": "01/03/2026",
-        "minimoHistorico": "15,27€",
-        "fechaMinimo": "24/04/2025",
-        "vendedor": "Amazon",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B09L7WSVWW/?coliid=I1TPMZOIPM47SJ&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "El juego del Calamar",
-        "nroFunko": "???",
-        "personaje": "Circulo",
-        "vistoA": "17,99€",
-        "fechaPrecioVisto": "01/03/2026",
-        "minimoHistorico": "5,00€",
-        "fechaMinimo": "02/07/2024",
-        "vendedor": "Amazon/Importtoys_1",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B09JRPR2RY/?coliid=I3DI3FJX9Q8NAU&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it"
-    },
-    {
-        "franquicia": "Jumanji",
-        "nroFunko": 844,
-        "personaje": "Alan",
-        "vistoA": "17,76€",
-        "fechaPrecioVisto": "23/03/2026",
-        "minimoHistorico": "7,92€",
-        "fechaMinimo": "10/09/2024",
-        "vendedor": "Amazon/docsmagic",
-        "alertaVendedor": "No",
-        "caracteristica": "Con cuchillo",
-        "link": "https://www.amazon.es/dp/B081LSGR9Y/?coliid=I1C83FGZTKJKX1&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it_im&th=1"
-    },
-    {
-        "franquicia": "Jumanji",
-        "nroFunko": "???",
-        "personaje": "Alan",
-        "vistoA": "10,99€",
-        "fechaPrecioVisto": "23/03/2026",
-        "minimoHistorico": "6,90€",
-        "fechaMinimo": "11/02/2025",
-        "vendedor": "Amazon/Importtoys_1",
-        "alertaVendedor": "No",
-        "caracteristica": "Sin cuchillo",
-        "link": "https://www.amazon.es/dp/B07RSFWD35/?coliid=I2YD4Q7QD7RE9G&colid=2ZJXUAH65T83I&psc=1&ref_=list_c_wl_lv_ov_lig_dp_it_im"
-    },
-    {
-        "franquicia": "300",
-        "nroFunko": 1475,
-        "personaje": "Xerxes",
-        "vistoA": "11,98€",
-        "fechaPrecioVisto": "23/03/2026",
-        "minimoHistorico": "6,95€",
-        "fechaMinimo": "27/12/2024",
-        "vendedor": "El rincon del pop",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/dp/B0BWFS81P9/?coliid=I3UJU60GI7C1DA&colid=2ZJXUAH65T83I&ref_=list_c_wl_lv_ov_lig_dp_it&th=1"
-    },
-    {
-        "franquicia": "300",
-        "nroFunko": 1474,
-        "personaje": "Queen Gorgo",
-        "vistoA": "5,25€",
-        "fechaPrecioVisto": "23/03/2026",
-        "minimoHistorico": "5,25€",
-        "fechaMinimo": "23/03/2026",
-        "vendedor": "Konke SRL",
-        "alertaVendedor": "No",
-        "caracteristica": "-",
-        "link": "https://www.amazon.es/Funko-POP-Movies-Collectible-Merchandise/dp/B0BWFT5M66?ref_=v_sp_product_dpx"
     },
     {
         "franquicia": "Avatar",
